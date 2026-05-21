@@ -22,17 +22,20 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
       exit={{ opacity: 0, x: -60 }}
       transition={{ duration: 0.28 }}
       className="flex flex-col w-full h-full"
-      style={{ background: "linear-gradient(135deg,#0f0a2e,#1a0a3e)" }}
+      style={{
+        background:
+          "linear-gradient(145deg,#0a1628 0%,#0e7490 55%,#155e75 100%)",
+      }}
     >
       <NavHeader title={`${subj.emoji} ${subj.label}`} onBack={onBack} />
 
       <div className="text-center py-3 shrink-0">
-        <span className="text-zinc-200 text-base font-semibold">
-          Choose a practice test
+        <span className="text-zinc-200 text-base font-semibold px-2">
+          Each round = 10 questions · learn something new
         </span>
       </div>
 
-      <div className="flex-1 flex flex-col gap-4 px-4 sm:px-10 pb-8 justify-center min-h-0">
+      <div className="flex-1 flex flex-col gap-4 px-4 sm:px-10 pb-8 justify-start sm:justify-center min-h-0 overflow-y-auto pt-2">
         {subj.tests.map((test, i) => {
           const hs = loadHighScore(subject, test.key);
           const isChallenge = test.variant === "challenge";

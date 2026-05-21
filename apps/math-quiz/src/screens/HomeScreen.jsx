@@ -20,7 +20,7 @@ export default function HomeScreen({ onSelect, onHistory, onRefresh }) {
       className="flex flex-col w-full h-full"
       style={{
         background:
-          "linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 50%,#0d1a3e 100%)",
+          "linear-gradient(145deg,#0a1628 0%,#0e7490 38%,#f59e0b 120%)",
       }}
     >
       {/* Title */}
@@ -31,16 +31,17 @@ export default function HomeScreen({ onSelect, onHistory, onRefresh }) {
           transition={{ delay: 0.1 }}
         >
           <span className="text-white font-extrabold text-2xl sm:text-3xl drop-shadow-lg">
-            ✨ Aahana&apos;s Learning App ✨
+            🔭 Ready for 3rd grade · STEM & curiosity
           </span>
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-zinc-200 text-sm font-semibold mt-0.5"
+          className="text-zinc-200 text-sm font-semibold mt-0.5 px-3"
         >
-          Pick a subject and start learning!
+          Warm up for 3rd grade with math and reading, then explore STEM, maps,
+          planets, dinosaurs, and wild facts. Tap a topic!
         </motion.p>
       </div>
 
@@ -91,7 +92,7 @@ export default function HomeScreen({ onSelect, onHistory, onRefresh }) {
                   className="absolute top-2 right-2 text-xs font-black px-2 py-0.5 rounded-full"
                   style={{ background: "#fff", color: "#a16207" }}
                 >
-                  🏆 HARD
+                  3rd+
                 </span>
               )}
             </motion.button>

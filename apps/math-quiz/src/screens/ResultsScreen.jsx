@@ -13,7 +13,20 @@ import { useSound } from "../hooks/useSound";
 /** Dedupe persistence + fanfare when React Strict Mode remounts the results screen. */
 const persistedCompletionIds = new Set();
 
-const CONFETTI = ["⭐", "🌟", "✨", "🎉", "🎊", "💫", "🏆", "💛", "🎈", "🌈"];
+const CONFETTI = [
+  "⭐",
+  "🌟",
+  "☀️",
+  "🍉",
+  "🎉",
+  "🎊",
+  "💫",
+  "🏆",
+  "🌊",
+  "🎈",
+  "🌈",
+  "🦋",
+];
 
 function Confetti({ count = 20 }) {
   const pieces = Array.from({ length: count }, (_, id) => ({
@@ -106,12 +119,15 @@ export default function ResultsScreen({
         damping: 22,
       }}
       className="relative flex flex-col w-full h-full"
-      style={{ background: "linear-gradient(135deg,#0f0a2e,#1a0a3e)" }}
+      style={{
+        background:
+          "linear-gradient(145deg,#0a1628 0%,#0e7490 40%,#f59e0b 130%)",
+      }}
     >
       {stars >= 2 && <Confetti count={stars === 3 ? 30 : 16} />}
 
       <NavHeader
-        title="Round Complete! 🎓"
+        title="Summer round complete! 🎓"
         onBack={onHome}
         backLabel="🏠 Home"
       />

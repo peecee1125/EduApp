@@ -1,12 +1,12 @@
 {
-  "name": "Aahana's App",
-  "short_name": "Aahana App",
-  "description": "A colorful 2nd grade learning app with Math, ELA, and more worlds coming soon",
+  "name": "Summer TN 3rd prep",
+  "short_name": "TN Summer",
+  "description": "Summer practice for kids heading into 3rd grade in Tennessee — math, reading, science, maps, and more",
   "start_url": ".",
   "display": "standalone",
   "orientation": "landscape",
-  "background_color": "#1a0f2e",
-  "theme_color": "#2d1b4e",
+  "background_color": "#0a1628",
+  "theme_color": "#0e7490",
   "icons": [
     {
       "src": "./icon.svg",

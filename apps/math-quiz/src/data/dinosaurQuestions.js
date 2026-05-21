@@ -1,5 +1,5 @@
-// Dinosaur Practice + Advanced (2nd-3rd bridge)
-// Scientifically accurate paleontology for kids
+// Dinosaurs + paleontology STEM (fossils, evidence, bird connections)
+// Scientifically accurate for curious kids
 
 export const dinosaurPractice1 = [
   {

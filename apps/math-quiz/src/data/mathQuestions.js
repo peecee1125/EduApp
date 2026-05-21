@@ -1,4 +1,4 @@
-// Tennessee TCAP 2nd Grade Math — Question Banks
+// Tennessee math — Grade 2 review banks (summer warm-up before 3rd grade)
 // Standards: 2.OA, 2.NBT, 2.MD (incl. 2.MD.C.7 time), 2.G
 // Each question carries _cat so the registry can pick a representative spread.
 // Categories: "word" | "oa" | "nbt" | "md" | "time" | "money" | "data" | "g"

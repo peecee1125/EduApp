@@ -1,5 +1,5 @@
-// Fun Facts Practice + Advanced (2nd-3rd bridge)
-// Amazing, verified facts to spark curiosity
+// Fun facts — animals, records, world trivia + separate “wow STEM” bank in registry
+// Facts chosen to be engaging and verifiable for curious kids
 
 export const funFactsPractice1 = [
   {

@@ -25,7 +25,10 @@ export default function HistoryScreen({ onBack }) {
       exit={{ opacity: 0, x: -60 }}
       transition={{ duration: 0.28 }}
       className="flex flex-col w-full h-full"
-      style={{ background: "linear-gradient(135deg,#0f0a2e,#1a0a3e)" }}
+      style={{
+        background:
+          "linear-gradient(145deg,#0a1628 0%,#0e7490 50%,#155e75 100%)",
+      }}
     >
       <NavHeader title="⭐ My Stars" onBack={onBack} />
 

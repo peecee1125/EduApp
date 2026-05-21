@@ -22,7 +22,7 @@ export default function App() {
         width: "100%",
         height: "100%",
         overflow: "hidden",
-        background: "#0f0a2e",
+        background: "linear-gradient(165deg,#0a1628 0%,#0c4a6e 45%,#164e63 100%)",
       }}
     >
       <AnimatePresence mode="wait">

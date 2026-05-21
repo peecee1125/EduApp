@@ -1,4 +1,4 @@
-// Tennessee TCAP 2nd Grade ELA Practice Questions
+// Tennessee ELA — Grade 2 reading & language (summer bridge to 3rd grade)
 // Standards: RL.2, RI.2, L.2, W.2
 // Each question carries _cat so the registry can guarantee a representative spread.
 // Categories: "rl_detail" | "rl_main" | "rl_vocab" | "rl_structure" | "rl_pov"

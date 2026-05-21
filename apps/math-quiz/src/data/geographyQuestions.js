@@ -1,4 +1,4 @@
-// 2nd Grade Geography Practice + Advanced (2nd-3rd bridge)
+// Geography & social studies — maps + Tennessee (2nd review, 3rd preview)
 // Aligned to Tennessee Academic Standards for Social Studies
 
 export const geographyPractice1 = [

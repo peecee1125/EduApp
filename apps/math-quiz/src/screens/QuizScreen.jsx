@@ -104,7 +104,8 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
 
   if (!test) return null;
 
-  const bg = "linear-gradient(135deg,#0f0a2e,#1a0a3e)";
+  const bg =
+    "linear-gradient(145deg,#0a1628 0%,#0e7490 45%,#164e63 100%)";
 
   if (isDone) {
     return (

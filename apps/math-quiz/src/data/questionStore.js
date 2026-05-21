@@ -69,7 +69,7 @@ export async function generateQuestions(
   count = 15,
 ) {
   const prompt =
-    `Generate exactly ${count} multiple-choice quiz questions for an 8-year-old (2nd/3rd grade) ` +
+    `Generate exactly ${count} multiple-choice quiz questions for a Tennessee student finishing 2nd grade / starting 3rd grade ` +
     `on the topic: "${subjectLabel} – ${testLabel}".\n` +
     `Rules:\n` +
     `- Age-appropriate, positive, and educational\n` +

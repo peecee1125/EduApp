@@ -1,6 +1,6 @@
 # Apps4Aahana
 
-Educational and fun apps for an 8-year-old, built with **React**, **Vite**, and **Tailwind CSS**. Each app lives under `apps/` and ships as a static site in **nginx** inside Docker—good for colorful, touch-friendly UIs on an **iPad** (Safari on your home Wi‑Fi).
+Educational and fun apps for an 8-year-old, built with **React**, **Vite**, and **Tailwind CSS**. The main quiz app targets **readiness for 3rd grade** (Tennessee-friendly math and ELA), **STEM** habits and content, **geography**, **planets and space**, **dinosaurs as science**, and **high-interest facts** so practice stays curious—not drill-only. Each app lives under `apps/` and ships as a static site in **nginx** inside Docker—good for colorful, touch-friendly UIs on an **iPad** (Safari on your home Wi‑Fi).
 
 ## Layout
 
@@ -18,20 +18,20 @@ Educational and fun apps for an 8-year-old, built with **React**, **Vite**, and 
 
 On the iPad, use **`http://<NAS-LAN-IP>:9080`** (same Wi‑Fi as the NAS). Large buttons and `viewport-fit=cover` help with touch and full-screen feel.
 
-### Subjects
+### Subjects (topics for 3rd-grade readiness + curiosity)
 
-8 subjects, each with 2–3 tests (Practice 1, Practice 2, and optionally a Challenge):
+Same eight **subject keys** for saved scores. Labels and **test names** now spell out what to learn: core math/ELA, **STEM science** (including a new data & design round), **geography** (maps, Tennessee, world wonders), **planets & space tech**, **dinosaurs as science** (fossils & evidence), and **WOW STEM facts**.
 
-| Subject      | Emoji | Tests                                        |
-| ------------ | ----- | -------------------------------------------- |
-| Math         | 🔢    | Practice 1, Practice 2, Challenge            |
-| ELA          | 📖    | Practice 1, Practice 2, Practice 3           |
-| Science      | 🔬    | Practice 1, Practice 2, Challenge            |
-| Geography    | 🌍    | Practice 1, Practice 2, Challenge            |
-| Solar System | 🪐    | Practice 1, Practice 2, Challenge            |
-| Dinosaurs    | 🦕    | Practice 1, Practice 2, Challenge            |
-| Fun Facts    | 🌟    | Practice 1, Practice 2, Challenge            |
-| Advanced     | ⭐    | Advanced Math, Science, ELA, World Knowledge |
+| Subject | Focus | New or renamed rounds (examples) |
+| ------- | ----- | -------------------------------- |
+| Math · 3rd-grade ready | Operations → grade-3 topics | Adds **STEM math: charts, time & patterns** |
+| Reading & writing | Comprehension, vocabulary | Tennessee-themed **summer reading boost** |
+| STEM · life, Earth & physical | NGSS-style content | Adds **STEM curiosity: data, design & Earth** |
+| Geography | Maps, landforms, civics | Adds **Explorers & world wonders** |
+| Planets & space science | Solar system through deep space | Adds **Planet mysteries & NASA tech** |
+| Dinosaurs · prehistoric STEM | Mesozoic life | Adds **Fossils, evidence & birds link** |
+| WOW facts | Records + science surprises | Adds **Mind-blowing science & tech** |
+| Extra challenge | Stretch quizzes | Math / science / reading / world labs |
 
 ### Features
 

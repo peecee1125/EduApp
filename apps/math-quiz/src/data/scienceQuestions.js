@@ -1,5 +1,5 @@
-// 2nd Grade Science Practice + Advanced (2nd-3rd bridge)
-// Aligned to NGSS K-2 and Tennessee Academic Standards for Science
+// Science practice + STEM curiosity banks (life, Earth, physical science)
+// Aligned to NGSS-style practices and Tennessee Academic Standards for Science
 
 export const sciencePractice1 = [
   {

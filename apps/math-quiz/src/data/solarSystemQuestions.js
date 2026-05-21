@@ -1,5 +1,5 @@
-// Solar System Practice + Advanced (2nd-3rd bridge)
-// Scientifically accurate, age-appropriate for 2nd grade
+// Solar system + sky — basics through “planet mysteries” extension banks
+// Scientifically accurate, age-appropriate for rising 3rd graders
 
 export const solarPractice1 = [
   {
