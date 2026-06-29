@@ -127,7 +127,7 @@ export default function ResultsScreen({
       {stars >= 2 && <Confetti count={stars === 3 ? 30 : 16} />}
 
       <NavHeader
-        title="Summer round complete! 🎓"
+        title="Round complete! 🎓"
         onBack={onHome}
         backLabel="🏠 Home"
       />

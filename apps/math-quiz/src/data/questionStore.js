@@ -11,9 +11,3 @@ export function loadCustomQuestions(subjectKey, testKey) {
     return null;
   }
 }
-
-export function clearCustomQuestions(subjectKey, testKey) {
-  try {
-    localStorage.removeItem(`${CUSTOM_PREFIX}${subjectKey}-${testKey}`);
-  } catch {}
-}

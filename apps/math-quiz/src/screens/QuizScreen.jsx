@@ -112,6 +112,7 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
       <motion.div
         key="quiz-done"
         initial={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         className="flex flex-col w-full h-full"
         style={{ background: bg }}
         aria-busy="true"
@@ -124,7 +125,17 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
             onBack();
           }}
         />
-        <div className="flex-1 min-h-0" />
+        <div className="flex-1 flex flex-col items-center justify-center gap-4 min-h-0">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+            className="text-5xl"
+            aria-hidden
+          >
+            ⭐
+          </motion.div>
+          <p className="text-white/70 font-bold text-lg">Calculating…</p>
+        </div>
       </motion.div>
     );
   }

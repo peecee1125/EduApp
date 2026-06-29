@@ -104,13 +104,13 @@ export default function HomeScreen({ onSelect, onHistory }) {
         <div className="text-center text-zinc-500 text-[11px] font-semibold py-1 sm:hidden">
           Released {releaseLabel} · v{__APP_VERSION__}
         </div>
-        <div className="flex items-center justify-between px-4 py-2">
-        <span className="text-zinc-400 text-xs font-semibold hidden sm:block">
-          Developed by Dad ❤️ &nbsp;© {year} prateekchhabra.com
-          <span className="ml-2 opacity-50">v{__APP_VERSION__}</span>
-          <span className="ml-2 opacity-50">Released {releaseLabel}</span>
-        </span>
-        <div className="flex gap-2">
+        <div className="flex items-center justify-center sm:justify-between px-4 py-2">
+          <span className="text-zinc-400 text-xs font-semibold hidden sm:block">
+            Developed by Dad ❤️ &nbsp;© {year} prateekchhabra.com
+            <span className="ml-2 opacity-50">v{__APP_VERSION__}</span>
+            <span className="ml-2 opacity-50">Released {releaseLabel}</span>
+          </span>
+          <div className="flex gap-2">
           <motion.button
             whileTap={{ scale: 0.93 }}
             onClick={() => {

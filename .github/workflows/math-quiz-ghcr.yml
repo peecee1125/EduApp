@@ -1,4 +1,4 @@
-name: Build and push math-quiz (GHCR)
+name: Build and push math-quiz (EduApp / GHCR)
 
 on:
   push:
@@ -34,4 +34,4 @@ jobs:
           context: ./apps/math-quiz
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/${{ github.repository_owner }}/apps4aahana-math-quiz:latest
+          tags: ghcr.io/${{ github.repository_owner }}/eduapp-math-quiz:latest

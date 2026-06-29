@@ -3,7 +3,7 @@
 
 services:
   math-quiz:
-    image: ghcr.io/peecee1125/apps4aahana-math-quiz:latest
+    image: ghcr.io/peecee1125/eduapp-math-quiz:latest
     restart: unless-stopped
     ports:
       - "9080:80"

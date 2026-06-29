@@ -1,4 +1,4 @@
-# Apps4Aahana
+# EduApp
 
 Educational and fun apps for an 8-year-old, built with **React**, **Vite**, and **Tailwind CSS**. The main quiz app targets **readiness for 3rd grade** (Tennessee-friendly math and ELA), **STEM** habits and content, **geography**, **planets and space**, **dinosaurs as science**, and **high-interest facts** so practice stays curious—not drill-only. Each app lives under `apps/` and ships as a static site in **nginx** inside Docker—good for colorful, touch-friendly UIs on an **iPad** (Safari on your home Wi‑Fi).
 
@@ -62,7 +62,7 @@ You are not missing much: you need **either** the NAS to **build** the image fro
 
 ### Option A — Build on the NAS (Git + compose in Portainer)
 
-1. Push this repo to **https://github.com/peecee1125/Apps4Aahana** (or keep using it as remote).
+1. Push this repo to **https://github.com/peecee1125/EduApp** (or keep using it as remote).
 2. In Portainer: **Stacks** → **Add stack** → **Repository** (or “Build from Git” depending on version).
 3. Paste the repo URL, set the **compose path** to `docker-compose.yml` at the repo root.
 4. For a **private** repo, add credentials: **Personal Access Token** (HTTPS) or **deploy key** (SSH). Portainer stores them for pulls.
@@ -73,14 +73,14 @@ If the Git integration is flaky, clone on the NAS or paste the compose file manu
 ### Option B — GitHub Actions builds the image (often simpler)
 
 1. Workflow **`.github/workflows/math-quiz-ghcr.yml`** builds and pushes to **GitHub Container Registry** (`ghcr.io`):  
-   `ghcr.io/peecee1125/apps4aahana-math-quiz:latest` (adjust owner if different).
+   `ghcr.io/peecee1125/eduapp-math-quiz:latest` (adjust owner if different).
 2. First time: in GitHub → **Packages** → package → **Package settings** → set visibility or grant access.
 3. On the NAS, use a stack that **only pulls the image** (no build on NAS):
 
 ```yaml
 services:
   math-quiz:
-    image: ghcr.io/peecee1125/apps4aahana-math-quiz:latest
+    image: ghcr.io/peecee1125/eduapp-math-quiz:latest
     restart: unless-stopped
     ports:
       - "9080:80"
