@@ -1,6 +1,6 @@
 /**
  * Grade-3 readiness + curiosity topics: STEM practices, geography explorers,
- * planetary science, paleontology as science, and “wow” facts.
+ * planetary science, paleontology as science, and "wow" facts.
  * Banks that use _cat work well with pickRepresentative() for varied quizzes.
  */
 
@@ -9,160 +9,160 @@ export const stemThirdGradeCuriosity = [
   {
     _cat: "life",
     passage:
-      "Traits like eye color are often passed from parents to offspring. Skills like riding a bike are usually learned with practice.",
-    question: "Which is MOSTLY an inherited trait in humans?",
-    choices: ["Reading a chapter book", "Natural hair color", "Playing piano", "Favorite food"],
-    answer: "Natural hair color",
+      "Some traits, like freckles, come from parents. Others, like tying shoes, are learned with practice.",
+    question: "Which is MOSTLY a learned behavior in humans?",
+    choices: ["Eye color", "Swimming after lessons", "Blood type", "Height tendency"],
+    answer: "Swimming after lessons",
   },
   {
     _cat: "life",
     question:
-      "In a food web, which organism is MOST likely a decomposer that returns nutrients to the soil?",
-    choices: ["Oak tree", "Earthworm", "Hawk", "Deer"],
-    answer: "Earthworm",
+      "In a pond food chain, which organism is MOST likely a producer that makes its own food?",
+    choices: ["Frog", "Algae", "Heron", "Mosquito"],
+    answer: "Algae",
   },
   {
     _cat: "matter",
     question:
-      "Heating a solid chocolate bar until it melts is mainly a change in…",
-    choices: ["State of matter", "Color only", "Mass disappearing", "New atoms forming"],
+      "Freezing water into ice cubes is mainly a change in…",
+    choices: ["State of matter", "The number of atoms", "Color only", "Mass disappearing"],
     answer: "State of matter",
   },
   {
     _cat: "matter",
     question:
-      "Which mixture can be separated easily with a screen or filter (like sand and water poured through mesh)?",
-    choices: ["Salt dissolved in water", "Sand and gravel", "Baked cake batter", "Rust on a nail"],
-    answer: "Sand and gravel",
+      "Which mixture can be separated by picking out larger pieces by hand (like mixed nuts and raisins)?",
+    choices: ["Sugar dissolved in tea", "Salt water", "Nuts and raisins", "Baked bread"],
+    answer: "Nuts and raisins",
   },
   {
     _cat: "force",
     question:
-      "Two teams pull a rope in opposite directions with equal strength. The rope stays still. The forces are…",
-    choices: ["Unbalanced", "Balanced", "Only magnetic", "Only gravitational"],
-    answer: "Balanced",
+      "A book resting on a desk stays still because the desk pushes up with a force that…",
+    choices: ["Is stronger than gravity", "Balances gravity on the book", "Only works at night", "Comes from magnets only"],
+    answer: "Balances gravity on the book",
   },
   {
     _cat: "force",
     question:
-      "Which change would MOST likely make a toy car roll farther on a smooth floor?",
+      "Which change would MOST likely make a marble roll farther on a ramp?",
     choices: [
-      "A bigger gentle push at the start",
-      "Painting the car red",
-      "Saying “go faster” without pushing",
+      "Starting it higher on the ramp",
+      "Painting it blue",
+      "Whispering to it",
       "Turning off the lights",
     ],
-    answer: "A bigger gentle push at the start",
+    answer: "Starting it higher on the ramp",
   },
   {
     _cat: "energy",
     question:
-      "A lit flashlight converts stored chemical energy in batteries mostly into…",
-    choices: ["Light and heat", "Sound only", "Magnetism only", "New matter"],
-    answer: "Light and heat",
+      "A wind-up toy stores energy in a spring. When it moves, that stored energy becomes mostly…",
+    choices: ["Motion (kinetic energy)", "New atoms", "Only heat in space", "Magnetism only"],
+    answer: "Motion (kinetic energy)",
   },
   {
     _cat: "energy",
     question:
-      "On a sunny day, a solar-powered calculator uses energy that started in…",
-    choices: ["The Moon", "The Sun", "Earth’s core only", "Wind only"],
+      "A plant growing in a sunny window gets energy for photosynthesis mainly from…",
+    choices: ["The Moon", "Sunlight", "Rocks only", "Wind only"],
+    answer: "Sunlight",
+  },
+  {
+    _cat: "earth",
+    passage:
+      "Volcanoes can erupt and spread lava that cools into rock. Some rocks form underground from cooled magma.",
+    question: "Igneous rock forms MOST directly from…",
+    choices: ["Cooled lava or magma", "Compressed leaves only", "Ocean waves", "Wind erosion only"],
+    answer: "Cooled lava or magma",
+  },
+  {
+    _cat: "earth",
+    question:
+      "Earth's outer rocky layer where we live is called the…",
+    choices: ["Crust", "Inner core", "Mantle only", "Atmosphere"],
+    answer: "Crust",
+  },
+  {
+    _cat: "weather",
+    question:
+      "Which tool measures how fast the wind is blowing?",
+    choices: ["Rain gauge", "Anemometer", "Thermometer only", "Compass only"],
+    answer: "Anemometer",
+  },
+  {
+    _cat: "weather",
+    question:
+      "Water that falls from clouds as liquid drops is called…",
+    choices: ["Snow", "Rain", "Hail only", "Fog always"],
+    answer: "Rain",
+  },
+  {
+    _cat: "space_earth",
+    question:
+      "Earth takes about one year to complete one trip around…",
+    choices: ["The Moon", "The Sun", "Mars", "Jupiter"],
     answer: "The Sun",
   },
   {
-    _cat: "earth",
-    passage:
-      "Sedimentary rock often forms in layers. Fossils are commonly found in these layered rocks.",
-    question: "Fossils are MOST often found in which type of rock?",
-    choices: ["Igneous only", "Sedimentary", "Metamorphic only", "Lava glass only"],
-    answer: "Sedimentary",
-  },
-  {
-    _cat: "earth",
-    question:
-      "Earth’s very hot, dense inner metal core is MOSTLY made of which metals?",
-    choices: ["Gold and silver", "Iron and nickel", "Copper only", "Ice and salt"],
-    answer: "Iron and nickel",
-  },
-  {
-    _cat: "weather",
-    question:
-      "Which tool do meteorologists use to measure air temperature outside?",
-    choices: ["Barometer", "Thermometer", "Anemometer only", "Microscope"],
-    answer: "Thermometer",
-  },
-  {
-    _cat: "weather",
-    question:
-      "A dark, spinning column of air touching the ground is called a…",
-    choices: ["Hurricane", "Tornado", "Tsunami", "Avalanche"],
-    answer: "Tornado",
-  },
-  {
     _cat: "space_earth",
     question:
-      "How many times does Earth rotate on its axis in one full day?",
-    choices: ["About once", "About 12 times", "About 30 times", "About 365 times"],
-    answer: "About once",
-  },
-  {
-    _cat: "space_earth",
-    question:
-      "The shape of Earth is BEST described as…",
-    choices: ["A flat disk", "A slightly squished ball (sphere)", "A cube", "A cylinder"],
-    answer: "A slightly squished ball (sphere)",
+      "Day and night on Earth happen because Earth…",
+    choices: [
+      "Stops spinning once a week",
+      "Rotates on its axis",
+      "Orbits the Moon",
+      "Is flat",
+    ],
+    answer: "Rotates on its axis",
   },
   {
     _cat: "investigation",
     question:
-      "In a fair science test, you should change ONE variable at a time so you can…",
-    choices: [
-      "Finish faster",
-      "Tell which change caused the result",
-      "Use more colors",
-      "Avoid writing a hypothesis",
-    ],
-    answer: "Tell which change caused the result",
+      "Before an experiment, a scientist makes a testable guess called a…",
+    choices: ["Hypothesis", "Joke", "Recipe", "Map key"],
+    answer: "Hypothesis",
   },
   {
     _cat: "investigation",
     question:
-      "A scientist writes down measurements during an experiment. This is part of…",
-    choices: ["Guessing", "Collecting data", "Ignoring results", "Skipping safety"],
-    answer: "Collecting data",
+      "Repeating an experiment helps scientists check whether results are…",
+    choices: ["Colorful", "Reliable", "Secret", "Impossible"],
+    answer: "Reliable",
   },
   {
     _cat: "engineering",
     question:
-      "Engineers often sketch ideas, build a model, test it, then improve it. That cycle is called…",
-    choices: ["Memorizing", "Design and improvement process", "Only guessing", "Deleting data"],
-    answer: "Design and improvement process",
+      "Engineers test a bridge model with weights to see if the design is…",
+    choices: ["Strong enough", "Always purple", "Invisible", "Made of air only"],
+    answer: "Strong enough",
   },
   {
     _cat: "engineering",
     question:
-      "Which material is usually BEST for a raincoat outer layer to keep you dry?",
-    choices: ["Paper towel", "Waterproof fabric", "Sponge", "Cotton only with holes"],
-    answer: "Waterproof fabric",
+      "Which material is usually BEST for insulating a lunch box to keep food cool?",
+    choices: ["Thin paper", "Foam or thick insulated walls", "Mesh screen", "Open holes"],
+    answer: "Foam or thick insulated walls",
   },
   {
     _cat: "data",
     passage:
-      "A class counts birds: Sparrows 9, Cardinals 4, Blue jays 7.",
-    question: "Which bird was counted the MOST?",
-    choices: ["Cardinal", "Blue jay", "Sparrow", "They tied"],
-    answer: "Sparrow",
+      "A class records insects: Beetles 6, Butterflies 3, Ladybugs 8.",
+    question: "Which insect was recorded the MOST?",
+    choices: ["Beetle", "Butterfly", "Ladybug", "They tied"],
+    answer: "Ladybug",
   },
   {
     _cat: "data",
     question:
-      "A line plot shows many X marks above the number 4 inches of rain. What does that suggest?",
+      "A bar graph shows the tallest bar above '5 books read.' What does that suggest?",
     choices: [
-      "4 inches happened often",
-      "It never rained",
-      "Rain is impossible to measure",
-      "Only snow fell",
+      "5 books was the highest count",
+      "Nobody read books",
+      "Books cannot be counted",
+      "Only 1 book was read",
     ],
-    answer: "4 inches happened often",
+    answer: "5 books was the highest count",
   },
 ];
 
@@ -171,169 +171,164 @@ export const planetaryWonderGrade3 = [
   {
     _cat: "sun",
     passage:
-      "The Sun is a medium-sized star. It releases enormous energy from nuclear reactions deep inside.",
-    question: "Where does the Sun get MOST of the energy it shines into space?",
-    choices: ["From the Moon", "From nuclear reactions in its core", "From Earth’s oceans", "From comets"],
-    answer: "From nuclear reactions in its core",
+      "The Sun is a star at the center of our solar system. Its gravity holds the planets in orbit.",
+    question: "The Sun is BEST described as…",
+    choices: ["A planet", "A star", "A moon", "An asteroid"],
+    answer: "A star",
   },
   {
     _cat: "sun",
     question:
-      "About how long does sunlight take to travel from the Sun to Earth?",
-    choices: ["1 second", "About 8 minutes", "1 year", "1 day"],
-    answer: "About 8 minutes",
+      "Without the Sun's light and warmth, Earth would MOST likely be…",
+    choices: ["Much colder and darker", "Exactly the same", "Made of cheese", "Closer to Jupiter"],
+    answer: "Much colder and darker",
   },
   {
     _cat: "inner",
     question:
-      "Which inner planet has a thick, cloudy atmosphere and is the HOTTEST planet surface in our solar system?",
-    choices: ["Mercury", "Venus", "Earth", "Mars"],
-    answer: "Venus",
+      "Which inner planet is closest to the Sun and has almost no atmosphere?",
+    choices: ["Venus", "Mercury", "Earth", "Mars"],
+    answer: "Mercury",
   },
   {
     _cat: "inner",
     question:
-      "Which planet is called the Red Planet because iron-rich dust makes it look reddish?",
-    choices: ["Jupiter", "Saturn", "Mars", "Neptune"],
-    answer: "Mars",
+      "Which planet is the only one known to have large amounts of liquid water on its surface?",
+    choices: ["Mars", "Venus", "Earth", "Mercury"],
+    answer: "Earth",
   },
   {
     _cat: "earth_moon",
     question:
-      "What is the largest natural satellite orbiting Earth?",
-    choices: ["Phobos", "The Moon", "Titan", "Io"],
-    answer: "The Moon",
+      "About how long does it take the Moon to orbit Earth once?",
+    choices: ["About 1 day", "About 1 month", "About 1 year", "About 10 years"],
+    answer: "About 1 month",
   },
   {
     _cat: "earth_moon",
     question:
-      "Ocean tides on Earth are MOSTLY caused by the gravity of…",
-    choices: ["The Sun only", "The Moon (and Sun helps)", "Mars", "Saturn’s rings"],
-    answer: "The Moon (and Sun helps)",
+      "We see different Moon phases because we see different amounts of the Moon's…",
+    choices: ["Lit side from Earth", "Rings", "Oceans", "Volcanoes"],
+    answer: "Lit side from Earth",
   },
   {
     _cat: "mars",
     passage:
-      "NASA rovers like Perseverance roll on Mars and send pictures back to Earth.",
-    question: "Why do scientists send rovers to Mars?",
+      "The Curiosity rover has explored Mars and drilled into rocks to study their chemistry.",
+    question: "Rovers on Mars send data back to Earth using…",
     choices: [
-      "To move Mars closer to the Sun",
-      "To study rocks, weather, and signs of ancient water",
-      "To plant forests",
-      "To replace the Moon",
+      "Radio signals to antennas on Earth",
+      "Paper letters",
+      "Carrier pigeons",
+      "Ocean cables",
     ],
-    answer: "To study rocks, weather, and signs of ancient water",
+    answer: "Radio signals to antennas on Earth",
   },
   {
     _cat: "mars",
     question:
-      "Mars has polar caps made largely of…",
-    choices: ["Lava", "Water ice and frozen carbon dioxide", "Gold", "Sand only"],
-    answer: "Water ice and frozen carbon dioxide",
+      "Mars appears reddish partly because its soil contains a lot of…",
+    choices: ["Iron oxide (rusty dust)", "Gold", "Ice only", "Grass"],
+    answer: "Iron oxide (rusty dust)",
   },
   {
     _cat: "jup_sat",
     question:
-      "Jupiter and Saturn are called gas giants MOSTLY because they…",
-    choices: [
-      "Are tiny solid cubes",
-      "Are huge and made mostly of hydrogen and helium",
-      "Have no moons",
-      "Orbit backwards",
-    ],
-    answer: "Are huge and made mostly of hydrogen and helium",
+      "Jupiter is the largest planet in our solar system. It is MOSTLY made of…",
+    choices: ["Rock and metal only", "Hydrogen and helium gases", "Solid ice cubes", "Liquid water only"],
+    answer: "Hydrogen and helium gases",
   },
   {
     _cat: "jup_sat",
     question:
-      "Saturn’s famous rings are made mostly of…",
-    choices: ["Fire", "Countless bits of ice and rock", "Liquid water only", "Cotton clouds"],
-    answer: "Countless bits of ice and rock",
+      "Saturn is famous for its bright…",
+    choices: ["Rings of ice and rock", "Oceans of lava", "Two moons only", "Purple grass"],
+    answer: "Rings of ice and rock",
   },
   {
     _cat: "ice_giants",
     question:
-      "Uranus and Neptune are called ice giants because they contain more of which materials than Jupiter and Saturn (along with gases)?",
-    choices: [
-      "Only solid iron balls",
-      "Water, ammonia, and methane ices mixed with gases",
-      "Pure gold clouds",
-      "No hydrogen at all",
-    ],
-    answer: "Water, ammonia, and methane ices mixed with gases",
+      "Uranus spins on its side compared with most planets. Uranus is an…",
+    choices: ["Ice giant", "Inner rocky planet", "Star", "Asteroid belt"],
+    answer: "Ice giant",
   },
   {
     _cat: "ice_giants",
     question:
-      "Which planet has the strongest measured winds in the solar system, with speeds over 1,200 mph in its atmosphere?",
-    choices: ["Earth", "Mars", "Jupiter", "Neptune"],
-    answer: "Neptune",
+      "Neptune is so far from the Sun that one Neptune year lasts about…",
+    choices: ["1 Earth day", "1 Earth month", "165 Earth years", "4 Earth years"],
+    answer: "165 Earth years",
   },
   {
     _cat: "small_bodies",
     question:
-      "Pluto is now classified as a ________ because it shares its orbit region with many similar objects.",
-    choices: ["Star", "Moon of Neptune", "Dwarf planet", "Comet tail"],
-    answer: "Dwarf planet",
+      "A rocky object orbiting the Sun that is too small to be a planet is often called an…",
+    choices: ["Asteroid", "Comet tail only", "Galaxy", "Nebula"],
+    answer: "Asteroid",
   },
   {
     _cat: "small_bodies",
     question:
-      "A dirty snowball of ice and dust that grows a glowing tail near the Sun is called a…",
-    choices: ["Asteroid", "Meteorite", "Comet", "Quasar"],
-    answer: "Comet",
+      "When a meteoroid enters Earth's atmosphere and burns up, the streak of light is called a…",
+    choices: ["Meteor (shooting star)", "Comet", "Planet", "Moon phase"],
+    answer: "Meteor (shooting star)",
   },
   {
     _cat: "people_space",
     question:
-      "People live and work for months in Earth orbit on the International…",
-    choices: ["Submarine", "Space Station (ISS)", "Oil rig", "Desert tent"],
-    answer: "Space Station (ISS)",
+      "Astronauts train in large pools to practice working in…",
+    choices: [
+      "Microgravity-like conditions underwater",
+      "Desert sandstorms",
+      "Deep caves only",
+      "Shopping malls",
+    ],
+    answer: "Microgravity-like conditions underwater",
   },
   {
     _cat: "people_space",
     question:
-      "Why do astronauts float inside the ISS (in a playful short answer style)?",
-    choices: [
-      "Because space has no air",
-      "They are in free fall around Earth (microgravity)",
-      "Because the Moon pulls them up",
-      "Magnets in the floor push them",
-    ],
-    answer: "They are in free fall around Earth (microgravity)",
+      "The first person to walk on the Moon was an American astronaut named…",
+    choices: ["Neil Armstrong", "Sally Ride", "Galileo", "Yuri Gagarin"],
+    answer: "Neil Armstrong",
   },
   {
     _cat: "tools",
     question:
-      "Which tool uses mirrors or lenses to collect light and make faraway objects look closer?",
-    choices: ["Microscope", "Telescope", "Periscope only", "Stethoscope"],
-    answer: "Telescope",
+      "Scientists use a spectroscope to study…",
+    choices: [
+      "Light from stars and what it tells about chemicals",
+      "Only shoe sizes",
+      "Ocean tides only",
+      "Dinosaur footprints only",
+    ],
+    answer: "Light from stars and what it tells about chemicals",
   },
   {
     _cat: "tools",
     question:
-      "The Hubble Space Telescope orbits Earth above most of the atmosphere so it can see…",
+      "The James Webb Space Telescope uses a large mirror to collect…",
     choices: [
-      "Only airplanes",
-      "Clearer images of distant stars and galaxies",
-      "Inside people’s houses",
-      "Only the Moon",
+      "Infrared light from very distant objects",
+      "Only rain on Earth",
+      "Fish in the ocean",
+      "Sound from Jupiter",
     ],
-    answer: "Clearer images of distant stars and galaxies",
+    answer: "Infrared light from very distant objects",
   },
   {
     _cat: "scale",
     question:
-      "About how many Earths could line up across Jupiter’s equator (diameter comparison)?",
-    choices: ["About 1", "About 5", "About 11", "About 100"],
-    answer: "About 11",
+      "Which is larger: Earth's diameter or the Moon's diameter?",
+    choices: ["Earth's", "The Moon's", "They are exactly equal", "Neither has a diameter"],
+    answer: "Earth's",
   },
   {
     _cat: "scale",
     question:
-      "If the Sun were the size of a basketball on a desk, Earth would be about the size of…",
-    choices: ["Another basketball", "A pinhead a few yards away", "A school bus", "The Moon"],
-    answer: "A pinhead a few yards away",
+      "Our solar system is located inside the…",
+    choices: ["Milky Way galaxy", "Andromeda galaxy only", "Sun itself", "A single comet"],
+    answer: "Milky Way galaxy",
   },
 ];
 
@@ -342,276 +337,261 @@ export const geographyExplorersGrade3 = [
   {
     _cat: "maps",
     question:
-      "On most maps, which direction is usually toward the TOP of the page?",
-    choices: ["South", "East", "North", "West"],
-    answer: "North",
+      "A map legend (or key) explains what…",
+    choices: ["Symbols and colors mean", "Tomorrow's weather is", "Dinosaurs ate", "Planets weigh"],
+    answer: "Symbols and colors mean",
   },
   {
     _cat: "maps",
     question:
-      "A map scale that says “1 inch = 100 miles” helps you estimate…",
-    choices: ["The temperature", "Real distances on the ground", "The year", "How old a rock is"],
-    answer: "Real distances on the ground",
+      "Lines of latitude run east-west and measure distance…",
+    choices: ["North or south of the equator", "Only east of Tennessee", "Inside volcanoes", "On the Moon only"],
+    answer: "North or south of the equator",
   },
   {
     _cat: "landforms",
     question:
-      "Which landform is the HIGHEST point above sea level on Earth?",
-    choices: ["Grand Canyon floor", "Mount Everest summit", "Death Valley", "Mississippi River delta"],
-    answer: "Mount Everest summit",
+      "A large area of mostly flat land with few trees is often called a…",
+    choices: ["Plateau", "Prairie or plain", "Volcano", "Fjord"],
+    answer: "Prairie or plain",
   },
   {
     _cat: "landforms",
     question:
-      "The Grand Canyon was carved MOSTLY by which river over millions of years?",
-    choices: ["Amazon", "Mississippi", "Colorado", "Nile"],
-    answer: "Colorado",
+      "A narrow strip of land with water on both sides, connecting larger land areas, is a…",
+    choices: ["Isthmus", "Canyon", "Delta", "Glacier"],
+    answer: "Isthmus",
   },
   {
     _cat: "water",
     question:
-      "Which is the LONGEST river system in the United States?",
-    choices: ["Rio Grande", "Colorado", "Mississippi–Missouri", "Hudson"],
-    answer: "Mississippi–Missouri",
+      "Which ocean is on the east coast of the United States?",
+    choices: ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean only"],
+    answer: "Atlantic Ocean",
   },
   {
     _cat: "water",
     question:
-      "The Great Lakes are the largest group of freshwater lakes by total area in…",
-    choices: ["Africa", "Australia", "North America", "South America"],
-    answer: "North America",
+      "A river that flows into a larger river is called a…",
+    choices: ["Tributary", "Mountain", "Desert", "Peninsula"],
+    answer: "Tributary",
   },
   {
     _cat: "US",
     question:
-      "Which U.S. state is the LARGEST by land area?",
-    choices: ["Texas", "California", "Alaska", "Montana"],
-    answer: "Alaska",
+      "Which U.S. state has the largest population (as of recent counts)?",
+    choices: ["Wyoming", "California", "Rhode Island", "Alaska"],
+    answer: "California",
   },
   {
     _cat: "US",
     question:
-      "Which city is the capital of the United States?",
-    choices: ["New York City", "Los Angeles", "Washington, D.C.", "Philadelphia"],
-    answer: "Washington, D.C.",
+      "The Rocky Mountains run through which part of the United States?",
+    choices: ["Only Florida", "Western states", "Only Hawaii", "Only Maine"],
+    answer: "Western states",
   },
   {
     _cat: "TN",
     passage:
-      "The Appalachian Mountains run through eastern Tennessee and many other eastern states.",
-    question: "Which Tennessee city is a gateway to the Great Smoky Mountains National Park?",
-    choices: ["Memphis", "Gatlinburg", "Nashville", "Jackson"],
-    answer: "Gatlinburg",
+      "The Cumberland Plateau rises in middle Tennessee and offers cliffs, waterfalls, and hiking trails.",
+    question: "The Cumberland Plateau is found mostly in which Tennessee region?",
+    choices: ["East Tennessee only", "Middle and parts of East Tennessee", "West Tennessee only", "Outside the United States"],
+    answer: "Middle and parts of East Tennessee",
   },
   {
     _cat: "TN",
     question:
-      "The Mississippi River touches Tennessee’s western border near which major Tennessee city?",
-    choices: ["Knoxville", "Chattanooga", "Memphis", "Bristol"],
-    answer: "Memphis",
+      "Which Tennessee river city is known as the Scenic City near Lookout Mountain?",
+    choices: ["Memphis", "Chattanooga", "Nashville", "Jackson"],
+    answer: "Chattanooga",
   },
   {
     _cat: "poles",
     question:
-      "Which place is colder on average: the North Pole region or the equator?",
-    choices: ["Equator", "North polar region", "They are always equal", "The equator at night only"],
-    answer: "North polar region",
+      "The South Pole is located on which continent?",
+    choices: ["Africa", "Antarctica", "Australia", "Europe"],
+    answer: "Antarctica",
   },
   {
     _cat: "climate",
     question:
-      "A tropical rainforest near the equator is usually…",
-    choices: ["Dry and icy", "Hot and rainy much of the year", "Only deserts", "Without plants"],
-    answer: "Hot and rainy much of the year",
+      "A desert climate is usually…",
+    choices: ["Very dry with little rainfall", "Always frozen", "Under the ocean", "Without sunlight"],
+    answer: "Very dry with little rainfall",
   },
   {
     _cat: "people_place",
     question:
-      "A community where many people live close together, with roads and buildings, is often called a…",
-    choices: ["Desert", "City (urban area)", "Glacier", "Trench"],
-    answer: "City (urban area)",
+      "A neighborhood where houses are spread out with yards and fewer tall buildings is often…",
+    choices: ["Suburban", "Deep ocean", "Polar ice cap", "Volcano crater"],
+    answer: "Suburban",
   },
   {
     _cat: "people_place",
     question:
-      "Why do many cities grow near rivers or harbors?",
+      "Why did many early towns grow near railroads or highways?",
     choices: [
-      "Rivers are always purple",
-      "Water helps trade, travel, and resources",
-      "Rivers remove oxygen",
-      "Rivers stop people from farming",
+      "Transportation helped trade and travel",
+      "Roads block all rain",
+      "Trains eat crops",
+      "Highways remove rivers",
     ],
-    answer: "Water helps trade, travel, and resources",
+    answer: "Transportation helped trade and travel",
   },
   {
     _cat: "resources",
     question:
-      "Which resource is renewable if forests are replanted responsibly?",
-    choices: ["Coal", "Oil", "Timber from well-managed forests", "Natural gas"],
-    answer: "Timber from well-managed forests",
+      "Which energy source is renewable because the wind keeps blowing?",
+    choices: ["Coal", "Wind power", "Oil", "Natural gas"],
+    answer: "Wind power",
   },
   {
     _cat: "conservation",
     question:
-      "National parks protect nature so future generations can…",
-    choices: [
-      "Remove every animal",
-      "Enjoy and learn from ecosystems",
-      "Dump trash freely",
-      "Close all trails forever",
-    ],
-    answer: "Enjoy and learn from ecosystems",
+      "Recycling paper helps conserve…",
+    choices: ["Trees and landfill space", "Gravity", "The Moon", "Earth's core heat"],
+    answer: "Trees and landfill space",
   },
 ];
 
-/** “Wow” STEM + world facts */
+/** "Wow" STEM + world facts */
 export const stemWowFactsCuriosity = [
   {
     _cat: "animals",
     question:
-      "An octopus has how many hearts?",
-    choices: ["One", "Two", "Three", "Eight"],
-    answer: "Three",
+      "How many legs does a spider have?",
+    choices: ["Six", "Eight", "Ten", "Two"],
+    answer: "Eight",
   },
   {
     _cat: "animals",
     question:
-      "Which bird is the FASTEST animal when diving to catch prey — speeds over 200 mph?",
-    choices: ["Chicken", "Penguin", "Peregrine falcon", "Ostrich"],
-    answer: "Peregrine falcon",
+      "Which mammal is the FASTEST on land, reaching speeds near 70 mph?",
+    choices: ["Tortoise", "Cheetah", "House cat", "Sloth"],
+    answer: "Cheetah",
   },
   {
     _cat: "human_body",
     question:
-      "About how fast does sound travel in air at room temperature?",
-    choices: ["About 20 mph", "About 760 mph", "About 186,000 mi/sec", "About 1 mph"],
-    answer: "About 760 mph",
+      "Which organ pumps blood through your body?",
+    choices: ["Lungs", "Heart", "Stomach", "Skin only"],
+    answer: "Heart",
   },
   {
     _cat: "human_body",
     question:
-      "Which travels faster in a vacuum: light or sound?",
-    choices: ["Sound", "Light", "They are equal", "Neither can move"],
-    answer: "Light",
+      "About how many bones does an adult human have?",
+    choices: ["About 20", "About 206", "About 1,000", "About 5"],
+    answer: "About 206",
   },
   {
     _cat: "ocean",
     question:
-      "Which ocean zone is totally dark because sunlight cannot reach it?",
-    choices: ["Sunlight zone only", "The deep sea (aphotic zone)", "Beach sand only", "Coral reef only"],
-    answer: "The deep sea (aphotic zone)",
+      "Which ocean is the largest on Earth?",
+    choices: ["Atlantic", "Pacific", "Arctic only", "Indian only"],
+    answer: "Pacific",
   },
   {
     _cat: "ocean",
     question:
-      "Which is the largest animal EVER known on Earth?",
-    choices: ["T. rex", "Blue whale", "Giant squid", "Elephant"],
-    answer: "Blue whale",
+      "Coral reefs are built mostly by tiny animals called…",
+    choices: ["Corals (coral polyps)", "Penguins", "Sharks only", "Seaweed only"],
+    answer: "Corals (coral polyps)",
   },
   {
     _cat: "sky_weather",
     passage:
-      "A lightning bolt’s channel can be hotter than the surface of the Sun for a split second.",
-    question: "Lightning is…",
-    choices: ["Always cold", "Incredibly hot and bright", "Only blue on Mars", "Impossible to study"],
-    answer: "Incredibly hot and bright",
+      "Hailstones can form when strong updrafts carry raindrops high into freezing air.",
+    question: "Hail is made of…",
+    choices: ["Ice", "Fire", "Sand only", "Cotton"],
+    answer: "Ice",
   },
   {
     _cat: "sky_weather",
     question:
-      "What causes a rainbow after a rain shower when the Sun is behind you?",
+      "What causes thunder?",
     choices: [
-      "Sound bouncing",
-      "Sunlight bending through water droplets",
-      "The Moon blocking stars",
-      "Planes painting the sky",
+      "Lightning heats air so fast it expands with a boom",
+      "Clouds rubbing together like shoes",
+      "The Moon falling",
+      "Birds flapping together",
     ],
-    answer: "Sunlight bending through water droplets",
+    answer: "Lightning heats air so fast it expands with a boom",
   },
   {
     _cat: "space_tech",
     question:
-      "GPS in phones works partly because of…",
+      "Weather satellites orbiting Earth help forecasters track…",
     choices: [
-      "Radio signals from satellites in space",
-      "Only paper maps",
-      "Magnets in your shoes",
-      "Whales singing",
+      "Storms and cloud patterns",
+      "Only dinosaur bones",
+      "Only subway maps",
+      "Only library books",
     ],
-    answer: "Radio signals from satellites in space",
+    answer: "Storms and cloud patterns",
   },
   {
     _cat: "space_tech",
     question:
-      "Rockets push spacecraft upward mainly by…",
-    choices: [
-      "Throwing hot gases downward (Newton’s 3rd law)",
-      "Pulling on clouds",
-      "Using wings like planes in space",
-      "Inflating balloons only",
-    ],
-    answer: "Throwing hot gases downward (Newton’s 3rd law)",
+      "The International Space Station travels around Earth at about…",
+    choices: ["5 mph", "17,500 mph", "The speed of light", "1 mph"],
+    answer: "17,500 mph",
   },
   {
     _cat: "materials",
     question:
-      "Which natural material on the Mohs scale is HARDER than quartz?",
-    choices: ["Talc", "Gypsum", "Topaz", "Graphite"],
-    answer: "Topaz",
+      "Diamond is one of the hardest natural materials because of how its…",
+    choices: ["Atoms are bonded tightly", "Color is blue", "Size is always tiny", "Weight is zero"],
+    answer: "Atoms are bonded tightly",
   },
   {
     _cat: "materials",
     question:
-      "Glass in windows is MOSTLY made from heating which common material to a very high temperature?",
-    choices: ["Wood chips", "Sand (silica)", "Sugar", "Ice cubes"],
-    answer: "Sand (silica)",
+      "Aluminum cans are often recycled to make…",
+    choices: ["New cans and products", "Only glass", "Only water", "Only clouds"],
+    answer: "New cans and products",
   },
   {
     _cat: "speed_records",
     question:
-      "Which is closest to the speed of light in empty space?",
-    choices: ["55 mph", "760 mph", "About 186,000 miles per second", "10 miles per hour"],
-    answer: "About 186,000 miles per second",
+      "Sound travels faster in which medium?",
+    choices: ["Air", "Water or steel (denser materials)", "Empty vacuum", "Outer space only"],
+    answer: "Water or steel (denser materials)",
   },
   {
     _cat: "tiny_big",
     question:
-      "Water can exist as solid, liquid, and gas. What do scientists call water in all three states on Earth?",
-    choices: ["A mineral", "A compound (H₂O)", "An element like gold", "A metal alloy"],
-    answer: "A compound (H₂O)",
+      "A single grain of sand is tiny, but beaches are huge. This shows how small parts can…",
+    choices: ["Build up large features over time", "Never add up", "Only exist in space", "Disappear instantly"],
+    answer: "Build up large features over time",
   },
   {
     _cat: "history_sci",
     question:
-      "Who was the first American woman to travel into space (Space Shuttle)?",
-    choices: [
-      "Marie Curie",
-      "Sally Ride",
-      "Amelia Earhart",
-      "Valentina Tereshkova",
-    ],
-    answer: "Sally Ride",
+      "Marie Curie studied radioactivity and won Nobel Prizes in different sciences. She worked in…",
+    choices: ["Chemistry and physics", "Only cooking", "Only map drawing", "Only sports"],
+    answer: "Chemistry and physics",
   },
   {
     _cat: "history_sci",
     question:
-      "The Wright brothers are famous for the first powered, controlled flight of a…",
-    choices: ["Submarine", "Airplane", "Rocket to the Moon", "Hot-air balloon in 1783"],
-    answer: "Airplane",
+      "Alexander Graham Bell is famous for inventing an early practical…",
+    choices: ["Telephone", "Bicycle", "Telescope", "Submarine only"],
+    answer: "Telephone",
   },
   {
     _cat: "water_earth",
     question:
-      "About what fraction of Earth’s surface is covered by oceans?",
-    choices: ["About one-tenth", "About one-third", "About seven-tenths (70%)", "All land"],
-    answer: "About seven-tenths (70%)",
+      "Most of Earth's freshwater is locked in…",
+    choices: ["Ice caps and glaciers", "Desert sand", "The Sun", "Volcanoes"],
+    answer: "Ice caps and glaciers",
   },
   {
     _cat: "water_earth",
     question:
-      "The tallest known tree species on Earth is the coast…",
-    choices: ["Oak", "Palm", "Redwood", "Pine"],
-    answer: "Redwood",
+      "The Amazon River basin contains the world's largest tropical…",
+    choices: ["Rainforest", "Desert", "Glacier", "Coral reef"],
+    answer: "Rainforest",
   },
 ];
 
@@ -620,144 +600,134 @@ export const dinoStemFossils = [
   {
     _cat: "fossils",
     question:
-      "Most fossils form when remains are buried in sediment and minerals slowly replace parts of the organism. This is…",
-    choices: ["Melting", "Fossilization in sedimentary rock", "Evaporation", "Photosynthesis"],
-    answer: "Fossilization in sedimentary rock",
+      "A fossilized leaf pressed flat in rock is an example of a…",
+    choices: ["Body fossil", "Weather report", "Living animal", "Comet"],
+    answer: "Body fossil",
   },
   {
     _cat: "fossils",
     question:
-      "A fossil footprint is called a…",
-    choices: ["Body fossil", "Trace fossil", "Meteorite", "Crystal"],
+      "Fossilized animal droppings (scat) are a type of…",
+    choices: ["Trace fossil", "Igneous rock", "Meteorite", "Crystal ball"],
     answer: "Trace fossil",
   },
   {
     _cat: "bones",
     question:
-      "Paleontologists compare fossil bones to bones of living animals to guess…",
-    choices: [
-      "The weather next week",
-      "How extinct animals moved and ate",
-      "Tomorrow’s lunch menu",
-      "Phone passwords",
-    ],
-    answer: "How extinct animals moved and ate",
+      "Scientists study the shape of fossil teeth to learn what an animal…",
+    choices: ["Ate", "Wore as hats", "Texted", "Painted"],
+    answer: "Ate",
   },
   {
     _cat: "bones",
     question:
-      "Which dinosaur group includes both huge long-necks and modern birds, according to many scientists?",
-    choices: ["Fish", "Amphibians", "Theropods (branch includes birds)", "Trilobites"],
-    answer: "Theropods (branch includes birds)",
+      "A complete dinosaur skeleton displayed in a museum is usually a…",
+    choices: ["Cast or assembled bones from fossils", "Living dinosaur", "Plastic toy only", "Meteor"],
+    answer: "Cast or assembled bones from fossils",
   },
   {
     _cat: "time_scale",
     question:
-      "Dinosaurs (non-avian) lived mostly in which era of geologic time?",
-    choices: ["Paleozoic", "Mesozoic", "Cenozoic", "Precambrian only"],
-    answer: "Mesozoic",
+      "The Mesozoic Era is often called the Age of…",
+    choices: ["Dinosaurs", "Humans only", "Smartphones", "Ice ages only"],
+    answer: "Dinosaurs",
   },
   {
     _cat: "time_scale",
     question:
-      "Which is OLDER: most dinosaur fossils or most human fossils?",
-    choices: ["Human fossils are usually older", "Dinosaur fossils are usually much older", "They are always the same age", "Neither exists"],
-    answer: "Dinosaur fossils are usually much older",
+      "Which came first: flowering plants widespread on land, or most dinosaurs?",
+    choices: ["Most dinosaurs (before widespread flowers)", "Flowering plants first", "They started the same day", "Neither ever existed"],
+    answer: "Most dinosaurs (before widespread flowers)",
   },
   {
     _cat: "classification",
     question:
-      "A pterosaur could fly, but it was NOT a dinosaur because dinosaurs have a specific ankle and hip structure. Pterosaurs were…",
-    choices: ["Fish", "Flying relatives of reptiles, separate from dinosaurs", "Mammals", "Insects"],
-    answer: "Flying relatives of reptiles, separate from dinosaurs",
+      "Stegosaurus is a dinosaur with plates on its back. It was a…",
+    choices: ["Plant-eating dinosaur", "Fish", "Bird", "Insect"],
+    answer: "Plant-eating dinosaur",
   },
   {
     _cat: "classification",
     question:
-      "Marine reptiles like mosasaurs lived with dinosaurs but were NOT dinosaurs. They were…",
-    choices: ["Birds", "Reptiles adapted to the sea", "Flowering plants", "Bacteria"],
-    answer: "Reptiles adapted to the sea",
+      "Ichthyosaurs looked like dolphins but were…",
+    choices: ["Marine reptiles, not dinosaurs", "Modern birds", "Flowers", "Mammals like whales"],
+    answer: "Marine reptiles, not dinosaurs",
   },
   {
     _cat: "birds_link",
     question:
-      "Many scientists consider birds living dinosaurs because they share ancestors with which dinosaur group?",
-    choices: ["Long-neck sauropods", "Theropods like velociraptor relatives", "Triceratops", "Stegosaurus"],
-    answer: "Theropods like velociraptor relatives",
+      "Archaeopteryx fossils show feathers AND teeth, linking birds to…",
+    choices: ["Theropod dinosaurs", "Fish only", "Frogs", "Trees"],
+    answer: "Theropod dinosaurs",
   },
   {
     _cat: "birds_link",
     question:
-      "Feathers are found in some dinosaur fossils from China. This evidence suggests…",
-    choices: [
-      "All dinosaurs could fly",
-      "Some theropod dinosaurs had feathers or feather-like coverings",
-      "Birds invented feathers in 2020",
-      "Feathers only grow on fish",
-    ],
-    answer: "Some theropod dinosaurs had feathers or feather-like coverings",
+      "Modern birds have hollow bones, which helps them…",
+    choices: ["Fly more easily", "Swim underground", "Grow teeth", "Live without air"],
+    answer: "Fly more easily",
   },
   {
     _cat: "digging",
     question:
-      "Before digging, paleontologists often use ground-penetrating radar or careful mapping to…",
+      "Paleontologists use small brushes and picks to…",
     choices: [
-      "Find the cafeteria",
-      "Plan where fossils might be without destroying the site",
-      "Paint bones",
-      "Cook dinner",
+      "Remove rock carefully around fragile fossils",
+      "Cook meals",
+      "Paint the sky",
+      "Measure wind only",
     ],
-    answer: "Plan where fossils might be without destroying the site",
+    answer: "Remove rock carefully around fragile fossils",
   },
   {
     _cat: "digging",
     question:
-      "When scientists wrap a fossil in plaster for travel, it is called a…",
-    choices: ["Pizza box", "Jacket (field jacket)", "Kite", "Snow globe"],
-    answer: "Jacket (field jacket)",
+      "GPS and detailed notes at a dig site help scientists record…",
+    choices: [
+      "Exactly where each fossil was found",
+      "Only lunch menus",
+      "Tomorrow's lottery",
+      "Only cloud colors",
+    ],
+    answer: "Exactly where each fossil was found",
   },
   {
     _cat: "extinction",
     question:
-      "The non-avian dinosaurs died out at the end of which period?",
-    choices: ["Triassic", "Jurassic", "Cretaceous", "Permian"],
-    answer: "Cretaceous",
+      "After non-avian dinosaurs died out, which group of animals became more dominant on land?",
+    choices: ["Mammals", "Trilobites", "Dinosaurs again", "None ever lived"],
+    answer: "Mammals",
   },
   {
     _cat: "extinction",
     question:
-      "Which line of evidence supports a major asteroid impact 66 million years ago?",
-    choices: [
-      "A worldwide layer rich in iridium and a huge crater near Chicxulub, Mexico",
-      "Only one fossil tooth",
-      "Ancient phone records",
-      "Moon rocks only",
-    ],
-    answer: "A worldwide layer rich in iridium and a huge crater near Chicxulub, Mexico",
+      "Volcanic eruptions and climate change may have ALSO stressed ecosystems at the end of the…",
+    choices: ["Cretaceous Period", "Triassic only", "Yesterday", "Future century"],
+    answer: "Cretaceous Period",
   },
   {
     _cat: "modern_science",
     question:
-      "Ancient DNA is rare, but comparing genes of birds helps scientists study…",
+      "3D printing from CT scans lets scientists share accurate…",
     choices: [
-      "How dinosaur relatives evolved into modern birds",
-      "How to build a time machine safely",
-      "Only jellyfish colors",
-      "Only weather on Venus",
+      "Copies of fossil bones for study",
+      "Only pizza recipes",
+      "Only weather maps",
+      "Only shoe sizes",
     ],
-    answer: "How dinosaur relatives evolved into modern birds",
+    answer: "Copies of fossil bones for study",
   },
   {
     _cat: "modern_science",
     question:
-      "CT scanning of fossils without cutting them open helps scientists see…",
+      "Comparing fossil sizes in the same rock layer helps scientists estimate…",
     choices: [
-      "Only the outside color",
-      "Hidden internal structures like brain shape clues",
-      "Tomorrow’s lottery numbers",
-      "Nothing useful",
+      "How old the layer is and how animals lived together",
+      "Next week's homework",
+      "Phone numbers",
+      "Only star colors",
     ],
-    answer: "Hidden internal structures like brain shape clues",
+    answer: "How old the layer is and how animals lived together",
   },
 ];
 
@@ -765,128 +735,128 @@ export const dinoStemFossils = [
 export const mathStemDataGrade3 = [
   {
     _cat: "graph",
-    passage: "Bar graph heights: Apples 6, Bananas 9, Oranges 4.",
-    question: "Which fruit has the tallest bar?",
-    choices: ["Apple", "Banana", "Orange", "They are equal"],
-    answer: "Banana",
+    passage: "Bar graph heights: Dogs 8, Cats 5, Hamsters 3.",
+    question: "Which pet has the tallest bar?",
+    choices: ["Cat", "Dog", "Hamster", "They are equal"],
+    answer: "Dog",
   },
   {
     _cat: "graph",
     question:
-      "A pictograph shows 🐟 = 2 fish. There are 5 fish symbols for Monday. How many fish recorded?",
-    choices: ["5", "7", "10", "12"],
-    answer: "10",
+      "A pictograph shows ⭐ = 3 stars earned. There are 4 star symbols for Tuesday. How many stars?",
+    choices: ["4", "7", "12", "15"],
+    answer: "12",
   },
   {
     _cat: "measure",
     question:
-      "Which unit is BEST to measure the mass of a banana?",
-    choices: ["Kilometers", "Grams or ounces", "Liters only", "Square inches"],
-    answer: "Grams or ounces",
+      "Which unit is BEST to measure the length of a classroom?",
+    choices: ["Meters or feet", "Grams", "Liters", "Seconds"],
+    answer: "Meters or feet",
   },
   {
     _cat: "measure",
     question:
-      "A science notebook is about 25 centimeters long. That is closest to…",
-    choices: ["1 inch", "10 inches", "1 foot", "1 mile"],
-    answer: "10 inches",
+      "A pencil is about 18 centimeters long. That is closest to…",
+    choices: ["1 inch", "7 inches", "1 yard", "1 mile"],
+    answer: "7 inches",
   },
   {
     _cat: "time_calc",
     question:
-      "A plant experiment starts at 2:15 PM and runs 45 minutes. When does it end?",
-    choices: ["2:45 PM", "3:00 PM", "3:15 PM", "2:60 PM"],
-    answer: "3:00 PM",
+      "A science fair demo starts at 9:30 AM and lasts 30 minutes. When does it end?",
+    choices: ["9:50 AM", "10:00 AM", "10:30 AM", "9:60 AM"],
+    answer: "10:00 AM",
   },
   {
     _cat: "time_calc",
     question:
-      "How many minutes are in 2 hours?",
-    choices: ["60", "100", "120", "200"],
-    answer: "120",
+      "How many hours are in 180 minutes?",
+    choices: ["2", "3", "4", "5"],
+    answer: "3",
   },
   {
     _cat: "array",
-    passage: "A garden has 3 rows with 5 tomato plants in each row.",
-    question: "How many tomato plants in all?",
-    choices: ["8", "15", "20", "35"],
-    answer: "15",
+    passage: "A greenhouse has 4 rows with 6 seedlings in each row.",
+    question: "How many seedlings in all?",
+    choices: ["10", "20", "24", "30"],
+    answer: "24",
   },
   {
     _cat: "array",
     question:
-      "Which expression matches “7 groups of 3”?",
-    choices: ["7 + 3", "7 − 3", "7 × 3", "7 ÷ 3"],
-    answer: "7 × 3",
+      'Which expression matches "8 groups of 2"?',
+    choices: ["8 + 2", "8 − 2", "8 × 2", "8 ÷ 2"],
+    answer: "8 × 2",
   },
   {
     _cat: "perimeter",
     question:
-      "A rectangular sandbox is 4 m long and 3 m wide. What is the perimeter?",
-    choices: ["7 m", "12 m²", "14 m", "24 m"],
-    answer: "14 m",
+      "A square garden has sides of 5 meters. What is the perimeter?",
+    choices: ["10 m", "20 m", "25 m²", "15 m"],
+    answer: "20 m",
   },
   {
     _cat: "perimeter",
     question:
-      "Perimeter is the distance around a shape. Area is the space inside. Which unit fits area?",
-    choices: ["Meters only", "Square meters", "Seconds", "Degrees only"],
-    answer: "Square meters",
+      "A rectangle is 6 cm long and 2 cm wide. What is its area?",
+    choices: ["8 cm", "12 cm²", "16 cm²", "12 cm"],
+    answer: "12 cm²",
   },
   {
     _cat: "money_data",
     question:
-      "Lemonade sales: $2, $3, $3, $5. What is the total?",
-    choices: ["$11", "$12", "$13", "$14"],
-    answer: "$13",
+      "Bake sale totals: $4, $4, $6, $2. What is the total?",
+    choices: ["$14", "$15", "$16", "$18"],
+    answer: "$16",
   },
   {
     _cat: "money_data",
     question:
-      "Which is more money: three quarters or seven dimes?",
-    choices: ["Three quarters (75¢)", "Seven dimes (70¢)", "They are equal", "Cannot compare"],
-    answer: "Three quarters (75¢)",
+      "Which is more money: two dimes and one nickel, or one quarter?",
+    choices: ["Two dimes and one nickel (25¢)", "One quarter (25¢)", "They are equal", "Cannot compare"],
+    answer: "They are equal",
   },
   {
     _cat: "compare",
     question:
-      "Which fraction is greater: 1/3 or 1/6 of the same brownie pan?",
-    choices: ["1/6", "1/3", "They are equal", "Neither is a fraction"],
-    answer: "1/3",
+      "Which fraction is greater: 2/8 or 1/8 of the same candy bar?",
+    choices: ["1/8", "2/8", "They are equal", "Neither is a fraction"],
+    answer: "2/8",
   },
   {
     _cat: "fraction_visual",
     question:
-      "A line from 0 to 1 is split into 4 equal parts. You shade 3 parts. You shaded…",
-    choices: ["1/4", "3/4", "4/3", "1/3"],
-    answer: "3/4",
+      "A circle is divided into 3 equal parts. You shade 1 part. You shaded…",
+    choices: ["1/3", "3/1", "1/2", "2/3"],
+    answer: "1/3",
   },
   {
     _cat: "pattern",
     question:
-      "Pattern: 5, 10, 15, 20, ___. What comes next?",
-    choices: ["21", "22", "25", "30"],
-    answer: "25",
+      "Pattern: 3, 6, 9, 12, ___. What comes next?",
+    choices: ["13", "14", "15", "18"],
+    answer: "15",
   },
   {
     _cat: "pattern",
     question:
-      "Which number makes this true: 48 + ? = 50",
-    choices: ["1", "2", "3", "4"],
-    answer: "2",
+      "Which number makes this true: 35 + ? = 40",
+    choices: ["3", "4", "5", "6"],
+    answer: "5",
   },
   {
     _cat: "tools",
     question:
-      "To measure how much liquid a beaker holds, you read the…",
-    choices: ["Scale on the side (volume)", "Only the color", "Zip code", "Clock hands"],
-    answer: "Scale on the side (volume)",
+      "A balance scale in science class is BEST for comparing…",
+    choices: ["Mass of two objects", "Temperature only", "Wind speed", "Star brightness"],
+    answer: "Mass of two objects",
   },
   {
     _cat: "tools",
     question:
-      "A ruler marked in centimeters is BEST for measuring…",
-    choices: ["The temperature", "Length of a leaf", "Mass of a whale", "Loudness of thunder"],
-    answer: "Length of a leaf",
+      "A measuring cup marked in milliliters is BEST for measuring…",
+    choices: ["Volume of liquid", "Length of a snake", "Mass of a rock", "Time of day"],
+    answer: "Volume of liquid",
   },
 ];

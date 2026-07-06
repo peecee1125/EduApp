@@ -1,14 +1,16 @@
-// Geography & social studies — maps + Tennessee (2nd review, 3rd preview)
+// Geography & social studies — maps, landforms, Tennessee, civics
 // Aligned to Tennessee Academic Standards for Social Studies
+// Grade 2 review / Grade 3 preview — continents, oceans, maps, communities, explorers
 
 export const geographyPractice1 = [
   {
-    question: "How many continents are on Earth?",
-    choices: ["5", "6", "7", "8"],
+    question: "How many continents are there on Earth?",
+    choices: ["5", "6", "7", "12"],
     answer: "7",
+    _cat: "continents",
   },
   {
-    question: "Which is the LARGEST ocean on Earth?",
+    question: "Which ocean is the largest on Earth?",
     choices: [
       "Atlantic Ocean",
       "Indian Ocean",
@@ -16,219 +18,257 @@ export const geographyPractice1 = [
       "Pacific Ocean",
     ],
     answer: "Pacific Ocean",
+    _cat: "oceans",
   },
   {
-    question: "In which direction does the sun RISE every morning?",
+    question: "If you face the sunrise in the morning, which direction are you facing?",
     choices: ["North", "South", "East", "West"],
     answer: "East",
+    _cat: "maps",
   },
   {
-    question: "Which continent is the United States located in?",
-    choices: ["Europe", "Asia", "South America", "North America"],
+    question: "The United States is located on which continent?",
+    choices: ["Europe", "Africa", "South America", "North America"],
     answer: "North America",
+    _cat: "continents",
   },
   {
     question: "What is the capital city of the United States?",
-    choices: ["New York City", "Los Angeles", "Chicago", "Washington D.C."],
-    answer: "Washington D.C.",
+    choices: ["Boston", "Atlanta", "Washington, D.C.", "Denver"],
+    answer: "Washington, D.C.",
+    _cat: "civics",
   },
   {
     passage:
-      "A globe is a model of Earth. The imaginary line around the middle of the Earth divides it into the Northern and Southern Hemispheres.",
-    question:
-      "What is the name of the imaginary line around the MIDDLE of Earth?",
-    choices: ["Prime Meridian", "Equator", "Tropic of Cancer", "Arctic Circle"],
+      "On a classroom globe, a bright line circles Earth halfway between the North Pole and the South Pole. Places on this line have warm weather all year.",
+    question: "What is the name of this imaginary line around the middle of Earth?",
+    choices: ["Equator", "Prime Meridian", "Tropic of Capricorn", "International Date Line"],
     answer: "Equator",
+    _cat: "maps",
   },
   {
-    question: "How many oceans are there on Earth?",
-    choices: ["3", "4", "5", "6"],
+    question: "How many oceans are recognized on Earth today?",
+    choices: ["3", "4", "5", "7"],
     answer: "5",
+    _cat: "oceans",
   },
   {
-    question: "Which is the LARGEST continent on Earth?",
-    choices: ["Africa", "North America", "Europe", "Asia"],
+    question: "Which continent is the largest by land area?",
+    choices: ["Australia", "Europe", "Africa", "Asia"],
     answer: "Asia",
+    _cat: "continents",
   },
   {
     question:
-      "On a map, what do we call the box that explains what each symbol means?",
-    choices: ["Title", "Compass Rose", "Legend (Map Key)", "Scale"],
-    answer: "Legend (Map Key)",
+      "On a map, the part that tells you what symbols and colors mean is called the…",
+    choices: ["Scale", "Legend (map key)", "Border", "Title only"],
+    answer: "Legend (map key)",
+    _cat: "maps",
   },
   {
-    question: "What do we call a large body of SALT WATER?",
-    choices: ["Lake", "River", "Pond", "Ocean"],
+    question: "Which body of water is a large area of salty water?",
+    choices: ["Pond", "Creek", "Lake", "Ocean"],
     answer: "Ocean",
+    _cat: "oceans",
   },
   {
     passage:
-      "Cardinal directions help us find our way. A compass rose on a map shows North, South, East, and West.",
-    question: "If you are facing North, which direction is to your LEFT?",
-    choices: ["East", "West", "South", "Northeast"],
-    answer: "West",
+      "Ava used a compass rose on her hiking map. The top of the rose pointed to North, and her campsite was south of the trail shelter.",
+    question: "On Ava's map, the campsite is in which direction from the shelter?",
+    choices: ["North", "South", "East", "West"],
+    answer: "South",
+    _cat: "maps",
   },
   {
-    question: "Which continent is the SMALLEST?",
-    choices: ["Europe", "Antarctica", "Australia", "South America"],
+    question: "Which continent is also a country and is known for kangaroos?",
+    choices: ["Antarctica", "Australia", "Europe", "South America"],
     answer: "Australia",
+    _cat: "continents",
   },
 ];
 
 export const geographyPractice2 = [
   {
-    question: "What do we call a large flat area of land?",
-    choices: ["Mountain", "Valley", "Plain", "Peninsula"],
-    answer: "Plain",
+    question: "A very tall piece of land that rises steeply above the area around it is a…",
+    choices: ["Valley", "Mountain", "Delta", "Harbor"],
+    answer: "Mountain",
+    _cat: "landforms",
   },
   {
     question:
-      "What is a piece of land that is COMPLETELY surrounded by water called?",
-    choices: ["Peninsula", "Island", "Cape", "Isthmus"],
+      "Land that is completely surrounded by water on all sides is called an…",
+    choices: ["Peninsula", "Island", "Plateau", "Canyon"],
     answer: "Island",
+    _cat: "landforms",
   },
   {
     passage:
-      "Mount Everest is located in the Himalayan mountain range on the border of Nepal and Tibet. It is the tallest mountain on Earth.",
-    question: "What is the TALLEST mountain in the world?",
-    choices: [
-      "Mount Kilimanjaro",
-      "Mount McKinley",
-      "Mount Everest",
-      "Mount Fuji",
-    ],
-    answer: "Mount Everest",
+      "The Great Smoky Mountains stretch across eastern Tennessee and western North Carolina. Millions of visitors hike there each year to see forests, streams, and wildlife.",
+    question: "The Great Smoky Mountains are an example of which landform?",
+    choices: ["Desert", "Mountain range", "Coral reef", "Glacier"],
+    answer: "Mountain range",
+    _cat: "tennessee",
   },
   {
-    question: "What is a low area of land between hills or mountains called?",
-    choices: ["Plain", "Plateau", "Valley", "Mesa"],
+    question: "A low area of land between hills or mountains is called a…",
+    choices: ["Plain", "Valley", "Volcano", "Isthmus"],
     answer: "Valley",
+    _cat: "landforms",
   },
   {
     question:
-      "Which US state is made up entirely of islands in the Pacific Ocean?",
-    choices: ["Florida", "California", "Alaska", "Hawaii"],
+      "Which U.S. state is a chain of islands in the Pacific Ocean?",
+    choices: ["Nevada", "Hawaii", "Ohio", "Maine"],
     answer: "Hawaii",
+    _cat: "landforms",
   },
   {
     question:
-      "What is the name of the world's longest river, located in Africa?",
-    choices: ["Amazon", "Mississippi", "Nile", "Congo"],
-    answer: "Nile",
+      "The Mississippi River flows through Memphis, Tennessee, on its way to the Gulf of Mexico. Rivers usually flow…",
+    choices: [
+      "Downhill toward the sea",
+      "Straight up mountains forever",
+      "Only from east to west",
+      "In circles around one city",
+    ],
+    answer: "Downhill toward the sea",
+    _cat: "tennessee",
   },
   {
-    question: "What is a large area of land that juts out into the sea called?",
-    choices: ["Island", "Peninsula", "Bay", "Delta"],
+    question:
+      "A piece of land that sticks out into the water on three sides is called a…",
+    choices: ["Island", "Peninsula", "Bay", "Strait"],
     answer: "Peninsula",
+    _cat: "landforms",
   },
   {
-    question: "Which ocean is found between North America and Europe?",
+    question: "Which ocean lies between the United States and Europe?",
     choices: [
       "Pacific Ocean",
       "Indian Ocean",
-      "Arctic Ocean",
       "Atlantic Ocean",
+      "Southern Ocean",
     ],
     answer: "Atlantic Ocean",
+    _cat: "oceans",
   },
   {
     question:
-      "What is a community of people living together in a city, town, or village called?",
-    choices: ["Country", "Continent", "Community", "County"],
+      "People who live, work, and help each other in the same town make up a…",
+    choices: ["Continent", "Community", "Hemisphere", "Volcano"],
     answer: "Community",
+    _cat: "civics",
   },
   {
-    question: "Which is the COLDEST continent on Earth?",
-    choices: ["Arctic", "Greenland", "Antarctica", "Siberia"],
+    question: "Which continent is covered with thick ice and is the coldest?",
+    choices: ["Africa", "Antarctica", "Australia", "South America"],
     answer: "Antarctica",
+    _cat: "continents",
   },
   {
     passage:
-      "Tennessee is a state in the southeastern United States. Its capital city is home to country music and the state government.",
+      "Tennessee's state government meets in a capitol building with a tall tower. Country music fans from around the world also visit this busy city on the Cumberland River.",
     question: "What is the capital city of Tennessee?",
-    choices: ["Memphis", "Knoxville", "Chattanooga", "Nashville"],
+    choices: ["Memphis", "Knoxville", "Nashville", "Chattanooga"],
     answer: "Nashville",
+    _cat: "tennessee",
   },
   {
     question:
-      "What do we call a narrow strip of land that connects two larger areas of land?",
-    choices: ["Peninsula", "Delta", "Isthmus", "Strait"],
+      "A narrow strip of land connecting two larger land areas is an…",
+    choices: ["Isthmus", "Delta", "Canyon", "Reef"],
     answer: "Isthmus",
+    _cat: "landforms",
   },
 ];
 
 export const geographyAdvanced = [
   {
-    question: "What is the LONGEST mountain range in the world?",
-    choices: ["Rocky Mountains", "Himalayas", "Alps", "Andes"],
+    question:
+      "Which mountain range runs along the western coast of South America?",
+    choices: ["Alps", "Rockies", "Andes", "Urals"],
     answer: "Andes",
+    _cat: "landforms",
   },
   {
-    question: "Which country has the LARGEST population in the world?",
-    choices: ["China", "India", "United States", "Russia"],
+    question: "Which country has the largest population in the world?",
+    choices: ["Brazil", "India", "Canada", "Egypt"],
     answer: "India",
+    _cat: "civics",
   },
   {
-    question: "What is the capital of France?",
-    choices: ["London", "Rome", "Berlin", "Paris"],
+    question: "What is the capital city of France?",
+    choices: ["Madrid", "Paris", "Rome", "Vienna"],
     answer: "Paris",
+    _cat: "civics",
   },
   {
     passage:
-      "The Amazon River in South America is one of the world's largest rivers by water volume. It flows through the Amazon Rainforest.",
-    question: "On which CONTINENT is the Amazon River located?",
-    choices: ["Africa", "North America", "South America", "Asia"],
-    answer: "South America",
+      "Explorer Meriwether Lewis and William Clark traveled west from the Mississippi River in the early 1800s. They mapped rivers, plains, and mountains for President Thomas Jefferson.",
+    question: "Lewis and Clark are famous American…",
+    choices: ["Explorers", "Inventors of the airplane", "Kings of England", "Oceanographers today"],
+    answer: "Explorers",
+    _cat: "explorers",
   },
   {
     question:
-      "The Great Barrier Reef — the world's largest coral reef system — is near which country?",
-    choices: ["Brazil", "South Africa", "Indonesia", "Australia"],
-    answer: "Australia",
+      "The Amazon Rainforest is mainly located on which continent?",
+    choices: ["Africa", "Asia", "South America", "Australia"],
+    answer: "South America",
+    _cat: "continents",
   },
   {
-    question: "Which US state is the LARGEST in total area?",
+    question:
+      "The Great Barrier Reef, the world's largest coral reef, is near which country?",
+    choices: ["Mexico", "Australia", "Norway", "Japan"],
+    answer: "Australia",
+    _cat: "oceans",
+  },
+  {
+    question: "Which U.S. state has the greatest total land area?",
     choices: ["Texas", "California", "Montana", "Alaska"],
     answer: "Alaska",
-  },
-  {
-    question: "What body of water separates Africa from Europe?",
-    choices: ["Red Sea", "Black Sea", "Mediterranean Sea", "Arabian Sea"],
-    answer: "Mediterranean Sea",
+    _cat: "landforms",
   },
   {
     question:
-      "Lines on a map or globe that measure distance NORTH or SOUTH of the equator are called…",
-    choices: ["Longitude lines", "Latitude lines", "Meridians", "Tropics"],
-    answer: "Latitude lines",
-  },
-  {
-    question:
-      "What is the name of the desert that covers most of North Africa?",
+      "Christopher Columbus sailed west from Europe in 1492 hoping to reach Asia. He landed in the…",
     choices: [
-      "Gobi Desert",
-      "Atacama Desert",
-      "Sahara Desert",
-      "Arabian Desert",
+      "Americas",
+      "South Pole",
+      "Moon",
+      "Mediterranean Sea only",
     ],
-    answer: "Sahara Desert",
+    answer: "Americas",
+    _cat: "explorers",
   },
   {
-    question: "Which country shares the LONGEST border with the United States?",
-    choices: ["Mexico", "Canada", "Cuba", "Russia"],
+    question:
+      "Lines on a map that run east and west and measure distance north or south of the equator are…",
+    choices: ["Latitude lines", "Longitude lines", "Border lines only", "Highway lines"],
+    answer: "Latitude lines",
+    _cat: "maps",
+  },
+  {
+    question:
+      "The Sahara is a huge hot desert on which continent?",
+    choices: ["Europe", "Africa", "Antarctica", "North America"],
+    answer: "Africa",
+    _cat: "landforms",
+  },
+  {
+    question:
+      "Which country shares the longest land border with the United States?",
+    choices: ["Mexico", "Canada", "Cuba", "Brazil"],
     answer: "Canada",
-  },
-  {
-    question: "What is the capital city of Japan?",
-    choices: ["Beijing", "Seoul", "Tokyo", "Bangkok"],
-    answer: "Tokyo",
+    _cat: "civics",
   },
   {
     passage:
-      "Climate zones are regions of Earth that share similar weather patterns year-round.",
-    question:
-      "Which climate zone is CLOSEST to the equator and is hot and rainy all year?",
-    choices: ["Polar", "Temperate", "Desert", "Tropical"],
+      "Near the equator, days stay warm year-round and rain forests grow thick and green. Farther north or south, winters grow longer and colder.",
+    question: "The hot, rainy climate zone closest to the equator is called…",
+    choices: ["Polar", "Tropical", "Tundra", "Desert only"],
     answer: "Tropical",
+    _cat: "maps",
   },
 ];

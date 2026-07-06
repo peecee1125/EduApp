@@ -1,315 +1,349 @@
 // Dinosaurs + paleontology STEM (fossils, evidence, bird connections)
-// Scientifically accurate for curious kids
+// Scientifically accurate for curious Tennessee 3rd graders
 
 export const dinosaurPractice1 = [
   {
-    question: "Which famous dinosaur was nicknamed the 'tyrant lizard king'?",
+    _cat: "bones",
+    question:
+      "Which dinosaur had a tall, curved crest on its head that may have helped it make loud calls?",
     choices: [
-      "Velociraptor",
+      "Stegosaurus",
+      "Parasaurolophus",
+      "Ankylosaurus",
       "Brachiosaurus",
-      "Triceratops",
-      "Tyrannosaurus Rex (T-Rex)",
     ],
-    answer: "Tyrannosaurus Rex (T-Rex)",
+    answer: "Parasaurolophus",
   },
   {
-    question: "What do we call a scientist who digs up and studies fossils?",
-    choices: ["Biologist", "Astronomer", "Paleontologist", "Archaeologist"],
+    _cat: "fossils",
+    question: "A scientist who studies fossils and ancient life is a…",
+    choices: ["Meteorologist", "Paleontologist", "Botanist", "Astronomer"],
     answer: "Paleontologist",
   },
   {
+    _cat: "time_scale",
     passage:
-      "Dinosaurs lived during a time in Earth's history called the Mesozoic Era, which was divided into three periods: Triassic, Jurassic, and Cretaceous.",
-    question: "Which era did dinosaurs live in?",
-    choices: ["Paleozoic Era", "Cenozoic Era", "Mesozoic Era", "Ice Age"],
+      "Dinosaurs lived during the Mesozoic Era. It is often split into three periods: Triassic, Jurassic, and Cretaceous.",
+    question: "During which era did dinosaurs live?",
+    choices: ["Ice Age", "Mesozoic Era", "Cenozoic Era", "Paleozoic Era"],
     answer: "Mesozoic Era",
   },
   {
+    _cat: "diet",
+    question: "A dinosaur that ate only plants is called a…",
+    choices: ["Carnivore", "Herbivore", "Omnivore", "Insectivore"],
+    answer: "Herbivore",
+  },
+  {
+    _cat: "fossils",
     question:
-      "Which dinosaur had THREE horns on its face and a large bony frill on its head?",
+      "What do we call the preserved remains or traces of ancient living things found in rock?",
+    choices: ["Gems", "Fossils", "Crystals", "Artifacts"],
+    answer: "Fossils",
+  },
+  {
+    _cat: "bones",
+    question:
+      "Diplodocus used its very long tail like a whip. Scientists think this helped it…",
     choices: [
-      "Stegosaurus",
-      "Triceratops",
-      "Ankylosaurus",
-      "Pachycephalosaurus",
+      "Fly short distances",
+      "Scare away predators",
+      "Dig underground tunnels",
+      "Swim in deep oceans",
     ],
-    answer: "Triceratops",
+    answer: "Scare away predators",
   },
   {
-    question:
-      "What is a preserved remain of an ancient plant or animal found in rock called?",
-    choices: ["Bone", "Artifact", "Fossil", "Mineral"],
-    answer: "Fossil",
-  },
-  {
-    question: "Dinosaurs that ate ONLY plants are called…",
-    choices: ["Carnivores", "Omnivores", "Herbivores", "Insectivores"],
-    answer: "Herbivores",
-  },
-  {
+    _cat: "bones",
     passage:
-      "Stegosaurus was a large plant-eating dinosaur with two rows of diamond-shaped plates along its back and sharp spikes on its tail.",
-    question: "What did a Stegosaurus use its tail spikes for?",
+      "Triceratops had three horns on its face and a large bony frill behind its head. It was a plant eater.",
+    question: "How many horns did Triceratops have on its face?",
+    choices: ["One", "Two", "Three", "Five"],
+    answer: "Three",
+  },
+  {
+    _cat: "extinction",
+    question:
+      "Most scientists think a huge space rock hitting Earth helped cause dinosaurs to…",
     choices: [
-      "To dig for food",
-      "For defense against predators",
-      "To attract mates",
-      "To store water",
+      "Grow feathers",
+      "Go extinct",
+      "Shrink to bird size",
+      "Move to the Moon",
     ],
-    answer: "For defense against predators",
+    answer: "Go extinct",
   },
   {
+    _cat: "classification",
     question:
-      "Which dinosaur had an extremely long neck and was one of the tallest animals ever?",
-    choices: ["Velociraptor", "T-Rex", "Brachiosaurus", "Spinosaurus"],
-    answer: "Brachiosaurus",
-  },
-  {
-    question: "Most scientists believe dinosaurs went extinct because of…",
+      "Pterosaurs could fly, but they were NOT dinosaurs. They were…",
     choices: [
-      "A giant asteroid hitting Earth",
-      "A massive flood covering the whole planet",
-      "Dinosaurs eating all the plants",
-      "The Sun becoming too hot",
+      "Flying reptile relatives",
+      "Early birds",
+      "Fish",
+      "Mammals",
     ],
-    answer: "A giant asteroid hitting Earth",
+    answer: "Flying reptile relatives",
   },
   {
+    _cat: "fossils",
+    question: "Fossilized dinosaur ________ have been found, showing dinosaurs hatched from eggs.",
+    choices: ["Feathers only", "Eggs", "Footprints only", "Skin only"],
+    answer: "Eggs",
+  },
+  {
+    _cat: "bones",
     question:
-      "Flying creatures that lived in the age of dinosaurs but were NOT dinosaurs are called…",
-    choices: ["Plesiosaurs", "Pterosaurs", "Ichthyosaurs", "Mosasaurs"],
-    answer: "Pterosaurs",
+      "Which armored dinosaur had a heavy club at the end of its tail?",
+    choices: ["Stegosaurus", "Ankylosaurus", "Diplodocus", "Parasaurolophus"],
+    answer: "Ankylosaurus",
   },
   {
-    question:
-      "Which dinosaur is known for the large bony plates on its back and four sharp spikes on its tail?",
-    choices: ["Ankylosaurus", "Stegosaurus", "Spinosaurus", "Diplodocus"],
-    answer: "Stegosaurus",
-  },
-  {
-    question: "Dinosaurs that ate BOTH plants AND meat are called…",
-    choices: ["Herbivores", "Carnivores", "Omnivores", "Decomposers"],
-    answer: "Omnivores",
+    _cat: "diet",
+    question: "Tyrannosaurus rex (T-Rex) was mainly a…",
+    choices: ["Plant eater", "Meat eater", "Fruit eater only", "Water drinker only"],
+    answer: "Meat eater",
   },
 ];
 
 export const dinosaurPractice2 = [
   {
-    question: "The word 'dinosaur' comes from Greek and means…",
+    _cat: "classification",
+    question: "The word 'dinosaur' comes from Greek words meaning…",
     choices: [
       "Giant lizard",
       "Terrible lizard",
-      "Ancient reptile",
-      "Big beast",
+      "Ancient fish",
+      "Flying beast",
     ],
     answer: "Terrible lizard",
   },
   {
+    _cat: "time_scale",
     passage:
-      "The Jurassic Period lasted from about 201 to 145 million years ago. Huge sauropods like Brachiosaurus and predators like Allosaurus roamed the Earth.",
-    question: "Which time period came BEFORE the Jurassic Period?",
-    choices: ["Cretaceous", "Triassic", "Permian", "Ice Age"],
+      "The Jurassic Period came after the Triassic Period. Huge long-necked dinosaurs and fierce predators lived during the Jurassic.",
+    question: "Which period came RIGHT BEFORE the Jurassic Period?",
+    choices: ["Cretaceous", "Triassic", "Ice Age", "Permian"],
     answer: "Triassic",
   },
   {
-    question: "Velociraptors were about the size of a…",
-    choices: ["School bus", "Car", "Large turkey", "Horse"],
-    answer: "Large turkey",
-  },
-  {
-    question: "What special weapon did Ankylosaurus have on its tail?",
-    choices: ["Sharp claws", "Long spikes", "A heavy bony club", "Razor teeth"],
-    answer: "A heavy bony club",
-  },
-  {
+    _cat: "bones",
     question:
-      "Which period ended with the mass extinction that wiped out non-bird dinosaurs?",
-    choices: ["Triassic", "Jurassic", "Cretaceous", "Permian"],
-    answer: "Cretaceous",
+      "Allosaurus was a large meat-eating dinosaur that lived during the Jurassic. It was a…",
+    choices: ["Herbivore", "Carnivore", "Plant and seed eater only", "Filter feeder"],
+    answer: "Carnivore",
   },
   {
+    _cat: "fossils",
     question:
-      "Modern-day birds are believed to have evolved (developed) from which group of dinosaurs?",
+      "Fossils often form when remains are slowly buried under layers of…",
     choices: [
-      "Sauropods (long-necked dinosaurs)",
-      "Small feathered theropod dinosaurs",
+      "Mud, sand, and rock",
+      "Fresh snow only",
+      "Metal and glass",
+      "Plastic and rubber",
+    ],
+    answer: "Mud, sand, and rock",
+  },
+  {
+    _cat: "birds_link",
+    question:
+      "Scientists believe modern birds evolved from small, feathered…",
+    choices: [
+      "Long-neck sauropods",
+      "Theropod dinosaurs",
       "Armored ankylosaurs",
       "Horned ceratopsians",
     ],
-    answer: "Small feathered theropod dinosaurs",
+    answer: "Theropod dinosaurs",
   },
   {
+    _cat: "bones",
     question:
-      "The Spinosaurus was unique because — unlike most big carnivores — it was also very good at…",
+      "Spinosaurus had a tall sail on its back and was excellent at…",
     choices: [
-      "Running fast on land",
-      "Swimming and catching fish",
       "Climbing trees",
-      "Digging underground",
+      "Swimming and catching fish",
+      "Gliding like a bird",
+      "Burrowing underground",
     ],
     answer: "Swimming and catching fish",
   },
   {
+    _cat: "extinction",
     question:
-      "Fossils form when an animal dies and its remains are covered by…",
+      "The mass extinction that ended most dinosaurs happened at the end of the…",
+    choices: ["Triassic Period", "Jurassic Period", "Cretaceous Period", "Ice Age"],
+    answer: "Cretaceous Period",
+  },
+  {
+    _cat: "fossils",
+    question:
+      "A fossilized dinosaur footprint is called a ________ fossil.",
+    choices: ["Trace", "Liquid", "Sound", "Color"],
+    answer: "Trace",
+  },
+  {
+    _cat: "bones",
+    question:
+      "Hadrosaurs are sometimes called 'duck-billed' dinosaurs because of their…",
     choices: [
-      "Lava",
-      "Ice",
-      "Layers of mud, sand, and rock over millions of years",
-      "Water forever",
+      "Flat, wide snouts",
+      "Giant claws",
+      "Long necks only",
+      "Spiked tails only",
     ],
-    answer: "Layers of mud, sand, and rock over millions of years",
+    answer: "Flat, wide snouts",
   },
   {
+    _cat: "digging",
     question:
-      "Which dinosaur had a large dome-shaped skull used for head-butting?",
-    choices: ["Triceratops", "Pachycephalosaurus", "Stegosaurus", "Diplodocus"],
-    answer: "Pachycephalosaurus",
-  },
-  {
-    question:
-      "Microraptor was special because it was one of the smallest known dinosaurs. About how big was it?",
+      "Paleontologists use small tools and brushes at dig sites so they do not…",
     choices: [
-      "Size of a bus",
-      "Size of an elephant",
-      "Size of a pigeon",
-      "Size of a horse",
+      "Wake up dinosaurs",
+      "Damage fragile fossils",
+      "Scare away birds",
+      "Melt the rock",
     ],
-    answer: "Size of a pigeon",
+    answer: "Damage fragile fossils",
   },
   {
+    _cat: "bones",
     question:
-      "What do we call the science of studying fossils and ancient life?",
-    choices: ["Zoology", "Geology", "Archaeology", "Paleontology"],
+      "Utahraptor was a meat-eating dinosaur that was much larger than the small Velociraptor. Utahraptor was about the size of a…",
+    choices: ["Mouse", "Turkey", "Bear", "School bus"],
+    answer: "Bear",
+  },
+  {
+    _cat: "modern_science",
+    question: "The study of fossils and ancient life is called…",
+    choices: ["Astronomy", "Paleontology", "Meteorology", "Oceanography"],
     answer: "Paleontology",
-  },
-  {
-    question:
-      "T-Rex had tiny arms that appeared useless. Scientists believe these arms might have been used for…",
-    choices: [
-      "Flying",
-      "Gripping prey or pushing up from the ground",
-      "Swimming",
-      "Building nests",
-    ],
-    answer: "Gripping prey or pushing up from the ground",
   },
 ];
 
 export const dinosaurAdvanced = [
   {
-    question: "When did dinosaurs FIRST appear on Earth?",
+    _cat: "time_scale",
+    question: "Dinosaurs first appeared on Earth about…",
     choices: [
-      "About 65 million years ago",
-      "About 100 million years ago",
-      "About 230 million years ago",
-      "About 500 million years ago",
+      "65 million years ago",
+      "100 million years ago",
+      "230 million years ago",
+      "1 billion years ago",
     ],
-    answer: "About 230 million years ago",
+    answer: "230 million years ago",
   },
   {
-    question: "The name 'Triceratops' means…",
-    choices: [
-      "Three-horned face",
-      "Triple-headed beast",
-      "Three-toed terror",
-      "Three-plated back",
-    ],
-    answer: "Three-horned face",
-  },
-  {
-    passage:
-      "Scientists discovered feathered dinosaur fossils in China in the 1990s. This provided strong evidence that birds evolved from theropod dinosaurs.",
+    _cat: "classification",
     question:
-      "What discovery provided proof that birds evolved from dinosaurs?",
-    choices: [
-      "Fossils of T-Rex eggs in nests",
-      "Feathered dinosaur fossils found in China",
-      "Dinosaur teeth matching bird beaks",
-      "Cave paintings of dinosaurs and birds together",
-    ],
-    answer: "Feathered dinosaur fossils found in China",
-  },
-  {
-    question: "Approximately how tall could a fully grown T-Rex stand?",
-    choices: [
-      "5 feet (1.5 m)",
-      "10 feet (3 m)",
-      "Up to 20 feet (6 m)",
-      "40 feet (12 m)",
-    ],
-    answer: "Up to 20 feet (6 m)",
-  },
-  {
-    question:
-      "Which group of dinosaurs includes the giant long-necked plant-eaters like Brachiosaurus and Diplodocus?",
-    choices: ["Theropods", "Ornithopods", "Sauropods", "Ceratopsians"],
+      "Brachiosaurus and Diplodocus belong to which group of long-necked plant eaters?",
+    choices: ["Theropods", "Sauropods", "Ceratopsians", "Ankylosaurs"],
     answer: "Sauropods",
   },
   {
+    _cat: "birds_link",
+    passage:
+      "In the 1990s, scientists found feathered dinosaur fossils in China. The feathers were preserved in fine rock layers.",
     question:
-      "What is the famous archaeological site in Montana and Wyoming where many T-Rex fossils have been found?",
+      "Why were feathered dinosaur fossils in China so important?",
     choices: [
-      "Badlands",
-      "Hell Creek Formation",
-      "Bone Cabin Quarry",
-      "Morrison Formation",
+      "They proved all dinosaurs could talk",
+      "They gave strong evidence that birds evolved from dinosaurs",
+      "They showed dinosaurs lived in caves",
+      "They proved dinosaurs were mammals",
     ],
-    answer: "Hell Creek Formation",
+    answer: "They gave strong evidence that birds evolved from dinosaurs",
   },
   {
-    question:
-      "Pteranodon was a pterosaur with a large wingspan. Approximately how wide could its wings spread?",
-    choices: ["3 feet", "6 feet", "Up to 23 feet", "50 feet"],
-    answer: "Up to 23 feet",
+    _cat: "bones",
+    question: "A fully grown T-Rex could stand up to about…",
+    choices: ["3 feet tall", "6 feet tall", "20 feet tall", "50 feet tall"],
+    answer: "20 feet tall",
   },
   {
+    _cat: "digging",
     question:
-      "Which famous fossil, called 'Sue,' is displayed at the Field Museum in Chicago?",
+      "Many T-Rex fossils have been found in the Hell Creek Formation, located mainly in…",
     choices: [
-      "Diplodocus",
-      "Triceratops",
-      "Velociraptor",
-      "Tyrannosaurus Rex (T-Rex)",
+      "Montana and Wyoming",
+      "Florida and Texas",
+      "Hawaii and Alaska",
+      "England and France",
     ],
-    answer: "Tyrannosaurus Rex (T-Rex)",
+    answer: "Montana and Wyoming",
   },
   {
-    question: "Dinosaurs were mostly ________, meaning they laid eggs.",
-    choices: [
-      "Viviparous (live birth)",
-      "Oviparous (egg-laying)",
-      "Marsupials (pouched)",
-      "Budding",
-    ],
-    answer: "Oviparous (egg-laying)",
-  },
-  {
+    _cat: "modern_science",
     question:
-      "The asteroid that killed the dinosaurs is believed to have landed near present-day…",
+      "The famous T-Rex fossil named 'Sue' is displayed at the Field Museum in…",
+    choices: ["Nashville", "Chicago", "New York", "Los Angeles"],
+    answer: "Chicago",
+  },
+  {
+    _cat: "reproduction",
+    question: "Like birds today, dinosaurs reproduced by…",
     choices: [
-      "Africa",
-      "Australia",
+      "Laying eggs",
+      "Live birth like mammals",
+      "Splitting in two",
+      "Growing from seeds",
+    ],
+    answer: "Laying eggs",
+  },
+  {
+    _cat: "extinction",
+    question:
+      "Scientists believe the asteroid that helped end the dinosaurs struck near modern-day…",
+    choices: [
       "Mexico (Yucatán Peninsula)",
-      "Antarctica",
+      "Tennessee",
+      "Greenland",
+      "Japan",
     ],
     answer: "Mexico (Yucatán Peninsula)",
   },
   {
+    _cat: "birds_link",
     question:
-      "What two modern animals are the CLOSEST living relatives of dinosaurs?",
+      "Which two groups of animals alive today are the closest living relatives of dinosaurs?",
     choices: [
-      "Lions and sharks",
       "Birds and crocodilians",
-      "Lizards and turtles",
-      "Elephants and whales",
+      "Dogs and cats",
+      "Sharks and whales",
+      "Frogs and fish",
     ],
     answer: "Birds and crocodilians",
   },
   {
+    _cat: "bones",
     question:
-      "Which dinosaur had the longest known neck — making up about HALF its body length?",
-    choices: ["Brachiosaurus", "Diplodocus", "Mamenchisaurus", "Brontosaurus"],
-    answer: "Mamenchisaurus",
+      "Mamenchisaurus is famous for having one of the longest ________ of any dinosaur.",
+    choices: ["Tails only", "Necks", "Arms", "Horns"],
+    answer: "Necks",
+  },
+  {
+    _cat: "fossils",
+    question:
+      "Sometimes tree sap hardens into amber and traps tiny ancient creatures. Amber can preserve…",
+    choices: [
+      "Only giant bones",
+      "Small fossils like insects",
+      "Only footprints",
+      "Only eggshells",
+    ],
+    answer: "Small fossils like insects",
+  },
+  {
+    _cat: "modern_science",
+    question:
+      "Scientists can use CT scans (like a hospital X-ray) to look inside a fossil without…",
+    choices: [
+      "Breaking it apart",
+      "Leaving the lab",
+      "Using a computer",
+      "Writing notes",
+    ],
+    answer: "Breaking it apart",
   },
 ];

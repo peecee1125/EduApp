@@ -1,354 +1,432 @@
 // Advanced Challenge Questions — 2nd→3rd Grade Bridge
-// Cross-subject harder content: deeper math, science, ELA, logic, world knowledge
+// Cross-subject stretch content for bright learners finishing 2nd / starting 3rd
 
 export const advancedMath = [
   {
-    question: "What is 7 × 8?",
-    choices: ["48", "54", "56", "63"],
-    answer: "56",
-  },
-  {
-    question: "What is 144 ÷ 12?",
-    choices: ["10", "11", "12", "13"],
-    answer: "12",
-  },
-  {
-    question: "Which fraction is the LARGEST?",
-    choices: ["1/4", "1/2", "1/8", "1/3"],
-    answer: "1/2",
-  },
-  {
-    question: "What is 325 + 487?",
-    choices: ["702", "712", "802", "812"],
-    answer: "812",
-  },
-  {
+    _cat: "multi_step",
     passage:
-      "A bakery makes 24 cookies in each batch. They bake 5 batches every day.",
-    question: "How many cookies does the bakery make in ONE day?",
-    choices: ["100", "115", "120", "125"],
-    answer: "120",
+      "Aahana collects 18 stickers on Monday and 14 on Tuesday. She gives 9 stickers to her brother.",
+    question: "How many stickers does Aahana have LEFT?",
+    choices: ["23", "32", "41", "17"],
+    answer: "23",
   },
   {
-    question: "What does the digit 4 represent in the number 2,481?",
-    choices: ["4 ones", "4 tens", "4 hundreds", "4 thousands"],
-    answer: "4 hundreds",
+    _cat: "fractions",
+    question: "Which fraction is the SAME as one half?",
+    choices: ["2/4", "1/4", "3/8", "1/3"],
+    answer: "2/4",
   },
   {
-    question: "How many minutes are in 2 hours and 30 minutes?",
-    choices: ["130", "140", "145", "150"],
-    answer: "150",
+    _cat: "fractions",
+    passage: "A pizza is cut into 8 equal slices. Aahana eats 3 slices.",
+    question: "What fraction of the pizza did Aahana eat?",
+    choices: ["3/8", "5/8", "3/5", "1/3"],
+    answer: "3/8",
   },
   {
-    question: "Which of these numbers is a prime number?",
-    choices: ["4", "6", "9", "7"],
-    answer: "7",
+    _cat: "patterns",
+    question: "What number comes NEXT in the pattern: 5, 10, 15, 20, ___?",
+    choices: ["22", "24", "25", "30"],
+    answer: "25",
   },
   {
-    passage: "Aahana has $5.75. She buys a book for $3.49.",
-    question: "How much money does Aahana have LEFT after buying the book?",
-    choices: ["$1.26", "$2.16", "$2.26", "$2.36"],
-    answer: "$2.26",
+    _cat: "patterns",
+    question: "What number comes NEXT in the pattern: 3, 6, 12, 24, ___?",
+    choices: ["30", "36", "48", "72"],
+    answer: "48",
   },
   {
-    question: "A rectangle is 9 cm long and 4 cm wide. What is its PERIMETER?",
-    choices: ["13 cm", "26 cm", "36 cm", "18 cm"],
-    answer: "26 cm",
+    _cat: "measurement",
+    passage:
+      "A ribbon is 2 feet long. Aahana needs pieces that are 6 inches each. (Remember: 1 foot = 12 inches.)",
+    question: "How many 6-inch pieces can she cut from the ribbon?",
+    choices: ["2", "3", "4", "6"],
+    answer: "4",
   },
   {
-    question: "Which multiplication sentence is the SAME as 4 + 4 + 4 + 4 + 4?",
-    choices: ["4 × 4", "4 × 5", "5 × 5", "4 × 3"],
-    answer: "4 × 5",
+    _cat: "measurement",
+    question: "How many centimeters are in 1 meter?",
+    choices: ["10", "50", "100", "1000"],
+    answer: "100",
   },
   {
-    question: "Round 374 to the nearest HUNDRED.",
-    choices: ["300", "370", "400", "380"],
-    answer: "400",
+    _cat: "multi_step",
+    passage:
+      "Each box holds 6 crayons. Aahana packs 4 boxes for her class and keeps 5 crayons for herself.",
+    question: "How many crayons does she pack for her class?",
+    choices: ["18", "24", "29", "30"],
+    answer: "24",
+  },
+  {
+    _cat: "fractions",
+    question: "Which fraction is the SMALLEST?",
+    choices: ["1/2", "1/3", "1/6", "1/4"],
+    answer: "1/6",
+  },
+  {
+    _cat: "measurement",
+    question:
+      "A square has sides that are each 7 cm long. What is the PERIMETER of the square?",
+    choices: ["14 cm", "21 cm", "28 cm", "49 cm"],
+    answer: "28 cm",
+  },
+  {
+    _cat: "multi_step",
+    passage:
+      "Aahana saves $2 each week for 6 weeks. She spends $7 on a science kit.",
+    question: "How much money does she have LEFT?",
+    choices: ["$3", "$5", "$7", "$12"],
+    answer: "$5",
+  },
+  {
+    _cat: "patterns",
+    passage: "The rule for a number machine is: multiply by 2, then add 1.",
+    question: "If you put in 4, what number comes OUT?",
+    choices: ["7", "8", "9", "10"],
+    answer: "9",
   },
 ];
 
 export const advancedScience = [
   {
-    question: "What is the chemical formula for water?",
-    choices: ["CO2", "O2", "H2O", "NaCl"],
-    answer: "H2O",
-  },
-  {
+    _cat: "ecosystems",
     passage:
-      "The food web shows how energy passes from one living thing to another. Sun → plant → caterpillar → robin → hawk.",
+      "In a forest, oak trees make acorns. Squirrels eat acorns. Hawks eat squirrels.",
     question:
-      "In this food web, what would likely happen if all the caterpillars disappeared?",
+      "If a disease killed most of the oak trees, what would MOST likely happen first?",
     choices: [
-      "Nothing would change",
-      "Hawks would have more food",
-      "Robins would have less food and might decrease",
-      "Plants would die",
+      "Hawks would have more squirrels to eat",
+      "Squirrels would have less food and their numbers might drop",
+      "Oak trees would grow faster",
+      "Nothing would change in the forest",
     ],
-    answer: "Robins would have less food and might decrease",
+    answer: "Squirrels would have less food and their numbers might drop",
   },
   {
-    question: "Which planet takes the LONGEST to orbit the Sun?",
-    choices: ["Jupiter", "Saturn", "Uranus", "Neptune"],
-    answer: "Neptune",
-  },
-  {
+    _cat: "ecosystems",
     question:
-      "What type of energy does the Sun provide that plants use to make food?",
+      "In a food chain, which organism is usually a PRODUCER that makes its own food?",
+    choices: ["Grass", "Rabbit", "Fox", "Mushroom on a dead log"],
+    answer: "Grass",
+  },
+  {
+    _cat: "ecosystems",
+    question:
+      "What do we call all the living and nonliving things in an area that interact?",
+    choices: ["A habitat only", "An ecosystem", "A fossil", "A weather pattern"],
+    answer: "An ecosystem",
+  },
+  {
+    _cat: "energy",
+    question:
+      "When you rub your hands together quickly, they feel warm. What kind of energy change is this?",
     choices: [
-      "Chemical energy",
-      "Nuclear energy",
-      "Light (solar) energy",
-      "Mechanical energy",
+      "Motion energy changing to heat energy",
+      "Heat energy changing to light energy",
+      "Sound energy changing to chemical energy",
+      "Electrical energy changing to motion energy",
     ],
-    answer: "Light (solar) energy",
+    answer: "Motion energy changing to heat energy",
   },
   {
-    question: "What is it called when a caterpillar changes into a butterfly?",
-    choices: ["Hibernation", "Migration", "Metamorphosis", "Adaptation"],
-    answer: "Metamorphosis",
-  },
-  {
-    question: "Pure water freezes at _____ degrees Fahrenheit.",
-    choices: ["0°F", "32°F", "100°F", "212°F"],
-    answer: "32°F",
-  },
-  {
+    _cat: "energy",
     passage:
-      "Renewable energy sources are ones that naturally replenish themselves and won't run out.",
-    question: "Which energy source is RENEWABLE?",
-    choices: ["Coal", "Oil", "Natural gas", "Solar (sun) power"],
-    answer: "Solar (sun) power",
+      "A flashlight uses batteries. When you turn it on, the bulb glows.",
+    question: "What type of energy does the glowing bulb give off?",
+    choices: ["Light energy", "Magnetic energy", "Sound energy only", "Gravity"],
+    answer: "Light energy",
   },
   {
-    question: "What is the CLOSEST planet to Earth?",
-    choices: ["Mars", "Mercury", "Venus", "Jupiter"],
-    answer: "Venus",
-  },
-  {
+    _cat: "energy",
     question:
-      "What do we call the process of water moving through a plant and evaporating out of its leaves?",
-    choices: ["Photosynthesis", "Transpiration", "Respiration", "Condensation"],
-    answer: "Transpiration",
+      "Which energy source is RENEWABLE because it will not run out on Earth?",
+    choices: ["Coal", "Wind power", "Natural gas", "Gasoline"],
+    answer: "Wind power",
   },
   {
-    question: "Which sense does the nose use to detect smells?",
-    choices: ["Sight", "Touch", "Hearing", "Smell (olfaction)"],
-    answer: "Smell (olfaction)",
+    _cat: "earth",
+    question:
+      "Over many years, wind and rain can break rocks into smaller pieces. This process is called…",
+    choices: ["Erosion", "Photosynthesis", "Evaporation", "Condensation"],
+    answer: "Erosion",
   },
   {
-    question: "What is the layer of gases surrounding Earth called?",
-    choices: ["Hydrosphere", "Lithosphere", "Atmosphere", "Biosphere"],
-    answer: "Atmosphere",
+    _cat: "earth",
+    passage:
+      "Water from a puddle disappears on a sunny day. The water turns into water vapor in the air.",
+    question: "What is this process called?",
+    choices: ["Evaporation", "Freezing", "Melting", "Precipitation"],
+    answer: "Evaporation",
   },
   {
-    question: "Which of these is NOT a living thing?",
-    choices: ["Mushroom", "Bacteria", "Rock", "Moss"],
-    answer: "Rock",
+    _cat: "earth",
+    question:
+      "Which layer of Earth is the thin, rocky outer shell where we live?",
+    choices: ["Core", "Mantle", "Crust", "Atmosphere"],
+    answer: "Crust",
+  },
+  {
+    _cat: "ecosystems",
+    question:
+      "A decomposer like a worm helps an ecosystem by…",
+    choices: [
+      "Breaking down dead plants and returning nutrients to the soil",
+      "Making food from sunlight",
+      "Hunting other animals",
+      "Pollinating flowers",
+    ],
+    answer: "Breaking down dead plants and returning nutrients to the soil",
+  },
+  {
+    _cat: "earth",
+    passage:
+      "Fossils are remains or traces of ancient plants and animals found in rock.",
+    question: "Fossils are MOST often found in which type of rock?",
+    choices: ["Igneous rock", "Sedimentary rock", "Metallic rock", "Liquid rock"],
+    answer: "Sedimentary rock",
+  },
+  {
+    _cat: "energy",
+    question:
+      "Plants use sunlight to make sugar for food. This process is called…",
+    choices: ["Photosynthesis", "Respiration", "Transpiration", "Fermentation"],
+    answer: "Photosynthesis",
   },
 ];
 
 export const advancedELA = [
   {
+    _cat: "inference",
     passage:
-      "The ancient Egyptians built enormous stone pyramids as tombs for their pharaohs. The Great Pyramid at Giza was built around 2560 BCE and is one of the Seven Wonders of the Ancient World.",
-    question: "What was the MAIN PURPOSE of the Egyptian pyramids?",
+      "Jamal packed an umbrella, rain boots, and a waterproof jacket before walking to school. Dark clouds filled the sky.",
+    question: "What can you INFER about the weather Jamal expected?",
     choices: [
-      "Temples for worshipping gods",
-      "Homes for royal families",
-      "Tombs for pharaohs",
-      "Granaries for storing food",
+      "He expected sunny and hot weather",
+      "He expected it might rain",
+      "He expected snow and ice",
+      "He expected a windy but dry day",
     ],
-    answer: "Tombs for pharaohs",
+    answer: "He expected it might rain",
   },
   {
-    question: "What does the word 'ENORMOUS' mean in the passage above?",
-    choices: ["Very old", "Very small", "Very beautiful", "Very large"],
-    answer: "Very large",
-  },
-  {
+    _cat: "vocabulary",
     passage:
-      "Despite the heavy rain, the soccer team practiced on the muddy field. Their dedication impressed their coach.",
-    question: "What does the word 'DEDICATION' most likely mean?",
-    choices: [
-      "Laziness and giving up easily",
-      "Strong commitment and hard work",
-      "Skill at playing soccer",
-      "Being able to play in rain",
-    ],
-    answer: "Strong commitment and hard work",
+      "The trail was so ARDUOUS that even the experienced hikers needed extra rest stops.",
+    question: "What does the word ARDUOUS most likely mean?",
+    choices: ["Easy and flat", "Short and quick", "Difficult and tiring", "Beautiful and scenic"],
+    answer: "Difficult and tiring",
   },
   {
-    question: "Which sentence uses an APOSTROPHE correctly?",
-    choices: [
-      "The dog's bone was buried.",
-      "The dogs' was bone buried.",
-      "The dogs bone's was buried.",
-      "The dogs bone buried.",
-    ],
-    answer: "The dog's bone was buried.",
-  },
-  {
+    _cat: "authors_purpose",
     passage:
-      "Mia arrived at the party early to help decorate. She blew up all the balloons by herself and arranged the flowers on the table.",
-    question: "Which word BEST describes Mia based on the passage?",
-    choices: ["Selfish", "Helpful", "Shy", "Forgetful"],
-    answer: "Helpful",
-  },
-  {
-    question: "What is the ANTONYM (opposite) of the word ANCIENT?",
-    choices: ["Old", "Historical", "Modern", "Classic"],
-    answer: "Modern",
-  },
-  {
-    question: "Which sentence is written in PAST TENSE?",
+      "Always wear a helmet when you ride a bike. Look both ways before crossing the street. Stay visible after dark with bright clothing.",
+    question: "What is the author's MAIN purpose in this passage?",
     choices: [
-      "She runs to school every day.",
-      "She is running to school.",
-      "She will run to school tomorrow.",
-      "She ran to school yesterday.",
+      "To entertain with a funny story",
+      "To teach safety rules for cyclists",
+      "To describe how bikes are built",
+      "To compare different types of helmets",
     ],
-    answer: "She ran to school yesterday.",
+    answer: "To teach safety rules for cyclists",
   },
   {
+    _cat: "inference",
     passage:
-      "The library was so quiet you could hear a pin drop. Jasmine whispered so softly that even the librarian strained to hear her.",
-    question: "The phrase 'hear a pin drop' means the library was…",
+      "Lena stared at her broken vase on the floor. Her cat sat nearby, tail twitching, with one paw still dusty.",
+    question: "What MOST likely happened?",
     choices: [
-      "Full of music",
-      "Very loud",
-      "Completely silent",
-      "Being cleaned",
+      "The vase fell because of an earthquake",
+      "The cat probably knocked over the vase",
+      "Lena threw the vase on purpose",
+      "The vase was already broken before Lena arrived",
     ],
-    answer: "Completely silent",
+    answer: "The cat probably knocked over the vase",
   },
   {
-    question:
-      "In the sentence 'The bright, colorful butterfly landed on the flower,' what are the ADJECTIVES?",
-    choices: [
-      "Butterfly and flower",
-      "Landed and colorful",
-      "Bright and colorful",
-      "The and on",
-    ],
-    answer: "Bright and colorful",
-  },
-  {
-    question: "What does it mean when we say a story has a MORAL?",
-    choices: [
-      "The story is very long",
-      "The story has a lesson or message to teach",
-      "The story has many characters",
-      "The story is based on real events",
-    ],
-    answer: "The story has a lesson or message to teach",
-  },
-  {
-    question:
-      "Which literary device is used in: 'The wind whispered through the trees'?",
-    choices: ["Simile", "Rhyme", "Personification", "Alliteration"],
-    answer: "Personification",
-  },
-  {
+    _cat: "vocabulary",
     passage:
-      "Kenji loved astronomy and read every book about stars he could find. One clear night, he finally spotted the Big Dipper with his own telescope.",
-    question: "Which conclusion can you draw about Kenji?",
+      "The museum exhibit was so FRAGILE that visitors were asked not to touch the glass cases.",
+    question: "What does FRAGILE mean in this sentence?",
+    choices: ["Very old", "Easily broken", "Very expensive", "Extremely large"],
+    answer: "Easily broken",
+  },
+  {
+    _cat: "authors_purpose",
+    passage:
+      "Did you know that honey never spoils? Archaeologists have found edible honey in ancient Egyptian tombs!",
+    question: "Why did the author MOST likely write this passage?",
     choices: [
-      "Kenji is afraid of the dark",
-      "Kenji is passionate about learning about stars",
-      "Kenji does not like reading books",
-      "Kenji wants to be a teacher",
+      "To persuade you to buy honey",
+      "To explain how bees make hives",
+      "To share an interesting fact to amaze the reader",
+      "To warn readers not to eat old food",
     ],
-    answer: "Kenji is passionate about learning about stars",
+    answer: "To share an interesting fact to amaze the reader",
+  },
+  {
+    _cat: "inference",
+    passage:
+      "After the talent show, Maya's friends crowded around her, clapping and asking for her autograph. Maya's face turned bright red.",
+    question: "How does Maya MOST likely feel?",
+    choices: ["Angry and upset", "Proud but a little embarrassed", "Bored and tired", "Confused and lost"],
+    answer: "Proud but a little embarrassed",
+  },
+  {
+    _cat: "vocabulary",
+    passage:
+      "The villagers were ELATED when the long drought finally ended and rain filled the wells.",
+    question: "What is the BEST meaning of ELATED?",
+    choices: ["Very worried", "Very joyful", "Very hungry", "Very confused"],
+    answer: "Very joyful",
+  },
+  {
+    _cat: "authors_purpose",
+    passage:
+      "First, mix the flour and sugar. Next, add the eggs and milk. Finally, pour the batter into a pan and bake for 25 minutes.",
+    question: "What is the author's purpose?",
+    choices: [
+      "To give step-by-step directions",
+      "To describe a character's feelings",
+      "To argue that baking is better than cooking",
+      "To tell a story about a bakery",
+    ],
+    answer: "To give step-by-step directions",
+  },
+  {
+    _cat: "inference",
+    passage:
+      "Every morning, Mr. Chen arrives at the library before it opens. He shelves returned books and helps children find stories they will love.",
+    question: "Which statement is BEST supported by the passage?",
+    choices: [
+      "Mr. Chen dislikes working with books",
+      "Mr. Chen cares about helping readers",
+      "Mr. Chen owns the library building",
+      "Mr. Chen only works on weekends",
+    ],
+    answer: "Mr. Chen cares about helping readers",
+  },
+  {
+    _cat: "vocabulary",
+    passage:
+      "The old map was so FADED that the names of some rivers were hard to read.",
+    question: "What does FADED mean here?",
+    choices: ["Lost its bright color over time", "Written in another language", "Folded into many pieces", "Drawn with bright ink"],
+    answer: "Lost its bright color over time",
+  },
+  {
+    _cat: "authors_purpose",
+    passage:
+      "Plastic bottles belong in the recycling bin, not the trash. Recycling saves energy and keeps our parks cleaner.",
+    question: "What is the author trying to get readers to DO?",
+    choices: [
+      "Stop drinking water",
+      "Recycle plastic bottles instead of throwing them away",
+      "Buy more plastic bottles",
+      "Visit parks every weekend",
+    ],
+    answer: "Recycle plastic bottles instead of throwing them away",
   },
 ];
 
 export const advancedWorld = [
   {
+    _cat: "geography",
+    question: "Which river flows through Egypt and was vital to ancient farming?",
+    choices: ["Amazon River", "Mississippi River", "Nile River", "Thames River"],
+    answer: "Nile River",
+  },
+  {
+    _cat: "civics",
     question:
-      "What is the name of the large supercontinent that all of today's continents were once part of?",
-    choices: ["Atlantis", "Gondwana", "Pangaea", "Laurasia"],
-    answer: "Pangaea",
+      "In the United States, who makes the laws for the whole country?",
+    choices: [
+      "The President alone",
+      "The Supreme Court alone",
+      "Congress (the Senate and House of Representatives)",
+      "The governors of each state",
+    ],
+    answer: "Congress (the Senate and House of Representatives)",
   },
   {
-    question: "The Olympics originated in which ancient civilization?",
-    choices: ["Roman", "Egyptian", "Greek", "Chinese"],
-    answer: "Greek",
+    _cat: "geography",
+    question: "Nashville is the capital of which U.S. state?",
+    choices: ["Kentucky", "Georgia", "Tennessee", "Alabama"],
+    answer: "Tennessee",
   },
   {
-    question: "What is the currency used in the United Kingdom?",
-    choices: ["Euro", "Dollar", "Pound Sterling", "Franc"],
-    answer: "Pound Sterling",
-  },
-  {
+    _cat: "world_knowledge",
     passage:
-      "The Great Wall of China was built over many centuries to protect Chinese states from invasions. It stretches thousands of miles across northern China.",
+      "The Great Barrier Reef lies off the coast of Australia and is home to thousands of species of fish and coral.",
+    question: "The Great Barrier Reef is located near which country?",
+    choices: ["Brazil", "Australia", "Japan", "Canada"],
+    answer: "Australia",
+  },
+  {
+    _cat: "civics",
     question:
-      "What was the PRIMARY purpose for building the Great Wall of China?",
+      "The first ten amendments to the U.S. Constitution are called the…",
     choices: [
-      "To mark the border for taxation",
-      "To protect from northern invasions",
-      "To create a road for trade",
-      "To store food and water",
+      "Declaration of Independence",
+      "Bill of Rights",
+      "Emancipation Proclamation",
+      "Articles of Confederation",
     ],
-    answer: "To protect from northern invasions",
+    answer: "Bill of Rights",
   },
   {
-    question: "Which instrument was invented by Alexander Graham Bell?",
-    choices: ["Television", "Telephone", "Radio", "Computer"],
-    answer: "Telephone",
+    _cat: "geography",
+    question:
+      "Which continent is the largest by land area?",
+    choices: ["Africa", "Europe", "Asia", "Antarctica"],
+    answer: "Asia",
   },
   {
-    question: "What is the name of the national anthem of the United States?",
+    _cat: "world_knowledge",
+    question:
+      "Which ancient civilization built pyramids along the Nile River?",
+    choices: ["Romans", "Egyptians", "Vikings", "Aztecs"],
+    answer: "Egyptians",
+  },
+  {
+    _cat: "civics",
+    passage:
+      "Citizens vote in elections to choose leaders who represent them in government.",
+    question: "Voting is an important way citizens can…",
     choices: [
-      "America the Beautiful",
-      "My Country, 'Tis of Thee",
-      "The Star-Spangled Banner",
-      "Yankee Doodle",
+      "Change the weather",
+      "Help choose their leaders",
+      "Build roads by themselves",
+      "Print their own money",
     ],
-    answer: "The Star-Spangled Banner",
+    answer: "Help choose their leaders",
   },
   {
-    question: "Who was the first President of the United States?",
-    choices: [
-      "Abraham Lincoln",
-      "Thomas Jefferson",
-      "Benjamin Franklin",
-      "George Washington",
-    ],
-    answer: "George Washington",
-  },
-  {
-    question: "The Eiffel Tower is located in which city?",
-    choices: ["London", "Rome", "Paris", "Madrid"],
-    answer: "Paris",
-  },
-  {
+    _cat: "geography",
     question:
-      "What is the name of the famous document that declared America's independence from Britain in 1776?",
-    choices: [
-      "The Constitution",
-      "The Bill of Rights",
-      "The Declaration of Independence",
-      "The Magna Carta",
-    ],
-    answer: "The Declaration of Independence",
+      "Mount Everest, the tallest mountain on Earth, is part of which mountain range?",
+    choices: ["Rocky Mountains", "Alps", "Himalayas", "Andes"],
+    answer: "Himalayas",
   },
   {
+    _cat: "world_knowledge",
     question:
-      "Which continent is home to the world's largest tropical rainforest?",
-    choices: ["Africa", "Asia", "South America", "Australia"],
-    answer: "South America",
+      "Which ocean lies between the United States and Europe?",
+    choices: ["Pacific Ocean", "Indian Ocean", "Atlantic Ocean", "Arctic Ocean"],
+    answer: "Atlantic Ocean",
   },
   {
+    _cat: "civics",
     question:
-      "In which country were the first modern Olympic Games held in 1896?",
-    choices: ["France", "Italy", "United States", "Greece"],
-    answer: "Greece",
+      "How many stars are on the flag of the United States (one for each state)?",
+    choices: ["13", "48", "50", "52"],
+    answer: "50",
   },
   {
-    question:
-      "What is the name of the space telescope launched in 1990 that has taken stunning photos of deep space?",
-    choices: ["James Webb", "Kepler", "Hubble", "Spitzer"],
-    answer: "Hubble",
+    _cat: "geography",
+    passage:
+      "The Sahara is a vast desert that covers much of northern Africa. Very little rain falls there.",
+    question: "On which continent is the Sahara Desert found?",
+    choices: ["Asia", "Africa", "Australia", "South America"],
+    answer: "Africa",
   },
 ];

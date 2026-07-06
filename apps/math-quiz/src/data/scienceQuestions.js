@@ -1,249 +1,299 @@
 // Science practice + STEM curiosity banks (life, Earth, physical science)
 // Aligned to NGSS-style practices and Tennessee Academic Standards for Science
+// Grade 2 review / Grade 3 preview — life science, Earth science, physical science, investigation
 
 export const sciencePractice1 = [
   {
     passage:
-      "Plants need certain things to make their own food through a process called photosynthesis.",
-    question: "What THREE things do plants need to grow and make food?",
+      "Maya planted sunflower seeds in her Nashville backyard. She watered them every morning and placed the pots where they could get plenty of sunshine.",
+    question: "What do seeds need to sprout and grow into healthy plants?",
     choices: [
-      "Sunlight, water, and soil",
-      "Food, water, and air",
-      "Sunlight, sugar, and rain",
-      "Dirt, rocks, and clouds",
+      "Sunlight, water, and air",
+      "Candy, soda, and ice",
+      "Rocks, sand, and metal",
+      "Darkness, salt, and wind only",
     ],
-    answer: "Sunlight, water, and soil",
+    answer: "Sunlight, water, and air",
+    _cat: "life",
   },
   {
-    question: "Which of these animals is a mammal?",
-    choices: ["Goldfish", "Butterfly", "Dog", "Snake"],
-    answer: "Dog",
+    question:
+      "Which animal has feathers, lays eggs, and is warm-blooded?",
+    choices: ["Red-eared slider turtle", "Eastern bluebird", "Gray tree frog", "White-tailed deer"],
+    answer: "Eastern bluebird",
+    _cat: "life",
   },
   {
     passage:
-      "A butterfly goes through four stages in its lifetime: egg → caterpillar → chrysalis → butterfly.",
-    question:
-      "What stage comes right AFTER the egg in a butterfly's life cycle?",
-    choices: ["Butterfly", "Chrysalis", "Caterpillar", "Cocoon"],
-    answer: "Caterpillar",
+      "A beaver builds a lodge beside a stream. It stores branches underwater and uses its flat tail to swim and steer.",
+    question: "A beaver's lodge beside a stream is an example of its…",
+    choices: ["Habitat", "Fossil", "Mineral", "Weather pattern"],
+    answer: "Habitat",
+    _cat: "life",
   },
   {
     question:
-      "What do we call baby frogs that live in the water and have tails?",
-    choices: ["Larvae", "Tadpoles", "Nymphs", "Hatchlings"],
-    answer: "Tadpoles",
-  },
-  {
-    question: "Which season has the LONGEST nights and SHORTEST days?",
-    choices: ["Spring", "Summer", "Fall", "Winter"],
-    answer: "Winter",
+      "Which part of a plant takes in water and nutrients from the soil?",
+    choices: ["Flower", "Leaf", "Root", "Stem"],
+    answer: "Root",
+    _cat: "life",
   },
   {
     question:
-      "An animal that sleeps during winter to survive the cold is going through…",
-    choices: ["Migration", "Hibernation", "Camouflage", "Metamorphosis"],
-    answer: "Hibernation",
+      "In Tennessee, which season usually brings the most colorful falling leaves?",
+    choices: ["Winter", "Spring", "Summer", "Fall"],
+    answer: "Fall",
+    _cat: "earth",
+  },
+  {
+    question:
+      "Bees visit flowers and carry pollen from one bloom to another. This helps plants…",
+    choices: [
+      "Make seeds and fruit",
+      "Grow taller overnight",
+      "Turn into rocks",
+      "Freeze in summer",
+    ],
+    answer: "Make seeds and fruit",
+    _cat: "life",
   },
   {
     passage:
-      "The largest organ on the human body covers your entire outside and protects your body from germs.",
-    question: "What is the largest organ in the human body?",
-    choices: ["Brain", "Heart", "Skin", "Lungs"],
-    answer: "Skin",
-  },
-  {
-    question: "Animals that ONLY eat plants are called…",
-    choices: ["Carnivores", "Omnivores", "Herbivores", "Predators"],
-    answer: "Herbivores",
+      "During a field trip to Radnor Lake, students spotted a salamander under a damp log. The guide explained that amphibians need moist places to keep their skin healthy.",
+    question: "Salamanders are amphibians because they…",
+    choices: [
+      "Live part of their life in water and part on land",
+      "Have feathers and fly south",
+      "Are covered in scales and lay hard eggs on dry sand",
+      "Make food from sunlight like grass",
+    ],
+    answer: "Live part of their life in water and part on land",
+    _cat: "life",
   },
   {
     question:
-      "What do we call animals that are active at NIGHT and sleep during the day?",
-    choices: ["Diurnal", "Nocturnal", "Migratory", "Colonial"],
-    answer: "Nocturnal",
+      "In the food chain Sun → clover → rabbit → red fox, the rabbit is a…",
+    choices: ["Producer", "Consumer", "Decomposer", "Fossil"],
+    answer: "Consumer",
+    _cat: "life",
   },
   {
-    question: "Which gas do plants absorb from the air to make their own food?",
-    choices: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-    answer: "Carbon Dioxide",
+    question:
+      "Oak trees in Tennessee lose their leaves each autumn. Trees that drop their leaves every year are called…",
+    choices: ["Evergreen", "Deciduous", "Carnivorous", "Aquatic"],
+    answer: "Deciduous",
+    _cat: "life",
+  },
+  {
+    question:
+      "A wetland with cattails, frogs, and herons is important because it…",
+    choices: [
+      "Cleans water and gives animals a home",
+      "Stops the Earth from spinning",
+      "Makes rocks melt into lava",
+      "Removes all oxygen from the air",
+    ],
+    answer: "Cleans water and gives animals a home",
+    _cat: "earth",
   },
   {
     passage:
-      "Birds fly south in autumn and return in spring to find food and warmer weather.",
-    question:
-      "What is the movement of animals to warmer places in winter called?",
-    choices: ["Hibernation", "Migration", "Adaptation", "Ecosystems"],
-    answer: "Migration",
+      "Leo's class sorted lunch waste into bins: paper, plastic bottles, and food scraps for compost. Their teacher said small daily choices can help the planet.",
+    question: "Recycling and composting help the environment by…",
+    choices: [
+      "Reducing waste sent to landfills",
+      "Making the sun rise earlier",
+      "Turning oceans into deserts",
+      "Stopping plants from growing",
+    ],
+    answer: "Reducing waste sent to landfills",
+    _cat: "investigation",
   },
   {
     question:
-      "Which of these living things is a producer that makes its own food?",
-    choices: ["Lion", "Rabbit", "Grass", "Eagle"],
-    answer: "Grass",
+      "Which sense helps you tell whether a Tennessee peach is sweet or sour?",
+    choices: ["Sight only", "Hearing", "Taste", "Balance"],
+    answer: "Taste",
+    _cat: "life",
   },
 ];
 
 export const sciencePractice2 = [
   {
-    question: "A push or a pull on an object is called a…",
-    choices: ["Motion", "Force", "Energy", "Mass"],
+    question:
+      "When you kick a soccer ball across the gym floor, you are applying a…",
+    choices: ["Shadow", "Force", "Season", "Fossil"],
     answer: "Force",
+    _cat: "force",
   },
   {
     passage:
-      "A ramp is a simple machine that makes it easier to move objects up to a higher place.",
-    question: "What is the scientific name for a ramp?",
-    choices: ["Lever", "Pulley", "Wedge", "Inclined Plane"],
-    answer: "Inclined Plane",
+      "At the science fair, Jamal rolled a toy car down a cardboard ramp to see how far it would travel on the carpet.",
+    question: "Jamal's cardboard ramp is an example of which simple machine?",
+    choices: ["Lever", "Pulley", "Inclined plane", "Wedge"],
+    answer: "Inclined plane",
+    _cat: "force",
   },
   {
     question:
-      "Water is a liquid. What happens to water when you put it in the freezer?",
-    choices: [
-      "It becomes a gas",
-      "It becomes a solid",
-      "It disappears",
-      "It turns yellow",
-    ],
-    answer: "It becomes a solid",
-  },
-  {
-    question:
-      "Which state of matter has NO definite shape AND no definite volume?",
+      "Ice cubes in a glass of lemonade are an example of matter in which state?",
     choices: ["Solid", "Liquid", "Gas", "Plasma"],
-    answer: "Gas",
+    answer: "Solid",
+    _cat: "matter",
   },
   {
-    question: "What invisible force pulls everything toward the ground?",
-    choices: ["Magnetism", "Friction", "Gravity", "Electricity"],
-    answer: "Gravity",
+    question:
+      "Puffy white clouds often mean fair weather. Dark gray clouds may bring…",
+    choices: ["Earthquakes", "Rain or storms", "Volcanoes", "Tornadoes every day"],
+    answer: "Rain or storms",
+    _cat: "weather",
   },
   {
-    question: "A doorknob is an example of which simple machine?",
-    choices: ["Lever", "Pulley", "Wheel and Axle", "Screw"],
-    answer: "Wheel and Axle",
+    question:
+      "A flashlight helps you see in a dark tent because it gives off…",
+    choices: ["Sound", "Light", "Gravity", "Magnetism"],
+    answer: "Light",
+    _cat: "physical",
+  },
+  {
+    question:
+      "Before testing which paper towel absorbs the most water, a scientist writes a…",
+    choices: ["Hypothesis", "Fossil", "Constellation", "Volcano"],
+    answer: "Hypothesis",
+    _cat: "investigation",
+  },
+  {
+    question:
+      "Butter left on a warm windowsill slowly turns from a solid into a…",
+    choices: ["Gas that disappears", "Liquid", "Rock", "Magnet"],
+    answer: "Liquid",
+    _cat: "matter",
+  },
+  {
+    question:
+      "Sandpaper feels rough and can slow a block of wood sliding across it because of…",
+    choices: ["Friction", "Photosynthesis", "Precipitation", "Migration"],
+    answer: "Friction",
+    _cat: "force",
   },
   {
     passage:
-      "Magnets have two poles called North and South. Two opposite poles attract, and two same poles repel.",
-    question:
-      "What happens when you bring two NORTH poles of magnets together?",
-    choices: [
-      "They attract strongly",
-      "They repel (push apart)",
-      "Nothing happens",
-      "They stick permanently",
-    ],
-    answer: "They repel (push apart)",
-  },
-  {
-    question: "Sound is created by…",
-    choices: ["Light waves", "Vibrations", "Gravity", "Heat"],
-    answer: "Vibrations",
-  },
-  {
-    question: "Which material would be the BEST conductor of electricity?",
-    choices: ["Wood", "Plastic", "Rubber", "Copper metal"],
-    answer: "Copper metal",
-  },
-  {
-    question: "Ice melting into water is an example of a change in…",
-    choices: ["Color", "State of matter", "Smell", "Weight"],
-    answer: "State of matter",
+      "In Ms. Chen's classroom, metal paper clips leaped toward a horseshoe magnet, but wooden pencils did not move at all.",
+    question: "Which material is attracted to a magnet?",
+    choices: ["Plastic ruler", "Iron nail", "Glass marble", "Rubber eraser"],
+    answer: "Iron nail",
+    _cat: "physical",
   },
   {
     question:
-      "Which type of rock is formed when hot melted rock (lava) cools down?",
-    choices: ["Sedimentary", "Metamorphic", "Igneous", "Fossil"],
+      "A thermometer measures…",
+    choices: ["Wind direction", "Temperature", "Earthquake size", "Plant height only"],
+    answer: "Temperature",
+    _cat: "weather",
+  },
+  {
+    question:
+      "Rocks formed from cooled lava are called…",
+    choices: ["Igneous", "Sedimentary", "Metamorphic", "Fossil fuel"],
     answer: "Igneous",
+    _cat: "earth",
   },
   {
     passage:
-      "The water cycle describes how water moves through nature: evaporation, condensation, precipitation.",
-    question:
-      "What is it called when water from oceans and lakes turns into water vapor in the air?",
-    choices: ["Precipitation", "Condensation", "Evaporation", "Absorption"],
-    answer: "Evaporation",
+      "During a rainstorm in Memphis, Priya watched water drip from the gutter, splash on the sidewalk, and flow toward a storm drain.",
+    question: "Water soaking into the ground or flowing to a drain is part of the…",
+    choices: ["Water cycle", "Food chain", "Rock cycle only", "Life cycle of a moth"],
+    answer: "Water cycle",
+    _cat: "weather",
   },
 ];
 
 export const scienceAdvanced = [
   {
     question:
-      "What is the name of the process by which green plants make their own food using sunlight?",
-    choices: ["Respiration", "Fermentation", "Photosynthesis", "Digestion"],
+      "Green leaves use sunlight to make sugar for the plant. This process is called…",
+    choices: ["Photosynthesis", "Hibernation", "Evaporation", "Fossilization"],
     answer: "Photosynthesis",
+    _cat: "life",
   },
   {
     passage:
-      "In a food chain, energy flows from the Sun → grass → rabbit → fox. Each living thing depends on the one before it.",
-    question:
-      "What do we call an organism that makes its own food and starts the food chain?",
-    choices: ["Consumer", "Decomposer", "Predator", "Producer"],
-    answer: "Producer",
+      "In a Tennessee forest, fallen leaves rot on the soil. Tiny fungi and bacteria break them down so new plants can use the nutrients.",
+    question: "Organisms that break down dead plants and animals are…",
+    choices: ["Producers", "Decomposers", "Herbivores", "Pollinators"],
+    answer: "Decomposers",
+    _cat: "life",
   },
   {
     question:
-      "A green caterpillar hiding on a leaf uses which survival strategy?",
-    choices: ["Hibernation", "Migration", "Camouflage", "Mimicry"],
+      "A katydid's green body looks like a leaf on a bush. This helps it hide from birds. This survival trick is called…",
+    choices: ["Camouflage", "Migration", "Hibernation", "Condensation"],
     answer: "Camouflage",
+    _cat: "life",
   },
   {
     question:
-      "What part of the plant cell captures sunlight for photosynthesis?",
-    choices: ["Nucleus", "Mitochondria", "Chloroplast", "Cell wall"],
-    answer: "Chloroplast",
+      "Which state of matter spreads out to fill any container and has no fixed shape?",
+    choices: ["Solid", "Liquid", "Gas", "Ice"],
+    answer: "Gas",
+    _cat: "matter",
   },
   {
     question:
-      "Which type of rock is formed from layers of sand, shells, and minerals pressed together over millions of years?",
-    choices: ["Igneous", "Metamorphic", "Sedimentary", "Volcanic"],
-    answer: "Sedimentary",
-  },
-  {
-    question:
-      "What do we call the complete community of living things and their non-living environment?",
-    choices: ["Habitat", "Species", "Ecosystem", "Population"],
-    answer: "Ecosystem",
-  },
-  {
-    question: "An insect's hard outer body covering is called its…",
-    choices: ["Shell", "Scales", "Exoskeleton", "Carapace"],
-    answer: "Exoskeleton",
-  },
-  {
-    question: "What is the most abundant gas in Earth's atmosphere?",
-    choices: ["Oxygen (21%)", "Nitrogen (78%)", "Carbon Dioxide", "Argon"],
-    answer: "Nitrogen (78%)",
+      "Earth's gravity pulls a book toward the floor. Gravity is a…",
+    choices: ["Type of weather", "Pulling force", "Kind of rock", "Plant root"],
+    answer: "Pulling force",
+    _cat: "force",
   },
   {
     passage:
-      "When cold air high in the sky meets warm moist air, water droplets form and can fall as rain, snow, or hail.",
-    question:
-      "What is the general term for water falling from clouds to the ground?",
-    choices: ["Evaporation", "Condensation", "Precipitation", "Transpiration"],
-    answer: "Precipitation",
+      "Weather data from Knoxville showed the temperature dropping from 72°F to 38°F overnight. The next morning, grass was coated in frost.",
+    question: "Frost forms when water vapor freezes on cold surfaces. This step in the water cycle is called…",
+    choices: ["Evaporation", "Condensation", "Precipitation", "Photosynthesis"],
+    answer: "Condensation",
+    _cat: "weather",
   },
   {
     question:
-      "Which property stays the SAME when you move an object from Earth to the Moon?",
-    choices: ["Weight", "Mass", "Gravity pull", "Speed of fall"],
-    answer: "Mass",
+      "Layers of sand and shells pressed together over time can form which type of rock?",
+    choices: ["Igneous", "Sedimentary", "Metamorphic", "Magnetic"],
+    answer: "Sedimentary",
+    _cat: "earth",
   },
   {
-    question: "Animals with backbones belong to which group?",
-    choices: ["Invertebrates", "Vertebrates", "Arthropods", "Mollusks"],
+    question:
+      "A student measures how far a rubber band launches a cork when stretched different amounts. This is a controlled…",
+    choices: ["Experiment", "Fossil dig", "Star chart", "Election"],
+    answer: "Experiment",
+    _cat: "investigation",
+  },
+  {
+    question:
+      "Fish, frogs, and humans all have backbones. Animals with backbones are…",
+    choices: ["Invertebrates", "Vertebrates", "Insects only", "Fungi"],
     answer: "Vertebrates",
+    _cat: "life",
   },
   {
     question:
-      "What do decomposers like fungi and bacteria do that helps an ecosystem?",
-    choices: [
-      "Hunt prey",
-      "Produce oxygen",
-      "Break down dead organisms returning nutrients to soil",
-      "Eat only plants",
-    ],
-    answer: "Break down dead organisms returning nutrients to soil",
+      "Which tool would best help you observe tiny details on a leaf?",
+    choices: ["Thermometer", "Hand lens (magnifying glass)", "Rain gauge", "Compass"],
+    answer: "Hand lens (magnifying glass)",
+    _cat: "investigation",
+  },
+  {
+    question:
+      "Sound from a drum reaches your ears because the drumhead…",
+    choices: ["Vibrates", "Freezes", "Photosynthesizes", "Evaporates"],
+    answer: "Vibrates",
+    _cat: "physical",
+  },
+  {
+    passage:
+      "The Sun, soil, water, oak trees, squirrels, and mushrooms all live and interact in the Great Smoky Mountains.",
+    question: "All the living and nonliving parts of an area working together form an…",
+    choices: ["Ecosystem", "Ocean current", "Igneous rock", "Simple machine"],
+    answer: "Ecosystem",
+    _cat: "earth",
   },
 ];

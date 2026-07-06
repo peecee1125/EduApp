@@ -1,257 +1,286 @@
-// Solar system + sky — basics through “planet mysteries” extension banks
-// Scientifically accurate, age-appropriate for rising 3rd graders
+// Solar system + sky — basics through NASA tech curiosity extension banks
+// Scientifically accurate, age-appropriate for rising 3rd graders (Tennessee Grade 3)
 
 export const solarPractice1 = [
   {
-    question: "How many planets are in our solar system?",
-    choices: ["7", "8", "9", "10"],
+    _cat: "planets",
+    question: "Our solar system has how many official planets?",
+    choices: ["6", "7", "8", "9"],
     answer: "8",
   },
   {
-    question: "Which planet is CLOSEST to the Sun?",
-    choices: ["Venus", "Earth", "Mars", "Mercury"],
-    answer: "Mercury",
+    _cat: "inner",
+    question: "Which planet is the SECOND planet from the Sun?",
+    choices: ["Mercury", "Venus", "Earth", "Mars"],
+    answer: "Venus",
   },
   {
-    question: "Which is the LARGEST planet in our solar system?",
-    choices: ["Saturn", "Neptune", "Jupiter", "Uranus"],
+    _cat: "sun",
+    question: "What sits at the CENTER of our solar system?",
+    choices: ["Earth", "The Moon", "The Sun", "Jupiter"],
+    answer: "The Sun",
+  },
+  {
+    _cat: "jup_sat",
+    question: "Which planet is the biggest in our solar system?",
+    choices: ["Earth", "Saturn", "Jupiter", "Neptune"],
     answer: "Jupiter",
   },
   {
-    question: "What number planet from the Sun is Earth?",
-    choices: ["1st", "2nd", "3rd", "4th"],
-    answer: "3rd",
-  },
-  {
-    question: "What is the Sun?",
-    choices: ["A planet", "A moon", "A star", "A comet"],
-    answer: "A star",
-  },
-  {
-    question:
-      "Which planet is known as the RED PLANET because of its reddish color?",
-    choices: ["Venus", "Jupiter", "Mercury", "Mars"],
+    _cat: "inner",
+    question: "Which planet is nicknamed the 'Red Planet'?",
+    choices: ["Venus", "Mars", "Jupiter", "Mercury"],
     answer: "Mars",
   },
   {
-    question:
-      "What is the name of Earth's natural satellite (it orbits Earth)?",
-    choices: ["Pluto", "The Moon", "Titan", "Phobos"],
-    answer: "The Moon",
+    _cat: "earth_moon",
+    question: "How many moons does Earth have?",
+    choices: ["None", "1", "2", "12"],
+    answer: "1",
   },
   {
+    _cat: "jup_sat",
     passage:
-      "Saturn is the sixth planet from the Sun. It is famous for the beautiful rings of ice and rock that circle it.",
-    question: "Which planet is famous for its beautiful RINGS?",
-    choices: ["Mars", "Jupiter", "Saturn", "Uranus"],
+      "Saturn is a giant gas planet. It is best known for the wide, flat rings made of ice and rock that circle around it.",
+    question: "Which planet is famous for its bright, wide RINGS?",
+    choices: ["Mars", "Venus", "Saturn", "Mercury"],
     answer: "Saturn",
   },
   {
-    question: "What causes DAY and NIGHT on Earth?",
+    _cat: "earth_moon",
+    question: "We have daytime and nighttime because Earth…",
     choices: [
-      "Earth orbiting the Sun",
-      "Earth spinning (rotating) on its axis",
-      "The Moon blocking the Sun",
-      "Clouds covering the Sun",
+      "Stops moving once a day",
+      "Spins once on its axis",
+      "Moves closer to the Sun at night",
+      "Hides behind the Moon",
     ],
-    answer: "Earth spinning (rotating) on its axis",
+    answer: "Spins once on its axis",
   },
   {
+    _cat: "earth_moon",
+    question: "About how long does Earth take to orbit the Sun one full time?",
+    choices: ["1 day", "1 week", "1 month", "1 year"],
+    answer: "1 year",
+  },
+  {
+    _cat: "small_bodies",
     question:
-      "How long does it take Earth to travel one full trip around the Sun?",
-    choices: ["24 hours", "1 month", "6 months", "1 year (365 days)"],
-    answer: "1 year (365 days)",
+      "Many rocky objects orbit the Sun between Mars and Jupiter. This region is called the…",
+    choices: ["Kuiper Belt", "Asteroid Belt", "Milky Way", "Orbit Trail"],
+    answer: "Asteroid Belt",
   },
   {
-    question:
-      "A rock from space that burns up and creates a streak of light in the sky is called a…",
-    choices: ["Comet", "Asteroid", "Meteor (shooting star)", "Satellite"],
-    answer: "Meteor (shooting star)",
+    _cat: "sun",
+    question: "The Sun gives Earth its…",
+    choices: ["Oceans", "Light and heat", "Moon phases", "North Pole"],
+    answer: "Light and heat",
   },
   {
-    question: "Which planet is farthest from the Sun?",
-    choices: ["Saturn", "Pluto", "Uranus", "Neptune"],
+    _cat: "ice_giants",
+    question: "Which planet is the FARTHEST from the Sun?",
+    choices: ["Uranus", "Saturn", "Jupiter", "Neptune"],
     answer: "Neptune",
   },
 ];
 
 export const solarPractice2 = [
   {
+    _cat: "moon_phases",
     question:
-      "The Moon goes through phases. Which phase shows the WHOLE face of the Moon lit up?",
-    choices: ["New Moon", "Half Moon", "Crescent Moon", "Full Moon"],
-    answer: "Full Moon",
+      "When we cannot see any of the Moon's lit side from Earth, the phase is called a…",
+    choices: ["Full Moon", "Half Moon", "New Moon", "Blue Moon"],
+    answer: "New Moon",
   },
   {
-    question:
-      "Approximately how many days does it take for the Moon to orbit Earth?",
-    choices: ["7 days", "14 days", "28 days", "365 days"],
-    answer: "28 days",
+    _cat: "moon_phases",
+    question: "About how many days does the Moon take to orbit Earth?",
+    choices: ["7 days", "14 days", "About 28 days", "365 days"],
+    answer: "About 28 days",
   },
   {
+    _cat: "stars",
     passage:
-      "Constellations are groups of stars that form patterns in the night sky. People long ago used them for navigation.",
-    question:
-      "What do we call a group of stars that form a recognizable pattern in the sky?",
-    choices: ["Galaxy", "Constellation", "Solar System", "Nebula"],
+      "On clear nights you can see patterns of stars. Long ago, sailors used these star patterns to find their way.",
+    question: "What do we call a pattern of stars in the night sky?",
+    choices: ["Comet", "Constellation", "Galaxy", "Meteor"],
     answer: "Constellation",
   },
   {
-    question:
-      "What do scientists call the path that a planet follows as it goes around the Sun?",
-    choices: ["Rotation", "Axis", "Orbit", "Gravity"],
+    _cat: "orbit",
+    question: "The curved path a planet follows around the Sun is called its…",
+    choices: ["Rotation", "Orbit", "Axis", "Tail"],
     answer: "Orbit",
   },
   {
-    question: "What invisible force keeps planets in orbit around the Sun?",
-    choices: ["Magnetism", "Friction", "Electricity", "Gravity"],
+    _cat: "gravity",
+    question: "What invisible pull keeps the Moon orbiting Earth?",
+    choices: ["Wind", "Magnetism", "Gravity", "Friction"],
     answer: "Gravity",
   },
   {
-    question: "A person who travels to space is called an…",
-    choices: ["Astronomer", "Astronaut", "Biologist", "Geologist"],
+    _cat: "people_space",
+    question: "A person trained to travel and work in space is called an…",
+    choices: ["Astronaut", "Astronomer", "Pilot", "Inventor"],
     answer: "Astronaut",
   },
   {
-    question: "A scientist who studies space, stars, and planets is called an…",
-    choices: ["Astronaut", "Geologist", "Astronomer", "Chemist"],
+    _cat: "people_space",
+    question: "A scientist who studies stars, planets, and space is an…",
+    choices: ["Astronomer", "Astronaut", "Chemist", "Veterinarian"],
     answer: "Astronomer",
   },
   {
-    question: "Which is BIGGER — the Sun or Earth?",
+    _cat: "scale",
+    question: "Compared to Earth, the Sun is…",
     choices: [
-      "Earth is bigger",
-      "They are the same size",
-      "The Sun is only a little bigger",
-      "The Sun is much, much bigger",
+      "About the same size",
+      "A little bigger",
+      "Much, much bigger",
+      "Smaller",
     ],
-    answer: "The Sun is much, much bigger",
+    answer: "Much, much bigger",
   },
   {
-    question: "What do we call the spin of Earth around its own axis?",
-    choices: ["Orbit", "Rotation", "Revolution", "Eclipse"],
+    _cat: "earth_moon",
+    question: "Earth spinning on its own axis is called…",
+    choices: ["Revolution", "Rotation", "Eclipse", "Orbit"],
     answer: "Rotation",
   },
   {
+    _cat: "jup_sat",
     question:
-      "Jupiter is famous for a giant storm on its surface. What is it called?",
+      "Jupiter has a giant storm that has lasted hundreds of years. What is it called?",
     choices: [
-      "The Blue Spot",
+      "The Great Blue Spot",
       "The Great Red Spot",
-      "The Big Storm",
-      "The Red Belt",
+      "The Big Wind",
+      "The Storm Ring",
     ],
     answer: "The Great Red Spot",
   },
   {
+    _cat: "earth_moon",
     passage:
-      "During a solar eclipse, the Moon moves between the Earth and the Sun, blocking sunlight.",
-    question:
-      "During a solar eclipse, what passes between the Earth and the Sun?",
-    choices: ["A comet", "Mars", "The Moon", "A cloud"],
-    answer: "The Moon",
+      "During a lunar eclipse, Earth moves between the Sun and the Moon. Earth's shadow falls on the Moon.",
+    question: "During a lunar eclipse, what blocks sunlight from reaching the Moon?",
+    choices: ["Mars", "A comet", "Earth", "Jupiter"],
+    answer: "Earth",
   },
   {
+    _cat: "people_space",
     question:
-      "The closest star to our solar system (besides the Sun) is called…",
+      "The International Space Station (ISS) is a home in space where astronauts…",
     choices: [
-      "Sirius",
-      "Betelgeuse",
-      "Proxima Centauri",
-      "Polaris (North Star)",
+      "Grow forests",
+      "Live and do science experiments",
+      "Mine gold",
+      "Build new planets",
     ],
-    answer: "Proxima Centauri",
+    answer: "Live and do science experiments",
   },
 ];
 
 export const solarAdvanced = [
   {
-    question: "What is the name of our galaxy?",
+    _cat: "galaxy",
+    question: "Our Sun and its planets are part of which galaxy?",
     choices: [
       "Andromeda Galaxy",
       "Milky Way Galaxy",
-      "Triangulum Galaxy",
       "Whirlpool Galaxy",
+      "Sombrero Galaxy",
     ],
     answer: "Milky Way Galaxy",
   },
   {
+    _cat: "ice_giants",
     question:
-      "Which planet is unique because it spins on its SIDE (its axis is tilted almost 98°)?",
-    choices: ["Neptune", "Saturn", "Venus", "Uranus"],
+      "Which planet spins on its side, so it looks like it rolls around the Sun?",
+    choices: ["Neptune", "Saturn", "Uranus", "Venus"],
     answer: "Uranus",
   },
   {
-    question:
-      "Pluto is now classified as a ________ rather than a full planet.",
-    choices: ["Moon", "Asteroid", "Dwarf planet", "Comet"],
+    _cat: "small_bodies",
+    question: "Pluto is now called a ________ instead of a full planet.",
+    choices: ["Moon", "Comet", "Dwarf planet", "Asteroid"],
     answer: "Dwarf planet",
   },
   {
+    _cat: "nasa",
     passage:
-      "The corona is the outermost layer of the Sun's atmosphere. It is extremely hot — much hotter than the Sun's surface.",
-    question:
-      "What is the name of the outermost layer of the Sun's atmosphere?",
-    choices: ["Photosphere", "Chromosphere", "Core", "Corona"],
-    answer: "Corona",
+      "NASA's Perseverance rover landed on Mars in 2021. It collects rock samples and searches for signs that tiny life may have lived there long ago.",
+    question: "What is NASA's Perseverance rover exploring?",
+    choices: ["The Moon", "Mars", "Jupiter", "Venus"],
+    answer: "Mars",
   },
   {
-    question: "How long does light from the Sun take to reach Earth?",
-    choices: ["1 second", "About 8 minutes", "About 1 hour", "About 1 day"],
+    _cat: "scale",
+    question: "About how long does sunlight take to reach Earth?",
+    choices: ["8 seconds", "About 8 minutes", "8 hours", "8 days"],
     answer: "About 8 minutes",
   },
   {
+    _cat: "small_bodies",
     question:
-      "What is an object made of ice, dust, and rock that develops a bright glowing tail when near the Sun?",
-    choices: ["Asteroid", "Meteor", "Satellite", "Comet"],
+      "A ball of ice, dust, and rock that grows a glowing tail near the Sun is a…",
+    choices: ["Meteor", "Comet", "Asteroid", "Satellite"],
     answer: "Comet",
   },
   {
-    question: "Which planet has the MOST confirmed moons in our solar system?",
-    choices: ["Jupiter", "Saturn", "Uranus", "Neptune"],
-    answer: "Saturn",
-  },
-  {
-    question: "The rocky belt between Mars and Jupiter is called the…",
-    choices: ["Kuiper Belt", "Oort Cloud", "Asteroid Belt", "Meteor Shower"],
-    answer: "Asteroid Belt",
-  },
-  {
+    _cat: "nasa",
     question:
-      "On the Moon, gravity is about 1/6th of Earth's gravity. If you weigh 60 lbs on Earth, about how much would you weigh on the Moon?",
-    choices: ["60 lbs", "30 lbs", "10 lbs", "100 lbs"],
-    answer: "10 lbs",
+      "Ingenuity was a small NASA helicopter that flew above the surface of which planet?",
+    choices: ["Earth", "Mars", "Venus", "Mercury"],
+    answer: "Mars",
   },
   {
+    _cat: "tools",
+    passage:
+      "The James Webb Space Telescope uses a giant mirror to collect faint light from faraway stars and galaxies. It orbits far from Earth.",
+    question: "What does the James Webb Space Telescope mainly help scientists study?",
+    choices: [
+      "Ocean waves",
+      "Distant stars and galaxies",
+      "Dinosaur bones",
+      "Volcanoes on Earth",
+    ],
+    answer: "Distant stars and galaxies",
+  },
+  {
+    _cat: "earth_moon",
     question:
-      "What is the correct order of the planets from closest to farthest from the Sun?",
+      "On the Moon, gravity is weaker. If you weigh 60 pounds on Earth, you would weigh about…",
+    choices: ["60 pounds", "30 pounds", "10 pounds", "120 pounds"],
+    answer: "10 pounds",
+  },
+  {
+    _cat: "planets",
+    question: "Which list shows the eight planets in order from closest to farthest from the Sun?",
     choices: [
       "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
-      "Mercury, Earth, Venus, Mars, Jupiter, Saturn, Uranus, Neptune",
-      "Venus, Mercury, Earth, Mars, Jupiter, Saturn, Neptune, Uranus",
+      "Mercury, Earth, Venus, Mars, Jupiter, Saturn, Neptune, Uranus",
+      "Venus, Mercury, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
       "Earth, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune",
     ],
     answer: "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
   },
   {
-    question:
-      "What causes the SEASONS on Earth (summer, fall, winter, spring)?",
+    _cat: "seasons",
+    question: "Earth has seasons because Earth…",
     choices: [
-      "Earth moving closer and farther from the Sun",
-      "Earth's tilted axis as it orbits the Sun",
-      "The Moon blocking sunlight",
-      "Day and night changes",
+      "Stops spinning in winter",
+      "Is tilted as it orbits the Sun",
+      "Moves away from the Sun in winter",
+      "Has no atmosphere",
     ],
-    answer: "Earth's tilted axis as it orbits the Sun",
+    answer: "Is tilted as it orbits the Sun",
   },
   {
-    question: "Stars appear as tiny dots because they are…",
-    choices: [
-      "Very small objects",
-      "Extremely far away from Earth",
-      "Made of ice",
-      "Only visible during eclipses",
-    ],
-    answer: "Extremely far away from Earth",
+    _cat: "nasa",
+    question:
+      "NASA's Artemis program aims to send astronauts back to explore the…",
+    choices: ["Sun", "Moon", "Mars", "Saturn"],
+    answer: "Moon",
   },
 ];
