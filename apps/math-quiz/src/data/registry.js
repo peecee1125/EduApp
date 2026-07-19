@@ -44,6 +44,12 @@ import {
   dinoStemFossils,
   mathStemDataGrade3,
 } from "./grade3WonderBanks.js";
+import {
+  multiplicationFoundations,
+  multiplicationTablesCore,
+  multiplicationTablesAdvanced,
+  multiplicationWordProblems,
+} from "./multiplicationLearning.js";
 
 /**
  * Subject keys unchanged (saved scores). Topics emphasize 3rd-grade readiness,
@@ -79,6 +85,30 @@ export const SUBJECTS = {
         label: "STEM math: charts, time & patterns",
         emoji: "🧮",
         questions: mathStemDataGrade3,
+      },
+      {
+        key: "mult1",
+        label: "Multiplication: groups, arrays & turn-arounds",
+        emoji: "🐝",
+        questions: multiplicationFoundations,
+      },
+      {
+        key: "mult2",
+        label: "Times tables: 0, 1, 2, 5, 10",
+        emoji: "⭐",
+        questions: multiplicationTablesCore,
+      },
+      {
+        key: "mult3",
+        label: "Times tables: 3, 4, 6, 7, 8, 9 + tricks",
+        emoji: "🧠",
+        questions: multiplicationTablesAdvanced,
+      },
+      {
+        key: "mult4",
+        label: "Multiplication word problems & fact families",
+        emoji: "🕷️",
+        questions: multiplicationWordProblems,
       },
       {
         key: "ch",
