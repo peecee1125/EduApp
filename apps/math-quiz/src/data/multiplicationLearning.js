@@ -1,551 +1,557 @@
 /**
- * Multiplication learning path for a rising 3rd grader.
- * Progression mirrors how Khan Academy / Bar Model & CGI research-based
- * curricula introduce multiplication:
- *   1) Equal groups (repeated addition) — multiplicationFoundations
- *   2) Arrays & number lines (visual + skip counting) — multiplicationFoundations
- *   3) Turn-around facts (commutative property) — multiplicationFoundations
- *   4) Core tables 0,1,2,5,10 (easiest patterns first) — multiplicationTablesCore
- *   5) Harder tables 3,4,6,7,8,9 + tricks & distributive property (break
- *      apart facts) — multiplicationTablesAdvanced
- *   6) Real-world word problems, fact families & missing factors, square
- *      numbers — multiplicationWordProblems
- *
+ * Multiplication learning path — TN Academic Standards for Math, Grade 3
+ * Standards: 3.OA.A.1 (products as equal groups), 3.OA.A.3 (word problems),
+ * 3.OA.A.4 (unknowns), 3.OA.B.5 (commutative/distributive properties),
+ * 3.OA.B.6 (division as unknown-factor), 3.OA.C.7 (fluent × and ÷ within 100),
+ * 3.OA.D.8 (two-step), 3.OA.D.9 (patterns).
  * All items use _cat so pickRepresentative() spreads each 10-question round
- * across multiple sub-skills instead of drilling one idea repeatedly.
+ * across foundational skills.
  */
 
-// ── 1) Foundations: equal groups, arrays, number lines, turn-around facts ──
+/** Foundations: what multiplication means — groups, arrays, skip counting, commutative */
 export const multiplicationFoundations = [
-  // equal groups / repeated addition
   {
     _cat: "groups",
-    passage: "🐝🐝🐝  🐝🐝🐝  🐝🐝🐝  🐝🐝🐝 — that's 4 groups of 3 bees.",
-    question: "4 groups of 3 is the same as which addition?",
-    choices: ["3+3+3+3", "4+4+4", "3+4", "4+4"],
-    answer: "3+3+3+3",
-  },
-  {
-    _cat: "groups",
-    passage: "A crayon box has 5 crayons. There are 3 boxes.",
-    question: "Which multiplication fact matches '3 groups of 5'?",
-    choices: ["3 × 5", "5 × 8", "3 + 5", "5 − 3"],
-    answer: "3 × 5",
-  },
-  {
-    _cat: "groups",
-    passage: "🚗🚗 🚗🚗 🚗🚗 🚗🚗 🚗🚗 — 5 groups of 2 toy cars.",
-    question: "How many toy cars in all?",
-    choices: ["7", "10", "12", "52"],
-    answer: "10",
-  },
-  {
-    _cat: "groups",
-    passage: "Repeated addition: 6 + 6 + 6 + 6.",
-    question: "Which multiplication fact means the same thing?",
-    choices: ["4 × 6", "6 × 6", "4 + 6", "6 × 4 × 4"],
-    answer: "4 × 6",
-  },
-  // arrays (rows × columns) — the visual model Khan Academy leads with
-  {
-    _cat: "array",
     passage:
-      "⭐⭐⭐⭐⭐\n⭐⭐⭐⭐⭐\n⭐⭐⭐⭐⭐  →  3 rows, 5 stars in each row.",
-    question: "What multiplication fact does this array show?",
-    choices: ["3 × 5", "5 × 8", "3 + 5", "3 × 3"],
-    answer: "3 × 5",
+      "There are 4 tables in Ms. Rivera's art room. Each table has 3 paint jars.",
+    question: "Which multiplication sentence matches this story?",
+    choices: ["4 + 3 = 7", "4 × 3 = 12", "4 − 3 = 1", "12 × 3 = 36"],
+    answer: "4 × 3 = 12",
+  },
+  {
+    _cat: "groups",
+    passage: "A florist makes 5 bouquets. Each bouquet has 6 flowers.",
+    question: "How many flowers did the florist use in all?",
+    choices: ["11", "25", "30", "36"],
+    answer: "30",
+  },
+  {
+    _cat: "groups",
+    question: "Which drawing shows 3 groups of 4?",
+    choices: ["★★★★ ★★★★ ★★★★", "★★★ ★★★★", "★★★★★★★★", "★★ ★★ ★★"],
+    answer: "★★★★ ★★★★ ★★★★",
+  },
+  {
+    _cat: "groups",
+    passage: "A pack of stickers holds 8 stickers. Diego buys 4 packs.",
+    question: "How many stickers does Diego have?",
+    choices: ["12", "24", "28", "32"],
+    answer: "32",
   },
   {
     _cat: "array",
-    passage: "An array has 4 rows with 6 dots in every row.",
-    question: "How many dots are in the array?",
-    choices: ["10", "20", "24", "28"],
-    answer: "24",
-  },
-  {
-    _cat: "array",
-    passage: "🟦🟦🟦🟦🟦🟦🟦  🟦🟦🟦🟦🟦🟦🟦 — 2 rows of 7 tiles.",
-    question: "What is 2 × 7?",
-    choices: ["9", "14", "16", "12"],
-    answer: "14",
-  },
-  {
-    _cat: "array",
-    question:
-      "A garden is planted in an array with 6 rows and 6 plants per row. How many plants total?",
-    choices: ["12", "30", "36", "42"],
-    answer: "36",
-  },
-  // number line / skip counting
-  {
-    _cat: "skip",
-    passage: "Skip counting by 3s on a number line: 0, 3, 6, 9, ___.",
-    question: "What number comes next?",
-    choices: ["10", "11", "12", "13"],
-    answer: "12",
-  },
-  {
-    _cat: "skip",
-    passage: "Count by 5s: 5, 10, 15, 20, ___.",
-    question: "What is the next number?",
-    choices: ["22", "24", "25", "30"],
-    answer: "25",
-  },
-  {
-    _cat: "skip",
-    passage: "Count by 10s: 10, 20, 30, ___.",
-    question: "What comes next?",
-    choices: ["31", "35", "40", "50"],
-    answer: "40",
-  },
-  {
-    _cat: "skip",
-    passage:
-      "Jumping by 4 on a number line, 5 jumps from 0 lands on 4, 8, 12, 16, ___.",
-    question: "Where does the 5th jump land?",
-    choices: ["18", "20", "24", "16"],
+    passage: "A classroom has chairs in 5 rows with 4 chairs in each row.",
+    question: "How many chairs are in the classroom?",
+    choices: ["9", "16", "20", "24"],
     answer: "20",
   },
   {
+    _cat: "array",
+    question: "An egg carton has 2 rows of 6 eggs. Which fact matches?",
+    choices: ["2 × 6 = 12", "2 + 6 = 8", "6 − 2 = 4", "6 × 6 = 36"],
+    answer: "2 × 6 = 12",
+  },
+  {
+    _cat: "array",
+    passage: "Nia arranges 21 books into an array with 3 rows.",
+    question: "How many books are in each row?",
+    choices: ["3", "6", "7", "9"],
+    answer: "7",
+  },
+  {
+    _cat: "array",
+    question:
+      "Which multiplication fact does this array show?\n★★★★★\n★★★★★\n★★★★★",
+    choices: ["3 × 5 = 15", "3 + 5 = 8", "5 × 5 = 25", "3 × 3 = 9"],
+    answer: "3 × 5 = 15",
+  },
+  {
     _cat: "skip",
-    question: "Skip counting by 6s: 6, 12, 18, 24, ___. What comes next?",
-    choices: ["26", "28", "30", "32"],
+    question: "Skip count by 4s: 4, 8, 12, __, 20. What number is missing?",
+    choices: ["14", "15", "16", "18"],
+    answer: "16",
+  },
+  {
+    _cat: "skip",
+    question: "Skip count by 3s: 3, 6, 9, 12, __. What comes next?",
+    choices: ["13", "14", "15", "18"],
+    answer: "15",
+  },
+  {
+    _cat: "skip",
+    question:
+      "Emma skip counts by 6s to find 6 × 5. She counts 6, 12, 18, 24, 30. What is 6 × 5?",
+    choices: ["24", "30", "35", "36"],
     answer: "30",
   },
-  // turn-around facts / commutative property
   {
-    _cat: "turnaround",
-    passage: "3 × 4 = 12.",
+    _cat: "skip",
     question:
-      "Multiplication facts can flip order and still match — what is 4 × 3?",
-    choices: ["7", "12", "34", "43"],
-    answer: "12",
+      "Which multiplication fact matches this skip count? 7, 14, 21, 28",
+    choices: ["7 × 3 = 21", "7 × 4 = 28", "4 × 4 = 16", "7 + 4 = 11"],
+    answer: "7 × 4 = 28",
+  },
+  {
+    _cat: "skip",
+    question: "Skip count by 9s: 9, 18, 27, __, 45. What number is missing?",
+    choices: ["30", "33", "36", "40"],
+    answer: "36",
   },
   {
     _cat: "turnaround",
-    passage:
-      "A 2-row array of 8 dots turned on its side becomes an 8-row array of 2 dots. Both have the same total!",
-    question: "This idea — that a × b = b × a — is called the:",
+    question: "If 3 × 8 = 24, what is 8 × 3?",
+    choices: ["11", "16", "24", "38"],
+    answer: "24",
+  },
+  {
+    _cat: "turnaround",
+    question: "The COMMUTATIVE property of multiplication tells us that…",
     choices: [
-      "Commutative (turn-around) property",
-      "Distributive property",
-      "Associative property",
-      "Identity property",
+      "Order matters in multiplication",
+      "You can multiply the numbers in any order and get the same product",
+      "You must always add first",
+      "Multiplication is the same as subtraction",
     ],
-    answer: "Commutative (turn-around) property",
+    answer:
+      "You can multiply the numbers in any order and get the same product",
   },
   {
     _cat: "turnaround",
-    passage: "If 7 × 9 = 63,",
-    question: "what is 9 × 7?",
-    choices: ["56", "63", "72", "16"],
-    answer: "63",
+    question: "Which is the SAME as 6 × 4?",
+    choices: ["6 + 4", "4 × 6", "6 − 4", "24 − 6"],
+    answer: "4 × 6",
   },
   {
     _cat: "turnaround",
-    question: "Which fact is TRUE just because of the turn-around rule?",
-    choices: [
-      "6 × 2 = 2 × 6",
-      "6 + 2 = 2 − 6",
-      "6 × 2 = 6 + 2",
-      "6 ÷ 2 = 2 ÷ 6",
-    ],
-    answer: "6 × 2 = 2 × 6",
+    question:
+      "Layla knows 7 × 2 = 14. Which fact does she ALREADY know because of the turn-around rule?",
+    choices: ["2 × 7 = 14", "7 + 2 = 9", "14 − 2 = 12", "14 × 2 = 28"],
+    answer: "2 × 7 = 14",
   },
 ];
 
-// ── 2) Core tables: 0, 1, 2, 5, 10 — the easiest patterns to notice ──
+/** Core tables: ×0, ×1, ×2, ×5, ×10 and their patterns */
 export const multiplicationTablesCore = [
   {
     _cat: "x0x1",
-    passage: "The zero property: anything times 0 is always 0.",
-    question: "What is 8 × 0?",
-    choices: ["0", "8", "1", "80"],
-    answer: "0",
-  },
-  {
-    _cat: "x0x1",
-    passage: "The identity property: any number times 1 stays the same.",
-    question: "What is 1 × 9?",
+    question: "What is 0 × 9?",
     choices: ["0", "1", "9", "10"],
-    answer: "9",
-  },
-  {
-    _cat: "x0x1",
-    question: "What is 0 × 27?",
-    choices: ["27", "1", "0", "270"],
     answer: "0",
   },
   {
     _cat: "x0x1",
-    question: "What is 6 × 1?",
-    choices: ["1", "6", "7", "0"],
-    answer: "6",
+    question: "Anything multiplied by 1 equals…",
+    choices: ["0", "1", "The other number", "10"],
+    answer: "The other number",
+  },
+  {
+    _cat: "x0x1",
+    passage: "A jar has 7 marbles. It is copied 0 times.",
+    question: "How many marbles are in 0 copies of the jar?",
+    choices: ["0", "1", "7", "70"],
+    answer: "0",
+  },
+  {
+    _cat: "x0x1",
+    question: "What is 1 × 8?",
+    choices: ["0", "1", "8", "18"],
+    answer: "8",
   },
   {
     _cat: "x2",
-    passage: "Multiplying by 2 is the same as doubling a number.",
-    question: "What is 2 × 6?",
+    question: "What is 2 × 7?",
+    choices: ["9", "12", "14", "27"],
+    answer: "14",
+  },
+  {
+    _cat: "x2",
+    passage: "A pair of shoes has 2 shoes. Nia has 6 pairs.",
+    question: "How many shoes does Nia have in all?",
     choices: ["8", "10", "12", "14"],
     answer: "12",
   },
   {
     _cat: "x2",
-    question: "What is 2 × 9?",
-    choices: ["16", "18", "20", "11"],
+    question: "What is DOUBLE 9?",
+    choices: ["11", "17", "18", "20"],
     answer: "18",
   },
   {
-    _cat: "x2",
-    question: "What is 7 × 2?",
-    choices: ["9", "12", "14", "16"],
-    answer: "14",
+    _cat: "x5",
+    question: "What is 5 × 6?",
+    choices: ["11", "25", "30", "56"],
+    answer: "30",
   },
   {
     _cat: "x5",
-    passage:
-      "Pattern watch: every ×5 answer ends in 0 or 5 — and skip-counting by 5 gets you there fast.",
-    question: "What is 5 × 4?",
-    choices: ["9", "20", "25", "15"],
-    answer: "20",
+    passage: "Each hand has 5 fingers. There are 4 kids at the table.",
+    question: "How many fingers are on all their hands together?",
+    choices: ["20", "25", "40", "45"],
+    answer: "40",
   },
   {
     _cat: "x5",
-    question: "What is 5 × 7?",
-    choices: ["30", "35", "40", "25"],
-    answer: "35",
+    question: "Multiples of 5 always end in…",
+    choices: ["0 or 1", "5 or 6", "0 or 5", "2 or 7"],
+    answer: "0 or 5",
   },
   {
     _cat: "x5",
-    question: "What is 5 × 9?",
-    choices: ["40", "45", "50", "35"],
-    answer: "45",
-  },
-  {
-    _cat: "x5",
-    passage:
-      "Trick: 5 × any number is half of 10 × that number (10 × 6 = 60, so 5 × 6 = 30).",
-    question: "Using that trick, what is 5 × 8?",
-    choices: ["35", "40", "45", "48"],
+    question: "What is 5 × 8?",
+    choices: ["13", "35", "40", "45"],
     answer: "40",
   },
   {
     _cat: "x10",
-    passage: "Pattern: ×10 just adds a zero to the end of the number.",
-    question: "What is 10 × 6?",
-    choices: ["16", "60", "600", "106"],
-    answer: "60",
+    question: "What is 10 × 7?",
+    choices: ["17", "60", "70", "80"],
+    answer: "70",
   },
   {
     _cat: "x10",
-    question: "What is 10 × 8?",
-    choices: ["18", "80", "800", "108"],
-    answer: "80",
+    passage: "A ten-frame holds 10 counters. A game uses 4 full ten-frames.",
+    question: "How many counters are in play?",
+    choices: ["14", "40", "44", "410"],
+    answer: "40",
   },
   {
     _cat: "x10",
-    question: "What is 3 × 10?",
-    choices: ["13", "30", "300", "31"],
-    answer: "30",
-  },
-  {
-    _cat: "pattern",
-    passage: "Look at 2×5=10, 4×5=20, 6×5=30.",
-    question: "What pattern do you notice as the first number goes up by 2?",
+    question: "To multiply a number by 10, you can…",
     choices: [
-      "The answer goes up by 10 each time",
-      "The answer stays the same",
-      "The answer goes up by 5 each time",
-      "The answer gets smaller",
+      "Add a zero at the end of the number",
+      "Subtract 10",
+      "Divide by 10",
+      "Add 10",
     ],
-    answer: "The answer goes up by 10 each time",
+    answer: "Add a zero at the end of the number",
   },
   {
     _cat: "pattern",
-    passage: "Even × even, even × odd, odd × odd — 2×3=6, 3×3=9, 4×3=12.",
-    question: "Which of these products is ODD?",
-    choices: ["2 × 3", "3 × 3", "4 × 3", "6 × 3"],
-    answer: "3 × 3",
+    question: "Which pattern is TRUE for even × even?",
+    choices: [
+      "The product is always ODD",
+      "The product is always EVEN",
+      "The product is always 0",
+      "The product is always 10",
+    ],
+    answer: "The product is always EVEN",
+  },
+  {
+    _cat: "pattern",
+    passage: "5 × 3 = 15, 5 × 5 = 25, 5 × 7 = 35",
+    question: "What pattern do you see in these products of 5 × an ODD number?",
+    choices: [
+      "They all end in 0",
+      "They all end in 5",
+      "They are all even",
+      "They all end in 1",
+    ],
+    answer: "They all end in 5",
   },
 ];
 
-// ── 3) Harder tables: 3,4,6,7,8,9 + tricks & distributive (break-apart) ──
+/** Advanced tables: ×3, ×4, ×6, ×7, ×8, ×9 and distributive tricks */
 export const multiplicationTablesAdvanced = [
   {
     _cat: "x3",
-    question: "What is 3 × 6?",
-    choices: ["9", "15", "18", "21"],
-    answer: "18",
-  },
-  {
-    _cat: "x3",
     question: "What is 3 × 8?",
-    choices: ["21", "24", "27", "18"],
+    choices: ["21", "23", "24", "28"],
     answer: "24",
   },
   {
     _cat: "x3",
-    passage: "Trick: 3 × a number = double it, then add one more group.",
-    question: "Using that trick, what is 3 × 7 (double 7 is 14, plus 7 more)?",
-    choices: ["18", "21", "24", "28"],
-    answer: "21",
+    passage: "A tricycle has 3 wheels. A parade has 9 tricycles rolling by.",
+    question: "How many wheels are rolling in the parade?",
+    choices: ["12", "18", "24", "27"],
+    answer: "27",
+  },
+  {
+    _cat: "x3",
+    question: "Which is a good STRATEGY for 3 × 7?",
+    choices: [
+      "Add 3 seven times",
+      "Multiply by 10",
+      "Divide by 3",
+      "Subtract 3 from 7",
+    ],
+    answer: "Add 3 seven times",
   },
   {
     _cat: "x4",
-    passage:
-      "Trick: ×4 is 'double, double' — double the number, then double again.",
-    question: "Double-double 6 (6→12→24). What is 4 × 6?",
-    choices: ["10", "20", "24", "28"],
+    question: "What is 4 × 6?",
+    choices: ["10", "18", "24", "46"],
     answer: "24",
   },
   {
     _cat: "x4",
-    question: "What is 4 × 7?",
-    choices: ["24", "26", "28", "32"],
+    passage: "A car has 4 tires. A parking lot has 8 cars.",
+    question: "How many tires are in the parking lot?",
+    choices: ["12", "16", "28", "32"],
+    answer: "32",
+  },
+  {
+    _cat: "x4",
+    question:
+      "To find 4 × 7, you can double 7 to get 14, then double again to get…",
+    choices: ["21", "24", "28", "34"],
     answer: "28",
   },
   {
-    _cat: "x4",
-    question: "What is 4 × 9?",
-    choices: ["32", "36", "40", "45"],
-    answer: "36",
-  },
-  {
     _cat: "x6",
-    question: "What is 6 × 4?",
-    choices: ["20", "24", "28", "18"],
-    answer: "24",
-  },
-  {
-    _cat: "x6",
-    passage:
-      "Rhyme some kids use: '6 times 8 fell on the floor, picked it up, it's 48!'",
     question: "What is 6 × 8?",
     choices: ["42", "46", "48", "54"],
     answer: "48",
   },
   {
     _cat: "x6",
-    question: "What is 6 × 7?",
-    choices: ["36", "40", "42", "48"],
+    passage: "A box holds 6 juice pouches. A team has 5 boxes.",
+    question: "How many juice pouches does the team have?",
+    choices: ["11", "24", "30", "36"],
+    answer: "30",
+  },
+  {
+    _cat: "x6",
+    question:
+      "You can find 6 × 7 by doing 5 × 7 and adding one more 7. What is 6 × 7?",
+    choices: ["35", "40", "42", "48"],
     answer: "42",
   },
   {
     _cat: "x7",
-    question: "What is 7 × 3?",
-    choices: ["18", "21", "24", "27"],
+    question: "What is 7 × 8?",
+    choices: ["49", "54", "56", "63"],
+    answer: "56",
+  },
+  {
+    _cat: "x7",
+    passage:
+      "There are 7 days in a week. Amir practices piano for 3 weeks in a row.",
+    question: "How many days has Amir practiced piano?",
+    choices: ["10", "14", "21", "24"],
     answer: "21",
   },
   {
     _cat: "x7",
-    question: "What is 7 × 6?",
-    choices: ["36", "40", "42", "48"],
+    question: "What is 7 × 6? (Hint: 7 × 6 has the same product as 6 × 7.)",
+    choices: ["13", "36", "42", "48"],
     answer: "42",
   },
   {
-    _cat: "x7",
-    passage: "Break it apart: 7 × 8 = (5 × 8) + (2 × 8) = 40 + 16.",
-    question: "So what is 7 × 8?",
-    choices: ["54", "56", "58", "64"],
-    answer: "56",
-  },
-  {
     _cat: "x8",
-    question: "What is 8 × 3?",
-    choices: ["21", "24", "27", "32"],
-    answer: "24",
-  },
-  {
-    _cat: "x8",
-    passage:
-      "Trick: ×8 is 'double, double, double' — three doublings of the number.",
-    question: "Triple-double 5 (5→10→20→40). What is 8 × 5?",
-    choices: ["35", "40", "45", "48"],
-    answer: "40",
-  },
-  {
-    _cat: "x8",
-    question: "What is 8 × 7?",
-    choices: ["49", "54", "56", "64"],
-    answer: "56",
-  },
-  {
-    _cat: "x9",
-    passage:
-      "Finger trick for ×9: hold up 10 fingers. For 9 × 3, fold down finger #3. 2 fingers before it + 7 after = 27!",
-    question:
-      "Using the finger trick, what is 9 × 4 (fold down finger #4: 3 before, 6 after)?",
-    choices: ["27", "32", "36", "40"],
-    answer: "36",
-  },
-  {
-    _cat: "x9",
-    passage:
-      "Another 9s pattern: the digits of the answer always add up to 9 (9×3=27, 2+7=9).",
-    question: "What is 9 × 6?",
-    choices: ["45", "54", "56", "63"],
-    answer: "54",
-  },
-  {
-    _cat: "x9",
-    question: "What is 9 × 8?",
-    choices: ["63", "72", "81", "64"],
+    question: "What is 8 × 9?",
+    choices: ["17", "63", "72", "89"],
     answer: "72",
   },
   {
-    _cat: "distributive",
+    _cat: "x8",
     passage:
-      "Breaking apart facts (the distributive property): 6 × 7 = (6 × 5) + (6 × 2) = 30 + 12.",
-    question: "What is 6 × 7?",
-    choices: ["36", "40", "42", "48"],
-    answer: "42",
-  },
-  {
-    _cat: "distributive",
-    passage: "Break apart 8 × 6 into (8 × 5) + (8 × 1) = 40 + 8.",
-    question: "What is 8 × 6?",
-    choices: ["42", "44", "46", "48"],
-    answer: "48",
-  },
-  {
-    _cat: "distributive",
-    passage:
-      "To find 9 × 7, some kids think of it as (10 × 7) − (1 × 7) = 70 − 7.",
-    question: "What is 9 × 7?",
-    choices: ["56", "63", "70", "77"],
-    answer: "63",
-  },
-];
-
-// ── 4) Word problems, fact families, missing factors & square numbers ──
-export const multiplicationWordProblems = [
-  {
-    _cat: "word",
-    passage: "A spider has 8 legs. There are 4 spiders in a web.",
-    question: "How many legs are there in all?",
+      "A spider has 8 legs. Ms. Kim's class finds 4 spiders in the garden.",
+    question: "How many spider legs did the class find in all?",
     choices: ["12", "24", "32", "40"],
     answer: "32",
   },
   {
-    _cat: "word",
-    passage: "Each shelf holds 6 books. There are 5 shelves.",
-    question: "How many books fit on all the shelves?",
-    choices: ["11", "24", "30", "35"],
-    answer: "30",
+    _cat: "x8",
+    question:
+      "To multiply 8 × 6, you can double 6 three times: 6 → 12 → 24 → __. What is 8 × 6?",
+    choices: ["36", "42", "48", "56"],
+    answer: "48",
   },
   {
-    _cat: "word",
-    passage: "A baker makes 7 trays of muffins with 6 muffins on each tray.",
-    question: "How many muffins did the baker make?",
-    choices: ["36", "40", "42", "48"],
-    answer: "42",
-  },
-  {
-    _cat: "word",
-    passage: "Each pack of pencils has 4 pencils. Maya buys 9 packs.",
-    question: "How many pencils does Maya have?",
-    choices: ["13", "27", "32", "36"],
+    _cat: "x9",
+    question: "What is 9 × 4?",
+    choices: ["27", "35", "36", "45"],
     answer: "36",
   },
   {
-    _cat: "word",
-    passage: "A parking lot has 8 rows with 9 cars parked in each row.",
-    question: "How many cars are in the parking lot?",
-    choices: ["17", "63", "72", "81"],
-    answer: "72",
-  },
-  {
-    _cat: "word",
-    passage: "3 friends each collect 9 seashells at the beach.",
-    question: "How many seashells did they collect altogether?",
-    choices: ["12", "18", "27", "36"],
-    answer: "27",
-  },
-  // fact families / missing factor (bridges toward division)
-  {
-    _cat: "missing",
-    passage: "Fact family: 4 × 5 = 20, 5 × 4 = 20, 20 ÷ 4 = 5, 20 ÷ 5 = 4.",
-    question: "Which fact belongs to the SAME fact family as 3 × 6 = 18?",
-    choices: ["6 × 3 = 18", "3 × 7 = 21", "6 × 6 = 36", "18 × 2 = 36"],
-    answer: "6 × 3 = 18",
-  },
-  {
-    _cat: "missing",
-    question: "Fill in the missing factor: 6 × ___ = 42",
-    choices: ["6", "7", "8", "9"],
-    answer: "7",
-  },
-  {
-    _cat: "missing",
-    question: "Fill in the missing factor: ___ × 8 = 56",
-    choices: ["6", "7", "8", "9"],
-    answer: "7",
-  },
-  {
-    _cat: "missing",
-    question: "Fill in the missing factor: 9 × ___ = 63",
-    choices: ["6", "7", "8", "9"],
-    answer: "7",
-  },
-  {
-    _cat: "missing",
-    passage: "If 5 × 8 = 40,",
-    question: "what is 40 ÷ 5?",
-    choices: ["5", "6", "8", "9"],
-    answer: "8",
-  },
-  // square numbers — noticing a × a pattern
-  {
-    _cat: "square",
-    passage:
-      "When both factors are the same number (like 5 × 5), the answer is a 'square number'.",
-    question: "What is 6 × 6?",
-    choices: ["12", "24", "30", "36"],
-    answer: "36",
-  },
-  {
-    _cat: "square",
-    question: "What is 7 × 7?",
-    choices: ["42", "49", "56", "63"],
-    answer: "49",
-  },
-  {
-    _cat: "square",
-    question: "What is 9 × 9?",
-    choices: ["72", "81", "90", "99"],
-    answer: "81",
-  },
-  {
-    _cat: "square",
-    passage: "A square garden has 4 equal sides, 4 tiles long each way.",
-    question: "How many square tiles cover the garden (4 × 4)?",
-    choices: ["8", "12", "16", "20"],
-    answer: "16",
-  },
-  // mixed review
-  {
-    _cat: "mixed",
-    question: "What is 7 × 9?",
-    choices: ["56", "63", "72", "81"],
-    answer: "63",
-  },
-  {
-    _cat: "mixed",
-    question: "What is 8 × 9?",
-    choices: ["63", "64", "72", "81"],
-    answer: "72",
-  },
-  {
-    _cat: "mixed",
-    question: "What is 6 × 9?",
+    _cat: "x9",
+    question:
+      "For 9 × 6, you can think 10 × 6 = 60, then subtract one 6. What is 9 × 6?",
     choices: ["45", "48", "54", "56"],
     answer: "54",
   },
   {
+    _cat: "x9",
+    passage:
+      "The digits of 9's multiples add to 9: 18 (1+8=9), 27 (2+7=9), 36 (3+6=9).",
+    question: "Following this pattern, the digits of 9 × 7 should ALSO add to…",
+    choices: ["7", "9", "10", "16"],
+    answer: "9",
+  },
+  {
+    _cat: "distributive",
+    passage:
+      "Instead of finding 6 × 9 directly, Kai breaks it apart: 6 × 9 = (6 × 5) + (6 × 4).",
+    question: "What is (6 × 5) + (6 × 4)?",
+    choices: ["30 + 24 = 54", "30 + 24 = 45", "30 × 24 = 720", "6 + 9 = 15"],
+    answer: "30 + 24 = 54",
+  },
+  {
+    _cat: "distributive",
+    question:
+      "Which equation shows the DISTRIBUTIVE property to help find 7 × 8?",
+    choices: [
+      "7 × 8 = (7 × 5) + (7 × 3)",
+      "7 × 8 = 7 + 8",
+      "7 × 8 = 8 × 7 × 1 × 1",
+      "7 × 8 = 78",
+    ],
+    answer: "7 × 8 = (7 × 5) + (7 × 3)",
+  },
+  {
+    _cat: "distributive",
+    passage: "Jamila splits 8 × 6 into two easier facts.",
+    question: "Which split of 8 × 6 is CORRECT?",
+    choices: [
+      "(8 × 3) + (8 × 3)",
+      "(8 × 5) + (8 × 2)",
+      "(8 × 4) + (8 × 4)",
+      "(8 × 6) + (8 × 6)",
+    ],
+    answer: "(8 × 3) + (8 × 3)",
+  },
+];
+
+/** Word problems, missing-number equations, squares, and mixed one/two-step */
+export const multiplicationWordProblems = [
+  {
+    _cat: "word",
+    passage: "A pack of trading cards has 6 cards. Diego opens 8 packs.",
+    question: "How many trading cards does Diego have?",
+    choices: ["14", "42", "48", "56"],
+    answer: "48",
+  },
+  {
+    _cat: "word",
+    passage: "A bag holds 9 apples. Farmer Riley fills 7 bags.",
+    question: "How many apples did Farmer Riley put in bags?",
+    choices: ["16", "56", "63", "72"],
+    answer: "63",
+  },
+  {
+    _cat: "word",
+    passage:
+      "45 students go on a field trip. They ride in vans that seat 5 students each.",
+    question: "How many vans do they need?",
+    choices: ["8", "9", "10", "40"],
+    answer: "9",
+  },
+  {
+    _cat: "word",
+    passage: "A garden has 32 tomato plants planted in 4 equal rows.",
+    question: "How many tomato plants are in each row?",
+    choices: ["6", "7", "8", "12"],
+    answer: "8",
+  },
+  {
+    _cat: "word",
+    passage:
+      "Ana buys 3 packs of markers. Each pack has 8 markers. She gives 6 markers to her brother.",
+    question: "How many markers does Ana have left?",
+    choices: ["14", "17", "18", "22"],
+    answer: "18",
+  },
+  {
+    _cat: "word",
+    passage:
+      "A school store has 5 boxes of pencils. Each box has 9 pencils. They sold 12 pencils today.",
+    question: "How many pencils are left in the store?",
+    choices: ["33", "42", "45", "57"],
+    answer: "33",
+  },
+  {
+    _cat: "missing",
+    question: "3 × ___ = 21. What number goes in the blank?",
+    choices: ["6", "7", "8", "18"],
+    answer: "7",
+  },
+  {
+    _cat: "missing",
+    question: "___ × 8 = 48. What number goes in the blank?",
+    choices: ["5", "6", "7", "8"],
+    answer: "6",
+  },
+  {
+    _cat: "missing",
+    passage:
+      "Priya has 24 stickers to share EQUALLY among some friends. Each friend gets 6 stickers.",
+    question: "How many friends did Priya share with?",
+    choices: ["2", "3", "4", "5"],
+    answer: "4",
+  },
+  {
+    _cat: "missing",
+    question: "56 ÷ ___ = 8. What number goes in the blank?",
+    choices: ["5", "6", "7", "8"],
+    answer: "7",
+  },
+  {
+    _cat: "missing",
+    question: "Which fact family MATCHES 4 × 7 = 28?",
+    choices: [
+      "28 − 4 = 24 and 28 − 7 = 21",
+      "7 × 4 = 28 and 28 ÷ 4 = 7 and 28 ÷ 7 = 4",
+      "4 + 7 = 11 and 4 − 7 = −3",
+      "28 × 4 = 112",
+    ],
+    answer: "7 × 4 = 28 and 28 ÷ 4 = 7 and 28 ÷ 7 = 4",
+  },
+  {
+    _cat: "square",
+    question: "What is 5 × 5?",
+    choices: ["10", "20", "25", "55"],
+    answer: "25",
+  },
+  {
+    _cat: "square",
+    passage:
+      "A chessboard has an equal number of rows and columns. It has 8 rows.",
+    question: "How many squares are on the chessboard?",
+    choices: ["16", "40", "56", "64"],
+    answer: "64",
+  },
+  {
+    _cat: "square",
+    question: "What is 7 × 7?",
+    choices: ["14", "42", "49", "56"],
+    answer: "49",
+  },
+  {
+    _cat: "square",
+    passage: "A square garden bed is 6 ft on each side.",
+    question: "What is the AREA of the garden bed?",
+    choices: ["12 sq ft", "24 sq ft", "30 sq ft", "36 sq ft"],
+    answer: "36 sq ft",
+  },
+  {
     _cat: "mixed",
-    passage: "Movie night: 5 rows of chairs are set up, 8 chairs in each row.",
-    question: "How many chairs are there in all?",
-    choices: ["13", "35", "40", "45"],
-    answer: "40",
+    passage:
+      "A pack has 4 juice boxes. A class buys 6 packs, then drinks 10 juice boxes at lunch.",
+    question: "How many juice boxes are LEFT?",
+    choices: ["10", "14", "16", "24"],
+    answer: "14",
+  },
+  {
+    _cat: "mixed",
+    passage:
+      "A store owner puts 72 muffins EQUALLY into 8 boxes. She sells 3 boxes at a school fair.",
+    question: "How many muffins did she sell?",
+    choices: ["9", "18", "24", "27"],
+    answer: "27",
+  },
+  {
+    _cat: "mixed",
+    passage: "A pizza has 8 slices. Two families each order 3 pizzas.",
+    question: "How many pizza slices did the families order in all?",
+    choices: ["24", "40", "48", "56"],
+    answer: "48",
+  },
+  {
+    _cat: "mixed",
+    passage:
+      "Kai reads 15 pages a night for 5 nights. Then he reads 20 pages on the weekend.",
+    question: "How many pages did Kai read in all?",
+    choices: ["50", "75", "95", "100"],
+    answer: "95",
   },
 ];

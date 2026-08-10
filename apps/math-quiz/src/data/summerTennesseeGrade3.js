@@ -1,169 +1,184 @@
-/**
- * Summer bridge content: finishing 2nd → starting 3rd grade in Tennessee.
- * Math & ELA items use _cat for representative quiz spreads.
- * TN social studies: state symbols, geography, and light civics.
- */
+// Tennessee 3rd-grade prep — TN Academic Standards
+// Math: 3.OA, 3.NBT, 3.NF, 3.MD, 3.G blended into short story problems.
+// ELA: RL.3 / RI.3 / L.3 with TN-flavored passages.
+// Social Studies (TN Grade 3 has world focus, but includes TN state connections):
+// state symbols, TN geography & rivers, three branches of government, community roles.
 
 export const mathGrade3SummerPrep = [
   {
     _cat: "mult",
     passage:
-      "Third graders in Tennessee practice multiplication facts to solve real-world problems.",
-    question: "What is 4 × 3?",
-    choices: ["7", "11", "12", "16"],
-    answer: "12",
+      "A pack of Rocky Top Bakery muffins holds 8 muffins. Mia's mom buys 3 packs for a class picnic.",
+    question: "How many muffins did Mia's mom buy in all?",
+    choices: ["11", "18", "24", "32"],
+    answer: "24",
   },
   {
     _cat: "mult",
-    question: "What is 6 × 2?",
-    choices: ["8", "10", "12", "14"],
-    answer: "12",
+    question: "What is 6 × 7?",
+    choices: ["36", "42", "48", "13"],
+    answer: "42",
   },
   {
     _cat: "mult",
-    question: "What is 10 × 4?",
-    choices: ["14", "40", "400", "104"],
-    answer: "40",
+    question:
+      "Which multiplication fact matches the array of 4 rows and 9 stars?",
+    choices: ["4 × 9 = 36", "4 + 9 = 13", "9 × 9 = 81", "4 × 4 = 16"],
+    answer: "4 × 9 = 36",
   },
   {
     _cat: "groups",
     passage:
-      "There are 5 camp cabins. Each cabin sleeps 2 campers on a summer trip.",
-    question: "How many campers can sleep in all?",
-    choices: ["7", "8", "10", "12"],
-    answer: "10",
-  },
-  {
-    _cat: "groups",
-    passage: "A farmer picks 3 baskets. Each basket holds 4 peaches.",
-    question: "How many peaches did the farmer pick?",
-    choices: ["7", "10", "12", "16"],
-    answer: "12",
-  },
-  {
-    _cat: "round",
-    question: "Round 52 to the nearest 10.",
-    choices: ["50", "55", "60", "52"],
-    answer: "50",
-  },
-  {
-    _cat: "round",
-    question: "Round 76 to the nearest 10.",
-    choices: ["70", "75", "80", "7"],
-    answer: "80",
-  },
-  {
-    _cat: "place",
-    question:
-      "In the number 518, which digit is in the hundreds place?",
-    choices: ["5", "1", "8", "None of these"],
-    answer: "5",
-  },
-  {
-    _cat: "place",
-    question: "What is the value of the digit 7 in 274?",
-    choices: ["7", "70", "700", "7,000"],
-    answer: "70",
-  },
-  {
-    _cat: "frac",
-    passage:
-      "A chocolate bar is cut into 3 equal pieces. You eat 1 piece. You ate one third of the bar.",
-    question: "Which fraction shows one part out of three equal parts?",
-    choices: ["1/2", "1/3", "1/4", "3/3"],
-    answer: "1/3",
-  },
-  {
-    _cat: "frac",
-    question:
-      "Which fraction is GREATER: 3/4 of a brownie or 1/4 of the same brownie?",
-    choices: ["1/4", "3/4", "They are equal", "Cannot tell"],
-    answer: "3/4",
-  },
-  {
-    _cat: "time",
-    passage: "The library summer program starts at 10:00 and lasts 2 hours.",
-    question: "What time does it end?",
-    choices: ["11:00", "12:00", "1:00", "10:02"],
-    answer: "12:00",
-  },
-  {
-    _cat: "time",
-    question: "How many seconds are in one minute?",
-    choices: ["30", "45", "60", "100"],
-    answer: "60",
-  },
-  {
-    _cat: "measure",
-    question:
-      "About how tall is a kitchen chair? Pick the best estimate.",
-    choices: ["3 feet", "3 miles", "3 inches", "3 yards"],
-    answer: "3 feet",
-  },
-  {
-    _cat: "measure",
-    question:
-      "Which unit do we usually use to measure how much water a bottle holds?",
-    choices: ["Pounds", "Liters or cups", "Miles", "Hours"],
-    answer: "Liters or cups",
-  },
-  {
-    _cat: "data",
-    passage:
-      "The tally chart shows favorite fruit: Grapes |||| Grapes, Strawberries ||| Strawberries.",
-    question: "Which fruit got MORE votes?",
-    choices: ["Strawberries", "Grapes", "They tied", "Not enough info"],
-    answer: "Grapes",
-  },
-  {
-    _cat: "data",
-    question:
-      "In a pictograph, each smiley face stands for 2 students. Four faces are shown. How many students?",
-    choices: ["4", "6", "8", "10"],
+      "Ranger Tia hands out 32 park brochures equally to 4 tour groups at Great Smoky Mountains visitor center.",
+    question: "How many brochures does each tour group get?",
+    choices: ["6", "7", "8", "12"],
     answer: "8",
   },
   {
-    _cat: "geom",
+    _cat: "groups",
+    passage:
+      "A country music teacher has 21 guitar picks. She puts 3 picks in each envelope for her students.",
+    question: "How many envelopes does she fill?",
+    choices: ["6", "7", "8", "18"],
+    answer: "7",
+  },
+  {
+    _cat: "round",
+    question: "Round 468 to the nearest ten.",
+    choices: ["460", "470", "500", "400"],
+    answer: "470",
+  },
+  {
+    _cat: "round",
+    question: "Round 632 to the nearest hundred.",
+    choices: ["600", "630", "700", "640"],
+    answer: "600",
+  },
+  {
+    _cat: "place",
+    passage: "The Titans played to a crowd of 65,209 fans in Nashville.",
+    question: "What is the value of the 5 in 65,209?",
+    choices: ["5", "50", "500", "5,000"],
+    answer: "5,000",
+  },
+  {
+    _cat: "place",
+    question: "In the number 374, which digit is in the tens place?",
+    choices: ["3", "7", "4", "None"],
+    answer: "7",
+  },
+  {
+    _cat: "frac",
+    passage: "Grandpa cuts a pecan pie into 6 equal slices. Ava eats 2 slices.",
+    question: "What fraction of the pie did Ava eat?",
+    choices: ["2/8", "2/6", "6/2", "1/2"],
+    answer: "2/6",
+  },
+  {
+    _cat: "frac",
     question:
-      "A triangle has how many sides?",
-    choices: ["2", "3", "4", "6"],
-    answer: "3",
+      "On a number line from 0 to 1 divided into 4 equal parts, where is 3/4?",
+    choices: [
+      "Right after 0",
+      "Halfway between 0 and 1",
+      "Three of the four steps from 0",
+      "Past 1",
+    ],
+    answer: "Three of the four steps from 0",
+  },
+  {
+    _cat: "time",
+    passage:
+      "A bluegrass festival concert starts at 6:15 p.m. and lasts 45 minutes.",
+    question: "What time does the concert end?",
+    choices: ["6:45 p.m.", "7:00 p.m.", "7:15 p.m.", "6:60 p.m."],
+    answer: "7:00 p.m.",
+  },
+  {
+    _cat: "time",
+    question: "Which shows 3:47 to the nearest minute on an analog clock?",
+    choices: [
+      "Hour hand a bit past 3, minute hand on the 9 plus 2 marks",
+      "Hour hand on 4, minute hand on 12",
+      "Hour hand on 3, minute hand on 4",
+      "Hour hand on 3:30, minute hand on 47",
+    ],
+    answer: "Hour hand a bit past 3, minute hand on the 9 plus 2 marks",
+  },
+  {
+    _cat: "measure",
+    passage:
+      "A jug at a Memphis BBQ joint holds 2 liters of lemonade. It is completely filled.",
+    question: "About how many milliliters of lemonade are in the jug?",
+    choices: ["20 mL", "200 mL", "2,000 mL", "20,000 mL"],
+    answer: "2,000 mL",
+  },
+  {
+    _cat: "measure",
+    question: "A watermelon has a mass of about…",
+    choices: ["5 grams", "5 kilograms", "5 milligrams", "5 tons"],
+    answer: "5 kilograms",
+  },
+  {
+    _cat: "data",
+    passage:
+      "A picture graph at Nashville Zoo shows visitors' favorite animals. Each 🐘 stands for 5 votes. There are 4 🐘 next to 'elephant.'",
+    question: "How many votes did elephant get?",
+    choices: ["4", "9", "20", "45"],
+    answer: "20",
+  },
+  {
+    _cat: "data",
+    passage:
+      "A line plot shows how tall bean plants grew, measured to the nearest half-inch. Three plants are at 3 in., two are at 3½ in., and one is at 4 in.",
+    question: "How many bean plants were measured in all?",
+    choices: ["5", "6", "10", "12"],
+    answer: "6",
+  },
+  {
+    _cat: "geom",
+    question: "A rectangle is 6 feet long and 4 feet wide. What is its AREA?",
+    choices: ["10 sq ft", "20 sq ft", "24 sq ft", "48 sq ft"],
+    answer: "24 sq ft",
   },
   {
     _cat: "geom",
     question:
-      "Which shape has no corners and is perfectly round?",
-    choices: ["Square", "Rectangle", "Circle", "Pentagon"],
-    answer: "Circle",
+      "A square garden has a side length of 5 meters. What is its PERIMETER?",
+    choices: ["10 m", "15 m", "20 m", "25 m"],
+    answer: "20 m",
   },
   {
     _cat: "word",
     passage:
-      "A Chattanooga aquarium sold 425 tickets on Saturday. On Sunday, 150 more tickets were sold.",
-    question: "How many tickets were sold in all?",
-    choices: ["275", "575", "585", "425"],
-    answer: "575",
+      "A class collects 48 canned goods for a Tennessee food bank on Monday and 27 more on Tuesday.",
+    question: "How many canned goods did they collect in the two days?",
+    choices: ["21", "65", "75", "85"],
+    answer: "75",
   },
   {
     _cat: "word",
     passage:
-      "Leo practiced piano 20 minutes on Wednesday and 35 minutes on Thursday for his summer goal.",
-    question: "How many minutes did he practice in all?",
-    choices: ["45", "50", "55", "60"],
-    answer: "55",
+      "A school store had 400 pencils. During Read Across Tennessee week, they gave away 165.",
+    question: "How many pencils are left?",
+    choices: ["235", "245", "265", "335"],
+    answer: "235",
   },
   {
     _cat: "money",
-    question:
-      "A popsicle costs 50¢. You pay with one dollar. How much change should you get back?",
-    choices: ["10¢", "25¢", "50¢", "75¢"],
-    answer: "50¢",
+    passage:
+      "A snow cone at a Chattanooga fair costs $3. Kai buys one snow cone for himself and one for each of his 3 cousins.",
+    question: "How much does Kai spend?",
+    choices: ["$6", "$9", "$12", "$15"],
+    answer: "$12",
   },
   {
     _cat: "money",
-    question: "How many dimes make one dollar?",
-    choices: ["5", "8", "10", "20"],
-    answer: "10",
+    passage:
+      "Zoe has a $10 bill. She buys a Tennessee bookmark for $2 and a state map for $5.",
+    question: "How much change does Zoe get?",
+    choices: ["$1", "$2", "$3", "$5"],
+    answer: "$3",
   },
 ];
 
@@ -171,393 +186,431 @@ export const elaGrade3SummerPrep = [
   {
     _cat: "detail",
     passage:
-      "At a Memphis blues festival, the band warmed up their horns while families found seats on blankets.",
-    question: "What did the band do while families found seats?",
-    choices: [
-      "Sold ice cream",
-      "Warmed up their horns",
-      "Packed their instruments",
-      "Left the park",
-    ],
-    answer: "Warmed up their horns",
+      "Every summer, the Miller family drives to their cabin near Fall Creek Falls in Tennessee. Jamie's favorite part is hiking to the tallest waterfall east of the Mississippi River. He always carries the trail map, and his little sister Ivy insists on packing granola bars for the group.",
+    question:
+      "According to the passage, WHAT does Ivy always pack for the family?",
+    choices: ["A trail map", "Granola bars", "A camera", "Water bottles"],
+    answer: "Granola bars",
   },
   {
     _cat: "detail",
     passage:
-      "Heavy rain flooded a Knoxville soccer field, so the evening game was moved to next week.",
-    question: "Why was the game moved?",
+      "Every summer, the Miller family drives to their cabin near Fall Creek Falls in Tennessee. Jamie's favorite part is hiking to the tallest waterfall east of the Mississippi River. He always carries the trail map, and his little sister Ivy insists on packing granola bars for the group.",
+    question: "Where is the Miller family's cabin located?",
     choices: [
-      "The field was flooded",
-      "School was closed forever",
-      "Nobody liked soccer",
-      "The sun was too bright",
+      "Near the Rocky Mountains",
+      "Near Fall Creek Falls in Tennessee",
+      "At a beach in Florida",
+      "In downtown Nashville",
     ],
-    answer: "The field was flooded",
+    answer: "Near Fall Creek Falls in Tennessee",
   },
   {
     _cat: "main",
     passage:
-      "Staying active in summer keeps bodies strong. Tennessee parks offer trails, pools, and playgrounds for families.",
-    question: "What is this passage MOSTLY about?",
+      "Honeybees do more than make sweet honey. They visit flowers to gather nectar and pollen. As they move from bloom to bloom, they help farmers grow apples, strawberries, and pumpkins. Without bees, many of our favorite foods would be hard to find.",
+    question: "What is the MAIN idea of this passage?",
     choices: [
-      "How to bake cookies",
-      "Ways to stay active in summer",
-      "The history of rockets",
-      "How to knit a scarf",
+      "Honey tastes sweet.",
+      "Bees help people by pollinating important crops.",
+      "Bees live in Tennessee.",
+      "Strawberries are red.",
     ],
-    answer: "Ways to stay active in summer",
+    answer: "Bees help people by pollinating important crops.",
   },
   {
     _cat: "main",
     passage:
-      "Hummingbirds zip from flower to flower in Tennessee gardens. Their fast wings help them hover for nectar.",
-    question: "What is the MAIN idea?",
+      "Elephants have huge ears they flap like fans to stay cool. Their long trunks can pick up a peanut or splash water. Baby elephants stay close to their mothers and learn from the herd for many years.",
+    question: "Which sentence BEST states what the passage is mostly about?",
     choices: [
-      "Hummingbirds hover and drink nectar from flowers",
-      "All birds cannot fly",
-      "Gardens never have insects",
-      "Flowers are only for decoration",
+      "Elephants love peanuts.",
+      "Elephants have special body parts and habits that help them live.",
+      "Elephants live only in one country.",
+      "Elephants are large.",
     ],
-    answer: "Hummingbirds hover and drink nectar from flowers",
+    answer: "Elephants have special body parts and habits that help them live.",
   },
   {
     _cat: "vocab",
-    passage: "The campers felt parched after hiking without water in the afternoon sun.",
-    question: "Parched means…",
-    choices: ["very thirsty", "very sleepy", "very tall", "very musical"],
-    answer: "very thirsty",
+    passage:
+      "The volunteer described the old dogwood tree as 'ancient.' Its trunk was thick, and its bark was rough and cracked from many, many years of sun and storms.",
+    question: "In the passage, what does the word 'ancient' MEAN?",
+    choices: ["New", "Very old", "Small", "Green"],
+    answer: "Very old",
   },
   {
     _cat: "vocab",
-    passage: "The cave was dim, so we used flashlights to see the stalactites.",
-    question: "Dim means…",
-    choices: [
-      "bright and sunny",
-      "not bright; somewhat dark",
-      "underwater only",
-      "made of metal",
-    ],
-    answer: "not bright; somewhat dark",
+    passage:
+      "Layla was famished after soccer practice. She hadn't eaten since lunch, and her stomach kept growling all the way home.",
+    question: "What does 'famished' most likely mean?",
+    choices: ["Very tired", "Very hungry", "Very happy", "Very cold"],
+    answer: "Very hungry",
   },
   {
     _cat: "purpose",
     passage:
-      "Trail sign: Stay on the path. Protect plants and wildlife for everyone who visits after you.",
-    question: "What is the author's purpose?",
+      "How to Make a Simple Bird Feeder: 1) Roll a pinecone in peanut butter. 2) Sprinkle it with birdseed. 3) Tie a string on top. 4) Hang it from a tree branch.",
+    question: "Why did the author MOST LIKELY write this text?",
     choices: [
-      "To persuade hikers to protect the trail",
-      "To sell hiking boots",
-      "To describe a snowstorm",
-      "To list every bird species",
+      "To make you laugh",
+      "To tell a story about a bird",
+      "To teach you how to do something",
+      "To describe a bird's life cycle",
     ],
-    answer: "To persuade hikers to protect the trail",
+    answer: "To teach you how to do something",
   },
   {
     _cat: "purpose",
     passage:
-      "How to build a bird feeder: cut a hole, add seed, and hang it where cats cannot reach.",
-    question: "What is the author's purpose?",
+      "You should always wear a helmet when you ride your bike. Helmets protect your head if you fall. Kids who wear helmets are much safer than kids who don't.",
+    question: "What is the author's MAIN purpose?",
     choices: [
-      "To entertain with a mystery",
-      "To inform with directions",
-      "To argue that birds should not eat",
-      "To write a song lyric",
+      "To describe a helmet",
+      "To convince readers to wear a bike helmet",
+      "To tell a scary bike story",
+      "To sell a helmet",
     ],
-    answer: "To inform with directions",
+    answer: "To convince readers to wear a bike helmet",
   },
   {
     _cat: "context",
-    question:
-      "Which sentence uses their (belonging to them) correctly?",
-    choices: [
-      "Their kite flew high above the field.",
-      "Their going to the creek tomorrow.",
-      "I left my towel their.",
-      "Their is a good swimmer.",
-    ],
-    answer: "Their kite flew high above the field.",
+    passage:
+      "The old barn was DILAPIDATED. Its roof sagged, boards had fallen off the walls, and the door hung crookedly on one hinge.",
+    question: "Using clues from the passage, DILAPIDATED probably means…",
+    choices: ["Brand new", "Falling apart", "Painted red", "Empty inside"],
+    answer: "Falling apart",
   },
   {
     _cat: "context",
-    question: "Which word is spelled correctly?",
-    choices: ["freind", "friend", "frend", "freindd"],
-    answer: "friend",
+    passage:
+      "Marcus tried to console his little brother, who was crying because his ice cream had fallen off the cone. Marcus hugged him and offered to share his own scoop.",
+    question: "What does 'console' mean here?",
+    choices: [
+      "To yell at",
+      "To comfort someone who is upset",
+      "To play a game",
+      "To buy something",
+    ],
+    answer: "To comfort someone who is upset",
   },
   {
     _cat: "structure",
     passage:
-      "Before lunch, we filled water bottles. During lunch, we ate sandwiches. After lunch, we hiked to the waterfall.",
-    question: "Which words show the order of events?",
+      "Ants live in colonies. First, the queen lays eggs. Next, worker ants care for the eggs until they hatch. Then, the young ants grow into adults. Finally, adult ants help gather food for the colony.",
+    question: "Which text structure is used in this passage?",
     choices: [
-      "water bottles and sandwiches",
-      "Before, During, After",
-      "hiked and waterfall",
-      "Tennessee and lunch",
+      "Compare and contrast",
+      "Sequence (step-by-step order)",
+      "Cause and effect only",
+      "Description of a place",
     ],
-    answer: "Before, During, After",
+    answer: "Sequence (step-by-step order)",
   },
   {
     _cat: "structure",
     passage:
-      "The lake shimmered like a sheet of glass — peaceful and still at dawn.",
-    question: "The phrase after the dash (—) is used to…",
+      "Frogs and toads look alike, but they are different. Frogs have smooth, wet skin and long back legs for jumping. Toads have bumpy, dry skin and shorter legs, so they walk more than they hop.",
+    question: "What text structure does this passage use?",
     choices: [
-      "add a describing detail",
-      "ask a question",
-      "list prices",
-      "end the paragraph with a number",
+      "Sequence",
+      "Cause and effect",
+      "Compare and contrast",
+      "Problem and solution",
     ],
-    answer: "add a describing detail",
+    answer: "Compare and contrast",
   },
   {
     _cat: "compare",
     passage:
-      "Both Nashville and Memphis are Tennessee cities, but Nashville is known for country music while Memphis is famous for blues.",
-    question: "How are the two cities ALIKE in the passage?",
+      "In one story, a boy tames a wild horse by being patient and gentle. In another story, a girl learns to trust a stray dog by feeding it every day.",
+    question: "What is a THEME shared by both stories?",
     choices: [
-      "They are both in Tennessee",
-      "They are on the ocean",
-      "They have the same nickname",
-      "They have no music",
+      "Animals are dangerous.",
+      "Trust and kindness help build friendship with animals.",
+      "Horses are better than dogs.",
+      "Kids should never touch animals.",
     ],
-    answer: "They are both in Tennessee",
+    answer: "Trust and kindness help build friendship with animals.",
   },
   {
     _cat: "compare",
     passage:
-      "A science journal uses headings; a comic strip uses panels. Both organize information for the reader.",
-    question: "What do a science journal and a comic strip have in common?",
+      "A NONFICTION article about butterflies gives facts about their life cycle. A POEM about butterflies describes them as 'floating stained-glass windows in the sky.'",
+    question: "How is the poem different from the article?",
     choices: [
-      "They both organize information in parts",
-      "They are always identical",
-      "They never use pictures",
-      "They are only for robots",
+      "It uses colorful, imaginative language instead of straight facts.",
+      "It only uses numbers.",
+      "It has no words about butterflies.",
+      "It has more facts than the article.",
     ],
-    answer: "They both organize information in parts",
+    answer: "It uses colorful, imaginative language instead of straight facts.",
   },
   {
     _cat: "poetry",
-    passage:
-      "Crickets chirp in the grass, / stars prick the dark blue bowl, / night smells like rain.",
-    question: "Which sense is MOST highlighted in the poem?",
-    choices: ["sound and smell at night", "only taste", "only sight of food", "only touch of snow"],
-    answer: "sound and smell at night",
+    passage: `The moon peeks through the tall pine trees,
+Silver light on the mountain breeze.
+Fireflies dance around the porch,
+Each one carries a tiny torch.`,
+    question: "What are the fireflies COMPARED to in this poem?",
+    choices: ["The moon", "Torches", "Pine trees", "The wind"],
+    answer: "Torches",
   },
   {
     _cat: "poetry",
-    passage: "The thunder grumbled like a hungry giant overhead.",
-    question: "Thunder is compared to a hungry giant. That comparison is…",
-    choices: ["a simile", "a table of contents", "a caption", "a spelling rule"],
-    answer: "a simile",
+    passage: `Slippery snakes slide slowly.
+Buzzy bees buzz busily.`,
+    question: "Which sound feature does the poet MAINLY use in these lines?",
+    choices: [
+      "Rhyme at the end of lines",
+      "Alliteration (repeating beginning sounds)",
+      "Numbers",
+      "Punctuation marks only",
+    ],
+    answer: "Alliteration (repeating beginning sounds)",
   },
   {
     _cat: "grammar",
-    question: "Which sentence is written correctly?",
+    question: "Which sentence uses a PROPER NOUN?",
     choices: [
-      "him and her went fishing.",
-      "Him and her went fishing.",
-      "He and she went fishing.",
-      "he and she went fishing.",
+      "The dog ran fast.",
+      "My teacher is very kind.",
+      "We visited Nashville last summer.",
+      "The park has a big slide.",
     ],
-    answer: "He and she went fishing.",
+    answer: "We visited Nashville last summer.",
   },
   {
     _cat: "grammar",
-    question: "Which is a complete sentence?",
-    choices: [
-      "When the canoe tipped over.",
-      "Under the shady oak tree.",
-      "We dried our towels in the sun.",
-      "Because the waves were big.",
-    ],
-    answer: "We dried our towels in the sun.",
+    question: "Which word is the correct past tense of RUN?",
+    choices: ["Runned", "Ran", "Runs", "Running"],
+    answer: "Ran",
   },
   {
     _cat: "infer",
     passage:
-      "Elena packed sunscreen, a wide hat, and extra water before the outdoor concert.",
-    question: "You can INFER that the weather will probably be…",
-    choices: ["sunny and warm", "snowy", "freezing", "underwater"],
-    answer: "sunny and warm",
+      "When Grandma opened the door, Toby's tail wagged so hard it thumped against the wall. He ran in circles and dropped his leash at her feet.",
+    question: "What can you INFER about Toby?",
+    choices: [
+      "Toby is tired.",
+      "Toby is upset.",
+      "Toby is excited and wants to go for a walk.",
+      "Toby is hungry for dinner.",
+    ],
+    answer: "Toby is excited and wants to go for a walk.",
   },
   {
     _cat: "infer",
     passage:
-      "Mom printed boarding passes and loaded suitcases into the car before sunrise.",
-    question: "What is the family MOST likely doing?",
+      "Ella looked at the empty cereal box, then at the empty milk carton, then at her tiny brother's grinning, milk-covered face.",
+    question: "What most likely happened?",
     choices: [
-      "Leaving for a trip",
-      "Planting a garden",
-      "Taking a math test",
-      "Building a snowman",
+      "Ella's brother ate all the cereal and drank the milk.",
+      "Ella already ate breakfast.",
+      "Their mom made pancakes.",
+      "The cat drank the milk.",
     ],
-    answer: "Leaving for a trip",
+    answer: "Ella's brother ate all the cereal and drank the milk.",
+  },
+  {
+    _cat: "textfeat",
+    passage:
+      "In a nonfiction book about frogs, a special section titled 'Glossary' at the back explains hard words like AMPHIBIAN and METAMORPHOSIS.",
+    question: "How would you use the GLOSSARY?",
+    choices: [
+      "To find where the author lives",
+      "To look up what a hard word in the book means",
+      "To find pictures only",
+      "To read the whole story again",
+    ],
+    answer: "To look up what a hard word in the book means",
   },
   {
     _cat: "textfeat",
     question:
-      "A table of contents at the front of a book helps readers…",
+      "Which text feature would BEST help you find the chapter about 'Weather' in a science book?",
     choices: [
-      "find chapters and page numbers",
-      "cook dinner",
-      "measure rainfall",
-      "skip all reading",
+      "Glossary",
+      "Table of contents",
+      "Picture caption",
+      "About the author page",
     ],
-    answer: "find chapters and page numbers",
-  },
-  {
-    _cat: "textfeat",
-    question: "Italics in a book title on a cover usually show…",
-    choices: [
-      "the title is emphasized or is a special name",
-      "words to delete",
-      "only page numbers",
-      "secret codes only",
-    ],
-    answer: "the title is emphasized or is a special name",
+    answer: "Table of contents",
   },
 ];
 
 export const tennesseeSummerSocial = [
   {
-    question: "What is Tennessee's state nickname?",
-    choices: [
-      "The Golden State",
-      "The Volunteer State",
-      "The Empire State",
-      "The Buckeye State",
-    ],
-    answer: "The Volunteer State",
-  },
-  {
-    question: "What is the capital of Tennessee?",
-    choices: ["Knoxville", "Nashville", "Memphis", "Chattanooga"],
+    question: "What is the CAPITAL city of Tennessee?",
+    choices: ["Memphis", "Nashville", "Knoxville", "Chattanooga"],
     answer: "Nashville",
   },
   {
-    passage:
-      "Tennessee has three Grand Divisions: West, Middle, and East Tennessee.",
-    question: "Which city is in EAST Tennessee?",
-    choices: ["Memphis", "Jackson", "Knoxville", "Clarksville"],
-    answer: "Knoxville",
-  },
-  {
-    question: "Which river runs along much of Tennessee's western border?",
-    choices: ["Ohio River", "Mississippi River", "Potomac River", "Columbia River"],
-    answer: "Mississippi River",
-  },
-  {
-    question: "Nashville is the largest city in which Grand Division?",
-    choices: ["West Tennessee", "Middle Tennessee", "East Tennessee", "Canada"],
-    answer: "Middle Tennessee",
-  },
-  {
-    question: "What is Tennessee's state flower?",
-    choices: ["Daisy", "Iris", "Lily", "Magnolia"],
-    answer: "Iris",
-  },
-  {
-    question: "What is Tennessee's state bird?",
-    choices: ["Robin", "Mockingbird", "Eagle", "Hummingbird"],
+    question: "Which of these is a state SYMBOL of Tennessee?",
+    choices: ["Bald eagle", "Mockingbird", "Blue jay", "Puffin"],
     answer: "Mockingbird",
   },
   {
-    question: "What is Tennessee's state tree?",
-    choices: ["Maple", "Tulip poplar", "Birch", "Cedar"],
-    answer: "Tulip poplar",
+    question: "The state flower of Tennessee, often seen in gardens, is the…",
+    choices: ["Iris", "Rose", "Sunflower", "Daisy"],
+    answer: "Iris",
   },
   {
-    question: "Which Tennessee city is known for Graceland and blues music?",
-    choices: ["Bristol", "Memphis", "Gatlinburg", "Murfreesboro"],
+    passage:
+      "Tennessee's state flag has three white stars in a blue circle. Each star stands for one of the state's three parts.",
+    question: "What do the three stars on Tennessee's flag stand for?",
+    choices: [
+      "Three big cities",
+      "The three grand divisions: East, Middle, and West Tennessee",
+      "Three rivers",
+      "Three governors",
+    ],
+    answer: "The three grand divisions: East, Middle, and West Tennessee",
+  },
+  {
+    passage:
+      "A wide, muddy river forms the western border of Tennessee. Barges push cargo up and down it every day.",
+    question: "Which river forms Tennessee's western border?",
+    choices: [
+      "Cumberland River",
+      "Ohio River",
+      "Mississippi River",
+      "Tennessee River",
+    ],
+    answer: "Mississippi River",
+  },
+  {
+    question:
+      "In which part of Tennessee are the Great Smoky Mountains located?",
+    choices: [
+      "East Tennessee",
+      "Middle Tennessee",
+      "West Tennessee",
+      "Southern Tennessee only",
+    ],
+    answer: "East Tennessee",
+  },
+  {
+    passage:
+      "Elvis Presley's home Graceland and a famous BBQ scene are found in this city on the bluffs of the Mississippi River.",
+    question: "Which Tennessee city is being described?",
+    choices: ["Nashville", "Memphis", "Knoxville", "Kingsport"],
     answer: "Memphis",
   },
   {
-    question: "Which city is called the home of country music and the Grand Ole Opry?",
-    choices: ["Nashville", "Memphis", "Johnson City", "Franklin"],
-    answer: "Nashville",
+    question:
+      "Which of these is a NATURAL RESOURCE that people use in Tennessee?",
+    choices: ["Cars", "Trees for lumber", "Cell phones", "Bicycles"],
+    answer: "Trees for lumber",
+  },
+  {
+    question:
+      "A GOOD is something you can hold, and a SERVICE is work someone does for you. Which is a SERVICE?",
+    choices: [
+      "A loaf of bread",
+      "A haircut at the barber",
+      "A new bike",
+      "A pair of sneakers",
+    ],
+    answer: "A haircut at the barber",
+  },
+  {
+    question: "People who BUY goods and services are called…",
+    choices: ["Producers", "Consumers", "Governors", "Mayors"],
+    answer: "Consumers",
+  },
+  {
+    question:
+      "A farmer who grows Tennessee tomatoes and sells them at a market is a…",
+    choices: ["Consumer", "Producer", "Judge", "Tourist"],
+    answer: "Producer",
   },
   {
     passage:
-      "Tennessee state parks protect forests, rivers, and wildlife for public use.",
-    question: "State parks are important because they help people…",
-    choices: [
-      "enjoy nature responsibly",
-      "avoid all outdoor activity",
-      "pollute rivers",
-      "remove all trees",
-    ],
-    answer: "enjoy nature responsibly",
+      "There are always more wants than resources to fill them. Tennessee farmers can only plant so many acres.",
+    question: "This idea is called…",
+    choices: ["Scarcity", "Voting", "Weather", "Sports"],
+    answer: "Scarcity",
   },
   {
-    question: "In a democracy, citizens choose leaders by…",
-    choices: ["voting in elections", "flipping coins only", "hiding ballots", "never meeting"],
-    answer: "voting in elections",
-  },
-  {
-    question: "Tennessee is a state in which country?",
-    choices: ["Canada", "Mexico", "United States", "France"],
-    answer: "United States",
-  },
-  {
-    question: "Which state borders Tennessee to the east?",
-    choices: ["Arkansas", "North Carolina", "Texas", "Illinois"],
-    answer: "North Carolina",
-  },
-  {
-    question: "Which state borders Tennessee to the west?",
-    choices: ["Virginia", "Arkansas and Missouri", "Georgia", "Ohio"],
-    answer: "Arkansas and Missouri",
-  },
-  {
-    question: "Who leads Tennessee's state government as chief executive?",
-    choices: ["Governor", "Mayor of Memphis", "Principal", "Judge only"],
+    question: "The leader of the state of Tennessee is the…",
+    choices: ["President", "Governor", "Mayor", "Chief Justice"],
     answer: "Governor",
   },
   {
+    question: "Which BRANCH of government makes the laws?",
+    choices: [
+      "Legislative (Congress or legislature)",
+      "Executive (President or Governor)",
+      "Judicial (courts)",
+      "News branch",
+    ],
+    answer: "Legislative (Congress or legislature)",
+  },
+  {
+    question:
+      "The BRANCH of government that decides if laws follow the U.S. Constitution is the…",
+    choices: ["Legislative", "Executive", "Judicial", "Voting"],
+    answer: "Judicial",
+  },
+  {
     passage:
-      "Ruby Falls is an underground waterfall inside Lookout Mountain near Chattanooga.",
-    question: "Ruby Falls is near which Tennessee city?",
-    choices: ["Chattanooga", "Memphis", "Nashville", "Bristol"],
-    answer: "Chattanooga",
+      "A citizen has both rights (things they may do) and responsibilities (things they should do).",
+    question: "Which is a RESPONSIBILITY of a good citizen?",
+    choices: [
+      "Playing video games",
+      "Following the rules and helping the community",
+      "Traveling every summer",
+      "Getting many toys",
+    ],
+    answer: "Following the rules and helping the community",
   },
   {
-    question: "The three stars on Tennessee's flag stand for…",
+    question:
+      "The first ten changes added to the U.S. Constitution are called the…",
     choices: [
-      "the three Grand Divisions of Tennessee",
-      "three national parks in Europe",
-      "three planets",
-      "three school subjects only",
+      "Bill of Rights",
+      "Declaration of Rules",
+      "Star-Spangled List",
+      "State Flags",
     ],
-    answer: "the three Grand Divisions of Tennessee",
+    answer: "Bill of Rights",
   },
   {
-    question: "Why should you wear a hat on a sunny Tennessee summer day?",
+    passage:
+      "Long before European settlers arrived, the CHEROKEE people lived in what is now East Tennessee. They built villages, farmed corn, and fished.",
+    question: "The Cherokee are an example of…",
     choices: [
-      "To help shade your face and stay cooler",
-      "To make homework disappear",
-      "To stop rain forever",
-      "To replace drinking water",
+      "European explorers",
+      "Native American / American Indian people",
+      "Astronauts",
+      "Modern engineers",
     ],
-    answer: "To help shade your face and stay cooler",
+    answer: "Native American / American Indian people",
   },
   {
-    question: "When playing outside in Tennessee woods, why check for ticks after hiking?",
+    passage:
+      "Davy Crockett was a famous Tennessean known as a hunter, a soldier, and later a member of the U.S. Congress from Tennessee.",
+    question: "Which title BEST describes Davy Crockett based on the passage?",
     choices: [
-      "Ticks can spread illness; checking helps you stay healthy",
-      "Ticks help you run faster",
-      "Ticks are state symbols",
-      "Ticks only live in winter",
+      "Governor of Alaska",
+      "Tennessee frontiersman and lawmaker",
+      "Ancient king",
+      "Baseball player",
     ],
-    answer: "Ticks can spread illness; checking helps you stay healthy",
+    answer: "Tennessee frontiersman and lawmaker",
   },
   {
-    question: "What is a good rule for visiting a Tennessee state park?",
-    choices: [
-      "Leave no trace: pack out what you pack in",
-      "Feed bears by hand",
-      "Leave gates open everywhere",
-      "Pick all the wildflowers home",
-    ],
-    answer: "Leave no trace: pack out what you pack in",
+    passage:
+      "Tennessee's largest music genre grew from folk, gospel, and blues. Nashville became known as 'Music City' because of it.",
+    question: "Which type of music is Nashville MOST famous for?",
+    choices: ["Country", "Opera", "Classical", "Reggae"],
+    answer: "Country",
+  },
+  {
+    question:
+      "When people take TURNS voting for leaders, this important part of American life is called…",
+    choices: ["An election", "A parade", "A recess", "A committee"],
+    answer: "An election",
   },
 ];
