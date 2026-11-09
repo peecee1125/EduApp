@@ -411,6 +411,10 @@ export const SUBJECTS = {
   },
 };
 
+export function scoreFromAnswers(correctCount, totalCount) {
+  return totalCount === 0 ? 0 : Math.round((correctCount / totalCount) * 100);
+}
+
 /** 0–3 stars from score. */
 export function starsFromScore(score) {
   return score >= 90 ? 3 : score >= 70 ? 2 : score > 0 ? 1 : 0;

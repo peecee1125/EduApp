@@ -1,134 +1,115 @@
-import { motion } from "framer-motion";
 import { SUBJECTS, loadHistory } from "../data/registry";
+import Icon from "../components/Icon";
+import SubjectArt from "../components/SubjectArt";
 import { useSound } from "../hooks/useSound";
 
-const KEYS = Object.keys(SUBJECTS);
+const DESCRIPTIONS = {
+  math: "Numbers, patterns & little puzzles",
+  ela: "Good stories. Great ideas.",
+  science: "Ask why. Find out how.",
+  geography: "A whole world to explore",
+  solarSystem: "Look up. Think bigger.",
+  dinosaurs: "Clues from a long time ago",
+  funFacts: "Things that make you say wow",
+  advanced: "A little extra brain stretch",
+};
 
-function formatReleaseDate(iso) {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  if (!m) return iso;
-  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
-  return d.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+function WorkbookArt() {
+  return (
+    <svg className="workbook-art" viewBox="0 0 300 210" fill="none" aria-hidden="true">
+      <ellipse cx="149" cy="183" rx="109" ry="12" fill="#e1e3d3" />
+      <g transform="rotate(-9 140 105)">
+        <rect x="60" y="24" width="153" height="162" rx="9" fill="#d9e5d7" stroke="#315847" strokeWidth="2" />
+        <rect x="72" y="18" width="145" height="160" rx="7" fill="#fffdf5" stroke="#315847" strokeWidth="2" />
+        <path d="M94 18v160" stroke="#e5c4af" strokeWidth="1.5" />
+        <path d="M107 53h85m-85 20h70m-70 20h85m-85 20h50" stroke="#d7ddce" strokeWidth="2" />
+        <path d="m122 137 7 7 15-17" stroke="#315847" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="134" cy="137" r="20" stroke="#a8bd98" strokeWidth="1.5" strokeDasharray="3 4" />
+        {[40, 67, 94, 121, 148].map((y) => (
+          <path key={y} d={`M65 ${y}h15`} stroke="#315847" strokeWidth="3" strokeLinecap="round" />
+        ))}
+      </g>
+      <g transform="rotate(22 229 108)">
+        <path d="M223 39h13v111l-6.5 18-6.5-18Z" fill="#e9b765" stroke="#654c32" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M223 150h13l-6.5 18Z" fill="#f3dcc0" stroke="#654c32" strokeWidth="2" />
+        <path d="m227 161 2.5 7 2.5-7" fill="#315847" />
+        <path d="M223 46h13v12h-13Z" fill="#e6c6b6" />
+        <path d="M229.5 59v87" stroke="#fff4d6" strokeWidth="2" />
+      </g>
+      <path d="m41 44 3 8 9 2-8 4-1 9-5-7-9-1 7-6Z" fill="#e9b765" />
+      <path d="M258 39v12m-6-6h12M32 131v8m-4-4h8" stroke="#789276" strokeWidth="2" strokeLinecap="round" />
+      <path d="M242 174c12-13 18-26 16-38-11 6-17 18-16 38Z" fill="#b9cbb0" stroke="#315847" strokeWidth="1.5" />
+    </svg>
+  );
 }
 
 export default function HomeScreen({ onSelect, onHistory }) {
   const { playTap } = useSound();
-  const totalStars = loadHistory().reduce((sum, a) => sum + (a.stars ?? 0), 0);
-  const releaseLabel = formatReleaseDate(__RELEASE_DATE__);
+  const totalStars = loadHistory().reduce((sum, attempt) => sum + (attempt.stars ?? 0), 0);
 
   return (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ duration: 0.3 }}
-      className="flex flex-col w-full h-full"
-      style={{
-        background:
-          "linear-gradient(145deg,#0a1628 0%,#0e7490 38%,#f59e0b 120%)",
-      }}
-    >
-      {/* Title */}
-      <div className="text-center pt-4 pb-2 shrink-0">
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.1 }}
-        >
-          <span className="text-white font-extrabold text-2xl sm:text-3xl drop-shadow-lg">
-            🔭 Grade 3 learning · STEM & curiosity
-          </span>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-zinc-200 text-sm font-semibold mt-0.5 px-3"
-        >
-          Practice this year&apos;s math and reading, then explore STEM, maps,
-          planets, dinosaurs, and wild facts. Tap a topic!
-        </motion.p>
-      </div>
+    <main className="screen home-screen">
+      <header className="home-header">
+        <div className="wordmark">
+          <span className="wordmark-icon"><Icon name="book" size={23} /></span>
+          EduApp<span className="wordmark-dot">.</span>
+        </div>
+        <div className="home-header-actions">
+          <span className="grade-label">The grade 3 edition</span>
+          <button className="button button-paper" onClick={() => { playTap(); onHistory(); }}>
+            <Icon name="star" size={20} />
+            <span>My Stars{totalStars > 0 ? ` · ${totalStars}` : ""}</span>
+          </button>
+        </div>
+      </header>
 
-      {/* subject grid: 2×4 on portrait/small, 4×2 on sm+ (landscape / tablets) */}
-      <div className="flex-1 grid grid-cols-2 grid-rows-4 sm:grid-cols-4 sm:grid-rows-2 gap-3 px-4 pb-2 min-h-0">
-        {KEYS.map((key, i) => {
-          const s = SUBJECTS[key];
-          return (
-            <motion.button
-              key={key}
-              initial={{ opacity: 0, y: 35, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{
-                delay: i * 0.06,
-                type: "spring",
-                stiffness: 300,
-                damping: 22,
-              }}
-              whileTap={{ scale: 0.92 }}
-              onClick={() => {
-                playTap();
-                onSelect(key);
-              }}
-              className="relative flex flex-col items-center justify-center rounded-2xl shadow-xl border border-white/10 overflow-hidden"
-              style={{ background: s.bg, cursor: "pointer" }}
-            >
-              <span className="text-4xl sm:text-5xl mb-1 drop-shadow float">
-                {s.emoji}
-              </span>
-              <span className="text-white font-extrabold text-sm sm:text-lg leading-tight text-center px-2 drop-shadow">
-                {s.label}
-              </span>
-              {key === "advanced" && (
-                <span
-                  className="absolute top-2 right-2 text-xs font-black px-2 py-0.5 rounded-full"
-                  style={{ background: "#fff", color: "#a16207" }}
+      <div className="screen-scroll home-scroll">
+        <div className="page-width">
+          <section className="home-hero" aria-labelledby="home-heading">
+            <div>
+              <p className="eyebrow">A workbook for curious minds</p>
+              <h1 id="home-heading">Small steps.<br /><em>Big discoveries.</em></h1>
+              <p className="hero-description">
+                A little math, a good story, or something wonderfully unexpected.
+                What will you explore today?
+              </p>
+            </div>
+            <WorkbookArt />
+          </section>
+
+          <section aria-labelledby="subjects-heading">
+            <div className="section-heading">
+              <h2 id="subjects-heading">Pick a subject</h2>
+              <span>Eight ways to grow</span>
+            </div>
+            <div className="subject-grid">
+              {Object.entries(SUBJECTS).map(([key, subject], index) => (
+                <button
+                  key={key}
+                  data-subject={key}
+                  className="subject-card"
+                  onClick={() => { playTap(); onSelect(key); }}
                 >
-                  3rd+
-                </span>
-              )}
-            </motion.button>
-          );
-        })}
-      </div>
-
-      {/* Footer */}
-      <div className="flex flex-col shrink-0">
-        <div className="text-center text-zinc-500 text-[11px] font-semibold py-1 sm:hidden">
-          Released {releaseLabel} · v{__APP_VERSION__}
-        </div>
-        <div className="flex items-center justify-center sm:justify-between px-4 py-2">
-          <span className="text-zinc-400 text-xs font-semibold hidden sm:block">
-            EduApp
-            <span className="ml-2 opacity-50">v{__APP_VERSION__}</span>
-            <span className="ml-2 opacity-50">Released {releaseLabel}</span>
-          </span>
-          <div className="flex gap-2">
-          <motion.button
-            whileTap={{ scale: 0.93 }}
-            onClick={() => {
-              playTap();
-              onHistory();
-            }}
-            className="flex items-center gap-2 px-4 py-2 rounded-full font-extrabold text-sm"
-            style={{
-              background: "rgba(251,191,36,0.15)",
-              border: "1.5px solid rgba(251,191,36,0.45)",
-              color: "#fbbf24",
-            }}
-          >
-            <span>⭐</span>
-            <span>My Stars {totalStars > 0 && `(${totalStars})`}</span>
-          </motion.button>
-        </div>
+                  <div className="subject-card-top">
+                    <SubjectArt subject={key} />
+                    <span className="card-index">0{index + 1}</span>
+                  </div>
+                  <h3>{subject.label.split(" · ")[0]}</h3>
+                  <p>{DESCRIPTIONS[key]}</p>
+                  <div className="subject-card-bottom">
+                    <span>{subject.tests.length} activities</span>
+                    <Icon name="arrow" size={20} />
+                  </div>
+                </button>
+              ))}
+            </div>
+          </section>
+          <footer className="home-footer">
+            <span>Made for little moments of discovery.</span>
+            <span>Grade 3 · v{__APP_VERSION__} · {__RELEASE_DATE__}</span>
+          </footer>
         </div>
       </div>
-    </motion.div>
+    </main>
   );
 }

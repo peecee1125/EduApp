@@ -8,7 +8,26 @@ import {
   validateQuestionBanks,
   saveSkillResults,
   getWeakSkillQuestions,
+  scoreFromAnswers,
 } from "./registry.js";
+
+describe("scoreFromAnswers", () => {
+  it("reports a standard round as a percentage", () => {
+    expect(scoreFromAnswers(5, 10)).toBe(50);
+    expect(scoreFromAnswers(10, 10)).toBe(100);
+  });
+  it("keeps a timed sprint within 100 rather than multiplying points twice", () => {
+    expect(scoreFromAnswers(1, 1)).toBe(100);
+    expect(scoreFromAnswers(3, 5)).toBe(60);
+  });
+  it("normalizes short weak-skill rounds", () => {
+    expect(scoreFromAnswers(4, 4)).toBe(100);
+    expect(scoreFromAnswers(1, 4)).toBe(25);
+  });
+  it("scores a sprint with no answers as zero", () => {
+    expect(scoreFromAnswers(0, 0)).toBe(0);
+  });
+});
 
 describe("starsFromScore", () => {
   it("returns 3 stars at 90+", () => {

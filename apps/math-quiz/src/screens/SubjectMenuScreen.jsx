@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   SUBJECTS,
   loadHighScore,
@@ -6,13 +5,9 @@ import {
   getWeakSkillQuestions,
 } from "../data/registry";
 import NavHeader from "../components/NavHeader";
+import Icon from "../components/Icon";
+import SubjectArt from "../components/SubjectArt";
 import { useSound } from "../hooks/useSound";
-
-function Stars({ score }) {
-  if (score == null) return null;
-  const n = starsFromScore(score);
-  return <span>{"⭐".repeat(n)}</span>;
-}
 
 export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
   const { playTap } = useSound();
@@ -22,86 +17,68 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
     subject === "math" ? getWeakSkillQuestions(subject).length : 0;
 
   return (
-    <motion.div
-      key="subject"
-      initial={{ opacity: 0, x: 60 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -60 }}
-      transition={{ duration: 0.28 }}
-      className="flex flex-col w-full h-full"
-      style={{
-        background:
-          "linear-gradient(145deg,#0a1628 0%,#0e7490 55%,#155e75 100%)",
-      }}
-    >
-      <NavHeader title={`${subj.emoji} ${subj.label}`} onBack={onBack} />
+    <main className="screen" data-subject={subject}>
+      <NavHeader title={subj.label} onBack={onBack} />
+      <div className="screen-scroll">
+        <div className="page-width subject-page">
+          <section className="subject-intro">
+            <div>
+              <p className="eyebrow">One small step at a time</p>
+              <h1>Let&apos;s explore<br /><em>{subj.label.split(" · ")[0].toLowerCase()}.</em></h1>
+              <p>Pick an activity. Take your time. See what you can discover.</p>
+            </div>
+            <div className="subject-intro-art"><SubjectArt subject={subject} /></div>
+          </section>
 
-      <div className="text-center py-3 shrink-0">
-        <span className="text-zinc-200 text-base font-semibold px-2">
-          Most rounds have 10 questions · learn something new
-        </span>
+          <div className="section-heading">
+            <h2>Your activities</h2>
+            <span>Most rounds · 10 questions</span>
+          </div>
+          <div className="activity-grid">
+            {subj.tests.map((test, index) => {
+              const best = loadHighScore(subject, test.key);
+              const isWeak = test.mode === "weak";
+              const locked = isWeak && weakQuestionCount === 0;
+              const isChallenge = test.variant === "challenge" || test.variant === "advanced";
+              const stars = best ? starsFromScore(best.score) : 0;
+              return (
+                <button
+                  key={test.key}
+                  className="activity-card"
+                  disabled={locked}
+                  onClick={() => { playTap(); onSelect(index); }}
+                >
+                  <div className="activity-card-top">
+                    <span className="activity-number">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="activity-tag">
+                      {locked ? <Icon name="lock" size={15} /> : test.mode === "timed" ? <Icon name="timer" size={16} /> : isChallenge ? <Icon name="spark" size={16} /> : null}
+                      {isWeak ? "Skill practice" : test.mode === "timed" ? "60 seconds" : isChallenge ? "A little stretch" : "10 questions"}
+                    </span>
+                  </div>
+                  <h3>{test.label}</h3>
+                  <div className="activity-card-bottom">
+                    <span>
+                      {isWeak
+                        ? weakQuestionCount > 0
+                          ? "A little extra practice, just where you need it"
+                          : "Unlocks when a skill needs a little extra practice"
+                        : best
+                          ? `Personal best · ${best.score}/100`
+                          : "Ready when you are"}
+                    </span>
+                    {best && !isWeak ? (
+                      <span className="mini-stars" aria-label={`${stars} of 3 stars`}>
+                        {[1, 2, 3].map((star) => <Icon key={star} name="star" size={17} className={star <= stars ? "star-earned" : "star-empty"} />)}
+                      </span>
+                    ) : !locked ? <Icon name="arrow" size={20} /> : null}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+          <p className="page-note">Progress stays on this device. Every try is a step forward.</p>
+        </div>
       </div>
-
-      <div className="flex-1 flex flex-col gap-4 px-4 sm:px-10 pb-8 justify-start sm:justify-center min-h-0 overflow-y-auto pt-2">
-        {subj.tests.map((test, i) => {
-          const hs = loadHighScore(subject, test.key);
-          const isChallenge = test.variant === "challenge";
-          const isWeakPractice = test.mode === "weak";
-          const isDisabledWeakPractice = isWeakPractice && weakQuestionCount === 0;
-          return (
-            <motion.button
-              key={test.key}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                delay: i * 0.09,
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
-              }}
-              whileTap={{ scale: 0.95 }}
-              disabled={isDisabledWeakPractice}
-              onClick={() => {
-                if (isDisabledWeakPractice) return;
-                playTap();
-                onSelect(i);
-              }}
-              className="flex items-center rounded-2xl px-6 py-4 shadow-xl border border-white/20"
-              style={{
-                background: isChallenge
-                  ? "linear-gradient(135deg,#92400e,#b45309)"
-                  : subj.bg,
-                opacity: isDisabledWeakPractice ? 0.65 : 1,
-                minHeight: 82,
-              }}
-            >
-              <span className="text-4xl mr-4">{test.emoji}</span>
-              <div className="flex flex-col flex-1 text-left">
-                <span className="text-white font-extrabold text-lg sm:text-xl drop-shadow-sm">
-                  {test.label}
-                </span>
-                {isWeakPractice ? (
-                  <span className="text-white/85 text-sm font-semibold mt-0.5">
-                    {weakQuestionCount > 0
-                      ? `${weakQuestionCount} questions from skills to review`
-                      : "Play a few math rounds to unlock skill practice"}
-                  </span>
-                ) : hs ? (
-                  <span className="text-white/85 text-sm font-semibold mt-0.5">
-                    Best: {hs.score}/100 &nbsp;
-                    <Stars score={hs.score} />
-                  </span>
-                ) : (
-                  <span className="text-zinc-200/90 text-sm font-medium">
-                    Not played yet
-                  </span>
-                )}
-              </div>
-              <span className="text-zinc-200 text-2xl">›</span>
-            </motion.button>
-          );
-        })}
-      </div>
-    </motion.div>
+    </main>
   );
 }

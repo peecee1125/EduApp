@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import {
   SUBJECTS,
   loadHighScore,
@@ -9,54 +8,11 @@ import {
   starsFromScore,
 } from "../data/registry";
 import NavHeader from "../components/NavHeader";
+import Icon from "../components/Icon";
 import { useSound } from "../hooks/useSound";
 
 /** Dedupe persistence + fanfare when React Strict Mode remounts the results screen. */
 const persistedCompletionIds = new Set();
-
-const CONFETTI = [
-  "⭐",
-  "🌟",
-  "☀️",
-  "🍉",
-  "🎉",
-  "🎊",
-  "💫",
-  "🏆",
-  "🌊",
-  "🎈",
-  "🌈",
-  "🦋",
-];
-
-function Confetti({ count = 20 }) {
-  const pieces = Array.from({ length: count }, (_, id) => ({
-    id,
-    emoji: CONFETTI[id % CONFETTI.length],
-    left: Math.random() * 95,
-    delay: Math.random() * 1,
-    dur: 2.2 + Math.random() * 2,
-  }));
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none overflow-hidden"
-      aria-hidden
-    >
-      {pieces.map((p) => (
-        <motion.span
-          key={p.id}
-          initial={{ y: -30, opacity: 1, rotate: 0 }}
-          animate={{ y: "105vh", opacity: 0, rotate: 540 }}
-          transition={{ delay: p.delay, duration: p.dur, ease: "linear" }}
-          className="absolute text-2xl"
-          style={{ left: `${p.left}%`, top: 0 }}
-        >
-          {p.emoji}
-        </motion.span>
-      ))}
-    </div>
-  );
-}
 
 export default function ResultsScreen({
   subject,
@@ -82,8 +38,7 @@ export default function ResultsScreen({
   const [isNewHigh, setIsNewHigh] = useState(false);
 
   useEffect(() => {
-    if (completionId == null) return;
-    if (persistedCompletionIds.has(completionId)) return;
+    if (completionId == null || persistedCompletionIds.has(completionId)) return;
     persistedCompletionIds.add(completionId);
     playFanfare();
     const prev = loadHighScore(subject, test?.key);
@@ -108,177 +63,93 @@ export default function ResultsScreen({
     subj?.label,
     test?.key,
     test?.label,
-    correctCount,
-    answeredCount,
-    missedQuestions,
     answers,
   ]);
 
   const badges = [
-    isNewHigh && { icon: "🏆", label: "New High Score!" },
-    bestStreak >= 5 && { icon: "🔥", label: `${bestStreak} Answer Streak!` },
-    score === 100 && { icon: "🌟", label: "Perfect Score!" },
+    isNewHigh && { icon: "trophy", label: "A new personal best" },
+    bestStreak >= 5 && { icon: "spark", label: `${bestStreak} correct in a row` },
+    score === 100 && { icon: "check", label: "Every answer correct" },
   ].filter(Boolean);
 
   return (
-    <motion.div
-      key="results"
-      initial={{ opacity: 0, scale: 0.88 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{
-        duration: 0.35,
-        type: "spring",
-        stiffness: 240,
-        damping: 22,
-      }}
-      className="relative flex flex-col w-full h-full"
-      style={{
-        background:
-          "linear-gradient(145deg,#0a1628 0%,#0e7490 40%,#f59e0b 130%)",
-      }}
-    >
-      {stars >= 2 && <Confetti count={stars === 3 ? 30 : 16} />}
-
-      <NavHeader
-        title="Round complete! 🎓"
-        onBack={onHome}
-        backLabel="🏠 Home"
-      />
-
-      <div className="flex-1 flex flex-col items-center justify-start sm:justify-center gap-3 sm:gap-5 px-5 sm:px-8 py-4 min-h-0 overflow-y-auto">
-        {/* Stars */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 280 }}
-          className="flex gap-2"
-        >
-          {[1, 2, 3].map((s) => (
-            <span
-              key={s}
-              className="text-4xl sm:text-5xl drop-shadow-lg"
-              style={{ opacity: stars >= s ? 1 : 0.18 }}
-            >
-              ⭐
-            </span>
+    <main className="screen results-screen" data-subject={subject}>
+      {stars >= 2 && (
+        <div className="confetti" aria-hidden="true">
+          {Array.from({ length: 10 }, (_, index) => (
+            <span key={index} style={{ "--piece": index }} />
           ))}
-        </motion.div>
-
-        {/* Score */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-center"
-        >
-          <div className="text-zinc-200 font-bold text-lg">
-            {subj?.emoji} {test?.label}
-          </div>
-          <div
-            className="font-black text-5xl sm:text-7xl leading-none mt-1"
-            style={{ color: "#fbbf24" }}
-          >
-            {score}
-            <span className="text-3xl text-zinc-400">/100</span>
-          </div>
-          <div className="text-zinc-300 text-base mt-1">
-            {correctCount ?? score / 10} of {answeredCount ?? 10} correct
-          </div>
-        </motion.div>
-
-        {/* Badges */}
-        {badges.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex gap-3 flex-wrap justify-center"
-          >
-            {badges.map((b) => (
-              <div
-                key={b.label}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-bold"
-                style={{
-                  background: "rgba(251,191,36,0.15)",
-                  border: "1.5px solid #fbbf24",
-                }}
-              >
-                <span className="text-xl">{b.icon}</span>
-                {b.label}
-              </div>
-            ))}
-          </motion.div>
-        )}
-
-        {/* Action buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-col items-center gap-3"
-        >
-          {missedQuestions.length > 0 && (
-            <details
-              className="w-full max-w-2xl rounded-xl px-4 py-3 text-white"
-              style={{
-                background: "rgba(0,0,0,0.22)",
-                border: "1px solid rgba(255,255,255,0.2)",
-              }}
-            >
-              <summary className="cursor-pointer font-bold">
-                Review {missedQuestions.length} missed{" "}
-                {missedQuestions.length === 1 ? "answer" : "answers"}
-              </summary>
-              <ol className="mt-3 space-y-3">
-                {missedQuestions.map((item, index) => (
-                  <li
-                    key={`${item.question.question}-${index}`}
-                    className="rounded-lg p-3 text-sm"
-                    style={{ background: "rgba(255,255,255,0.08)" }}
-                  >
-                    <p className="font-bold">{item.question.question}</p>
-                    <p className="mt-1 text-white/75">Your answer: {item.selected}</p>
-                    <p className="text-green-200">Correct answer: {item.correct}</p>
-                    {item.question.explanation ? (
-                      <p className="mt-1 text-white/90">
-                        Why: {item.question.explanation}
-                      </p>
-                    ) : (
-                      <p className="mt-1 text-white/60">
-                        Try explaining what clue or strategy leads to the correct answer.
-                      </p>
-                    )}
-                  </li>
+        </div>
+      )}
+      <NavHeader title="Another page of progress" onBack={onHome} />
+      <div className="screen-scroll">
+        <div className="page-width results-layout">
+          <section className="result-sheet" aria-labelledby="results-heading">
+            <p className="eyebrow">Round complete</p>
+            <div className="result-stars" aria-label={`${stars} of 3 stars earned`}>
+              {[1, 2, 3].map((star) => (
+                <Icon key={star} name="star" size={48} className={star <= stars ? "star-earned" : "star-empty"} />
+              ))}
+            </div>
+            <h1 id="results-heading">{score >= 70 ? "Look at you grow." : "Every try counts."}</h1>
+            <p className="result-activity">{test?.label}</p>
+            <p className="result-score">{score}<span>/100</span></p>
+            <p className="result-correct">{correctCount ?? score / 10} of {answeredCount ?? 10} correct</p>
+            {badges.length > 0 && (
+              <div className="result-badges">
+                {badges.map((badge) => (
+                  <span key={badge.label}><Icon name={badge.icon} size={18} />{badge.label}</span>
                 ))}
-              </ol>
-            </details>
-          )}
-          <div className="flex gap-4 flex-wrap justify-center">
-            <motion.button
-              whileTap={{ scale: 0.93 }}
-              onClick={onPlayAgain}
-              className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
-              style={{
-                background: subj?.bg ?? "linear-gradient(135deg,#7c3aed,#4f46e5)",
-              }}
-            >
-              🔄 Play Again
-            </motion.button>
-            <motion.button
-              whileTap={{ scale: 0.93 }}
-              onClick={onSubjectMenu}
-              className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
-              style={{
-                background: "rgba(255,255,255,0.14)",
-                border: "1px solid rgba(255,255,255,0.28)",
-              }}
-            >
-              📋 All Tests
-            </motion.button>
-          </div>
-        </motion.div>
+              </div>
+            )}
+          </section>
+
+          <section className="result-next" aria-labelledby="next-heading">
+            <p className="eyebrow">Keep your curiosity going</p>
+            <h2 id="next-heading">What&apos;s next?</h2>
+            <p className="result-next-copy">
+              {missedQuestions.length > 0
+                ? "The ones you missed are a chance to learn something new. Have another look before you go."
+                : "Take a moment to enjoy that. Then try another round or discover a different activity."}
+            </p>
+            <div className="result-actions">
+              <button className="button button-primary" onClick={onPlayAgain}>
+                <Icon name="replay" size={20} />Try another round
+              </button>
+              <button className="button button-paper" onClick={onSubjectMenu}>
+                All activities<Icon name="arrow" size={20} />
+              </button>
+            </div>
+            {missedQuestions.length > 0 ? (
+              <details className="mistake-review">
+                <summary>
+                  <Icon name="book" size={21} />
+                  <span>Review {missedQuestions.length} missed {missedQuestions.length === 1 ? "answer" : "answers"}</span>
+                  <Icon name="arrow" size={18} className="review-arrow" />
+                </summary>
+                <ol className="mistake-list">
+                  {missedQuestions.map((item, index) => (
+                    <li key={`${item.question.question}-${index}`}>
+                      <p className="eyebrow">A second look · {index + 1}</p>
+                      {item.question.passage && <p className="review-passage">{item.question.passage}</p>}
+                      <h3>{item.question.question}</h3>
+                      <p className="review-selected">Your answer: {item.selected}</p>
+                      <p className="review-correct"><Icon name="check" size={18} />{item.correct}</p>
+                      <p className="review-explanation">
+                        {item.question.explanation
+                          ? item.question.explanation
+                          : "What clue or strategy leads to the correct answer? Try explaining it in your own words."}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            ) : (
+              <div className="result-note"><Icon name="book" size={25} /><p>A small habit makes a big difference.<br />Come back for another little discovery.</p></div>
+            )}
+          </section>
+        </div>
       </div>
-    </motion.div>
+    </main>
   );
 }

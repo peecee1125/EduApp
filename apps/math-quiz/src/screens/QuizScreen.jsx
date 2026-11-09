@@ -5,24 +5,19 @@ import {
   useCallback,
   useRef,
 } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   SUBJECTS,
   shuffle,
   pickRepresentative,
   getWeakSkillQuestions,
+  scoreFromAnswers,
 } from "../data/registry";
 import NavHeader from "../components/NavHeader";
+import Icon from "../components/Icon";
 import { useSound } from "../hooks/useSound";
 
 const PER_ROUND = 10;
 const TIMED_SECONDS = 60;
-
-/** Unanswered: readable on dark purple without looking “washed out”. */
-const BG_UNANSWERED = "rgba(255,255,255,0.16)";
-const BG_DIM = "rgba(255,255,255,0.09)";
-const BG_CORRECT = "#15803d";
-const BG_WRONG = "#b91c1c";
 
 function initState({ questions, mode }) {
   return {
@@ -48,6 +43,7 @@ function reducer(state, action) {
   switch (action.type) {
     case "ANSWER": {
       const q = state.questions[state.index];
+      if (!q || state.answered || (state.mode === "timed" && state.timeRemaining === 0)) return state;
       const ok = action.choice === q.answer;
       const streak = ok ? state.streak + 1 : 0;
       return {
@@ -89,13 +85,6 @@ function reducer(state, action) {
 
 const LABELS = ["A", "B", "C", "D"];
 
-function choiceBackground(choice, answered, correct, selected) {
-  if (!answered) return BG_UNANSWERED;
-  if (choice === correct) return BG_CORRECT;
-  if (choice === selected && choice !== correct) return BG_WRONG;
-  return BG_DIM;
-}
-
 export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
   const subj = SUBJECTS[subject];
   const test = subj?.tests[testIdx];
@@ -108,9 +97,12 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
     { questions: pool, mode: test?.mode },
     initState,
   );
-  const { playCorrect, playWrong, playTap } = useSound();
+  const { playCorrect, playWrong } = useSound();
   const timerRef = useRef(null);
   const countdownRef = useRef(null);
+  const scrollRef = useRef(null);
+  const questionRef = useRef(null);
+  const answerLockRef = useRef(false);
   const completedRef = useRef(false);
   const completionIdRef = useRef(
     typeof crypto !== "undefined" && crypto.randomUUID
@@ -131,13 +123,9 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
     }
     if (completedRef.current) return;
     completedRef.current = true;
+    const total = state.mode === "timed" ? state.answeredCount : state.questions.length;
     onComplete({
-      score:
-        state.mode === "timed"
-          ? state.answeredCount
-            ? Math.round((state.score / state.answeredCount) * 100)
-            : 0
-          : state.score,
+      score: scoreFromAnswers(state.score / 10, total),
       bestStreak: state.bestStreak,
       correctCount: state.score / 10,
       answeredCount: state.answeredCount,
@@ -152,6 +140,7 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
     state.answeredCount,
     state.answers,
     state.mode,
+    state.questions.length,
     onComplete,
   ]);
 
@@ -160,6 +149,12 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
     countdownRef.current = setInterval(() => dispatch({ type: "TICK" }), 1000);
     return () => clearInterval(countdownRef.current);
   }, [state.mode, isDone]);
+
+  useEffect(() => {
+    answerLockRef.current = false;
+    scrollRef.current?.scrollTo({ top: 0, behavior: "auto" });
+    if (state.index > 0) questionRef.current?.focus({ preventScroll: true });
+  }, [state.index]);
 
   useLayoutEffect(
     () => () => {
@@ -171,7 +166,8 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
 
   const answer = useCallback(
     (choice) => {
-      if (state.answered || !q) return;
+      if (state.answered || !q || answerLockRef.current || isDone) return;
+      answerLockRef.current = true;
       dispatch({ type: "ANSWER", choice });
       if (choice === q.answer) playCorrect();
       else playWrong();
@@ -180,199 +176,101 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
         state.mode === "timed" ? 500 : 1500,
       );
     },
-    [state.answered, state.mode, q, playCorrect, playWrong],
+    [state.answered, state.mode, q, isDone, playCorrect, playWrong],
   );
 
   if (!test) return null;
 
-  const bg =
-    "linear-gradient(145deg,#0a1628 0%,#0e7490 45%,#164e63 100%)";
-
   if (isDone) {
     return (
-      <motion.div
-        key="quiz-done"
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="flex flex-col w-full h-full"
-        style={{ background: bg }}
-        aria-busy="true"
-      >
-        <NavHeader
-          title={`${subj.emoji} ${test.label}`}
-          onBack={() => {
-            playTap();
-            clearTimeout(timerRef.current);
-            clearInterval(countdownRef.current);
-            onBack();
-          }}
-        />
-        <div className="flex-1 flex flex-col items-center justify-center gap-4 min-h-0">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-            className="text-5xl"
-            aria-hidden
-          >
-            ⭐
-          </motion.div>
-          <p className="text-white/70 font-bold text-lg">Calculating…</p>
-        </div>
-      </motion.div>
+      <main className="screen" aria-busy="true">
+        <p className="loading-message" role="status">Gathering your discoveries...</p>
+      </main>
     );
   }
 
   const { answered } = state;
+  const timed = state.mode === "timed";
+  const longChoices = q.choices.some((choice) => choice.length > 58);
+  const progress = timed
+    ? ((TIMED_SECONDS - state.timeRemaining) / TIMED_SECONDS) * 100
+    : (state.index / state.questions.length) * 100;
 
   return (
-    <motion.div
-      key="quiz"
-      initial={{ opacity: 0, x: 60 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -60 }}
-      transition={{ duration: 0.25 }}
-      className="flex flex-col w-full h-full"
-      style={{ background: bg }}
-    >
+    <main className="screen quiz-screen" data-subject={subject}>
       <NavHeader
-        title={`${subj.emoji} ${test.label}`}
+        title={test.label}
+        backLabel="Activities"
         onBack={() => {
-          playTap();
           clearTimeout(timerRef.current);
           clearInterval(countdownRef.current);
           onBack();
         }}
       />
 
-      <div
-        className="flex items-center justify-between py-2 shrink-0 text-base font-bold"
-        style={{
-          background: "rgba(0,0,0,0.35)",
-          paddingLeft: "max(20px,env(safe-area-inset-left))",
-          paddingRight: "max(20px,env(safe-area-inset-right))",
-        }}
-      >
-        <span className="text-white/90">
-          {state.mode === "timed" ? (
-            <>
-              Answered{" "}
-              <span style={{ color: "#fbbf24" }}>{state.answeredCount}</span>
-            </>
-          ) : (
-            <>
-              Q <span style={{ color: "#fbbf24" }}>{state.index + 1}</span> /{" "}
-              {state.questions.length}
-            </>
-          )}
-        </span>
-        <span className="text-white/90">
-          {state.mode === "timed" ? (
-            <>
-              Time&nbsp;
-              <span style={{ color: "#4ade80" }}>{state.timeRemaining}s</span>
-            </>
-          ) : (
-            <>
-              Score&nbsp;<span style={{ color: "#4ade80" }}>{state.score}</span>
-            </>
-          )}
-        </span>
-        {state.streak >= 2 && (
-          <span className="text-orange-300 font-bold">
-            🔥 {state.streak} in a row!
+      <div className="quiz-progress-wrap">
+        <div className="quiz-meta page-width">
+          <span>{timed ? `${state.answeredCount} answered` : `Question ${state.index + 1} of ${state.questions.length}`}</span>
+          {state.streak >= 2 && <span className="streak-label">{state.streak} in a row</span>}
+          <span className="quiz-score">
+            {timed && <Icon name="timer" size={18} />}
+            {timed ? `${state.timeRemaining}s left` : `${state.score} points`}
           </span>
-        )}
+        </div>
+        <div
+          className="quiz-progress"
+          role="progressbar"
+          aria-label={timed ? "Sprint time elapsed" : "Round progress"}
+          aria-valuemin={0}
+          aria-valuemax={timed ? TIMED_SECONDS : state.questions.length}
+          aria-valuenow={timed ? TIMED_SECONDS - state.timeRemaining : state.index}
+        >
+          <div style={{ width: `${progress}%` }} />
+        </div>
       </div>
 
-      <div
-        className="flex-1 flex flex-col min-h-0 pt-3 gap-3"
-        style={{
-          paddingLeft: "max(20px,env(safe-area-inset-left))",
-          paddingRight: "max(20px,env(safe-area-inset-right))",
-        }}
-      >
-        <AnimatePresence mode="wait">
+      <div className="screen-scroll quiz-scroll" ref={scrollRef}>
+        <div className={`page-width quiz-workspace ${q.passage ? "quiz-with-passage" : ""}`}>
           {q.passage && (
-            <motion.div
-              key={`p-${state.index}`}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="shrink-0 rounded-xl px-4 py-3 text-zinc-100 text-base leading-relaxed font-medium"
-              style={{
-                background: "rgba(139,92,246,0.28)",
-                border: "1px solid rgba(196,181,253,0.45)",
-              }}
-            >
-              {q.passage}
-            </motion.div>
+            <section className="reading-sheet" aria-label="Read this passage">
+              <p className="eyebrow"><Icon name="book" size={18} /> Read & discover</p>
+              <p className="reading-passage">{q.passage}</p>
+              <span className="reading-sheet-note">The clues are in the details.</span>
+            </section>
           )}
-        </AnimatePresence>
-
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={`q-${state.index}`}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="text-zinc-50 font-extrabold text-xl sm:text-2xl leading-snug shrink-0"
-          >
-            {q.question}
-          </motion.p>
-        </AnimatePresence>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`c-${state.index}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex-1 grid grid-cols-2 gap-3 pb-3 min-h-0"
-          >
-            {q.choices.map((choice, i) => {
-              const bgChoice = choiceBackground(
-                choice,
-                answered,
-                answered?.correct,
-                answered?.selected,
-              );
-              const showLetterTint = !answered;
-              return (
-                <motion.button
-                  key={`${state.index}-${i}`}
-                  whileTap={!answered ? { scale: 0.94 } : {}}
-                  onClick={() => answer(choice)}
-                  className="flex items-center rounded-2xl px-4 py-3 text-left shadow-lg border border-white/25"
-                  style={{
-                    background: bgChoice,
-                    cursor: answered ? "default" : "pointer",
-                    transition: "background 0.25s",
-                    minHeight: "clamp(72px, 15vh, 110px)",
-                  }}
-                >
-                  <span
-                    className="shrink-0 font-black text-sm mr-3 rounded-full flex items-center justify-center"
-                    style={{
-                      width: 30,
-                      height: 30,
-                      minWidth: 30,
-                      background: showLetterTint
-                        ? "rgba(255,255,255,0.92)"
-                        : "rgba(255,255,255,0.18)",
-                      color: showLetterTint ? subj.color : "white",
-                    }}
+          <section className="question-panel" aria-labelledby="question-heading">
+            <p className="eyebrow">{timed ? "Quick thinking" : "Think it through"}</p>
+            <h1 id="question-heading" className="question-heading" ref={questionRef} tabIndex={-1}>{q.question}</h1>
+            <p className="question-instruction">Choose one answer.</p>
+            <div className={`answer-choices ${longChoices ? "answer-choices-long" : ""}`}>
+              {q.choices.map((choice, index) => {
+                const correct = answered && choice === q.answer;
+                const wrong = answered && choice === answered.selected && !correct;
+                return (
+                  <button
+                    key={`${state.index}-${index}`}
+                    className={`answer-choice ${correct ? "answer-correct" : wrong ? "answer-wrong" : ""}`}
+                    onClick={() => answer(choice)}
+                    disabled={Boolean(answered)}
                   >
-                    {LABELS[i]}
-                  </span>
-                  <span className="text-zinc-50 font-semibold text-base sm:text-xl leading-snug">
-                    {choice}
-                  </span>
-                </motion.button>
-              );
-            })}
-          </motion.div>
-        </AnimatePresence>
+                    <span className="answer-letter">{LABELS[index]}</span>
+                    <span className="answer-text">{choice}</span>
+                    {correct ? <Icon name="check" size={22} /> : wrong ? <Icon name="close" size={22} /> : null}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="answer-feedback" role="status" aria-atomic="true">
+              {answered && (
+                <p className={answered.selected === q.answer ? "feedback-correct" : "feedback-review"}>
+                  <Icon name={answered.selected === q.answer ? "check" : "book"} size={20} />
+                  {answered.selected === q.answer ? "You got it!" : `Not quite. The answer is ${q.answer}.`}
+                </p>
+              )}
+            </div>
+          </section>
+        </div>
       </div>
-    </motion.div>
+    </main>
   );
 }

@@ -18,6 +18,19 @@ Educational and fun apps built with **React**, **Vite**, and **Tailwind CSS**. T
 
 On the iPad, use **`http://<NAS-LAN-IP>:9080`** (same Wi‑Fi as the NAS). Large buttons and `viewport-fit=cover` help with touch and full-screen feel.
 
+### iPad-first design
+
+The original **learning workbook** interface uses warm paper colors, editorial headings, hand-drawn-style SVG illustrations, and subject-specific accents. It is not a copied commercial template, and all fonts and illustrations are served locally.
+
+- Layouts adapt to 11-inch and 13-inch iPad Air viewports in **portrait and landscape**, including smaller Split View windows.
+- Navigation and action buttons have at least **48 px** touch targets. Activity grids scroll without hiding their first items; long passages and answers wrap instead of clipping.
+- Reading questions use a side-by-side passage/answer layout on wide screens and a stacked layout on narrower screens. Poems and visual arrays retain their line breaks.
+- Dynamic viewport sizing and safe-area spacing accommodate Safari and the Home Screen app. Browser zoom remains available.
+- Keyboard focus is visible, answer feedback includes text and icons rather than color alone, and **Reduce Motion** disables transitions and confetti.
+- The quiz still advances automatically after an answer: 1.5 seconds for standard rounds and 0.5 seconds for the timed sprint. Explanations remain available in results-page mistake review.
+
+On iPad, use Safari's **Share → Add to Home Screen** for a standalone window. After deploying, refresh the app to load the new design. No offline service worker is installed; the app must be reachable over the network.
+
 ### Subjects (3rd-grade learning + curiosity)
 
 Same eight **subject keys** for saved scores. Labels and **test names** now spell out what to learn: core math/ELA, **STEM science** (including a new data & design round), **geography** (maps, Tennessee, world wonders), **planets & space tech**, **dinosaurs as science** (fossils & evidence), and **WOW STEM facts**.
@@ -26,7 +39,7 @@ Same eight **subject keys** for saved scores. Labels and **test names** now spel
 | ------- | ----- | -------------------------------- |
 | Math · Grade 3 | Operations, multiplication, division, fractions, measurement | Adds division, fractions, area/perimeter, elapsed time, and a timed fact sprint |
 | Reading & writing | Comprehension, vocabulary | Adds multi-paragraph text evidence, word parts, homophones, and reference skills |
-| STEM · life, Earth & physical | NGSS-style content | Adds **STEM curiosity: data, design & Earth** |
+| STEM · life, Earth & physical | Life, Earth, physical science & scientific thinking | **STEM curiosity: data, design & Earth** and **Forces, weather & life cycles** |
 | Geography | Maps, landforms, civics | Adds **Explorers & world wonders** |
 | Planets & space science | Solar system through deep space | Adds **Planet mysteries & NASA tech** |
 | Dinosaurs · prehistoric STEM | Mesozoic life | Adds **Fossils, evidence & birds link** |
@@ -36,9 +49,9 @@ Same eight **subject keys** for saved scores. Labels and **test names** now spel
 ### Features
 
 - **10 randomised questions** per standard round, drawn from the subject's question bank. The fact-fluency sprint is timed instead.
-- **Scoring:** 10 pts per correct answer; 0–3 ⭐ stars awarded (1 star for a nonzero score below 70, 2 stars ≥ 70, 3 stars ≥ 90).
+- **Scoring:** 10 pts per correct answer during a round; results show a percentage out of 100, including short skill-practice rounds and timed sprints. Earn 0–3 ⭐ stars (1 star for a nonzero score below 70, 2 stars ≥ 70, 3 stars ≥ 90).
 - **Best score** per test is saved and shown on the subject menu so the learner can see their personal best.
-- **Star history:** recent attempts are recorded in `localStorage` (capped so storage stays healthy). Tap **⭐ My Stars** on the home screen to see history (score, stars, subject, date) and a running total of stars earned.
+- **Star history:** recent attempts are recorded in `localStorage` (capped so storage stays healthy). Tap **My Stars** on the home screen to see history (score, stars, subject, date) and a running total of stars earned.
 - **Streak tracking:** best consecutive correct answer streak is tracked per session and shown at results.
 - **Mistake review:** results show missed questions, selected and correct answers, and an explanation when the question includes one.
 - **Skill practice:** tagged answers build per-skill progress in `localStorage`; the math menu unlocks a practice round for skills below 70% after at least two attempts.

@@ -4,10 +4,16 @@
   "description": "In-year Tennessee grade 3 practice for math, reading, science, maps, and more",
   "start_url": ".",
   "display": "standalone",
-  "orientation": "landscape",
-  "background_color": "#0a1628",
-  "theme_color": "#0e7490",
+  "orientation": "any",
+  "background_color": "#f7f5ed",
+  "theme_color": "#f7f5ed",
   "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "./icon.svg",
       "sizes": "any",
