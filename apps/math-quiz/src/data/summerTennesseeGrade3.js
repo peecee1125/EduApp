@@ -1,10 +1,10 @@
-// Tennessee 3rd-grade prep — TN Academic Standards
+// Tennessee grade 3 practice — TN Academic Standards
 // Math: 3.OA, 3.NBT, 3.NF, 3.MD, 3.G blended into short story problems.
 // ELA: RL.3 / RI.3 / L.3 with TN-flavored passages.
 // Social Studies (TN Grade 3 has world focus, but includes TN state connections):
 // state symbols, TN geography & rivers, three branches of government, community roles.
 
-export const mathGrade3SummerPrep = [
+export const mathGrade3Practice = [
   {
     _cat: "mult",
     passage:
@@ -182,7 +182,7 @@ export const mathGrade3SummerPrep = [
   },
 ];
 
-export const elaGrade3SummerPrep = [
+export const elaGrade3Practice = [
   {
     _cat: "detail",
     passage:
@@ -439,23 +439,27 @@ Buzzy bees buzz busily.`,
   },
 ];
 
-export const tennesseeSummerSocial = [
+export const tennesseeSocialStudies = [
   {
+    _cat: "state_government",
     question: "What is the CAPITAL city of Tennessee?",
     choices: ["Memphis", "Nashville", "Knoxville", "Chattanooga"],
     answer: "Nashville",
   },
   {
+    _cat: "state_symbols",
     question: "Which of these is a state SYMBOL of Tennessee?",
     choices: ["Bald eagle", "Mockingbird", "Blue jay", "Puffin"],
     answer: "Mockingbird",
   },
   {
+    _cat: "state_symbols",
     question: "The state flower of Tennessee, often seen in gardens, is the…",
     choices: ["Iris", "Rose", "Sunflower", "Daisy"],
     answer: "Iris",
   },
   {
+    _cat: "state_symbols",
     passage:
       "Tennessee's state flag has three white stars in a blue circle. Each star stands for one of the state's three parts.",
     question: "What do the three stars on Tennessee's flag stand for?",
@@ -468,6 +472,7 @@ export const tennesseeSummerSocial = [
     answer: "The three grand divisions: East, Middle, and West Tennessee",
   },
   {
+    _cat: "geography_rivers",
     passage:
       "A wide, muddy river forms the western border of Tennessee. Barges push cargo up and down it every day.",
     question: "Which river forms Tennessee's western border?",
@@ -480,6 +485,7 @@ export const tennesseeSummerSocial = [
     answer: "Mississippi River",
   },
   {
+    _cat: "geography_regions",
     question:
       "In which part of Tennessee are the Great Smoky Mountains located?",
     choices: [
@@ -491,6 +497,7 @@ export const tennesseeSummerSocial = [
     answer: "East Tennessee",
   },
   {
+    _cat: "tennessee_history",
     passage:
       "Elvis Presley's home Graceland and a famous BBQ scene are found in this city on the bluffs of the Mississippi River.",
     question: "Which Tennessee city is being described?",
@@ -498,12 +505,14 @@ export const tennesseeSummerSocial = [
     answer: "Memphis",
   },
   {
+    _cat: "resources",
     question:
       "Which of these is a NATURAL RESOURCE that people use in Tennessee?",
     choices: ["Cars", "Trees for lumber", "Cell phones", "Bicycles"],
     answer: "Trees for lumber",
   },
   {
+    _cat: "economics",
     question:
       "A GOOD is something you can hold, and a SERVICE is work someone does for you. Which is a SERVICE?",
     choices: [
@@ -515,17 +524,20 @@ export const tennesseeSummerSocial = [
     answer: "A haircut at the barber",
   },
   {
+    _cat: "economics",
     question: "People who BUY goods and services are called…",
     choices: ["Producers", "Consumers", "Governors", "Mayors"],
     answer: "Consumers",
   },
   {
+    _cat: "economics",
     question:
       "A farmer who grows Tennessee tomatoes and sells them at a market is a…",
     choices: ["Consumer", "Producer", "Judge", "Tourist"],
     answer: "Producer",
   },
   {
+    _cat: "economics",
     passage:
       "There are always more wants than resources to fill them. Tennessee farmers can only plant so many acres.",
     question: "This idea is called…",
@@ -533,11 +545,13 @@ export const tennesseeSummerSocial = [
     answer: "Scarcity",
   },
   {
+    _cat: "state_government",
     question: "The leader of the state of Tennessee is the…",
     choices: ["President", "Governor", "Mayor", "Chief Justice"],
     answer: "Governor",
   },
   {
+    _cat: "government_branches",
     question: "Which BRANCH of government makes the laws?",
     choices: [
       "Legislative (Congress or legislature)",
@@ -548,12 +562,14 @@ export const tennesseeSummerSocial = [
     answer: "Legislative (Congress or legislature)",
   },
   {
+    _cat: "government_branches",
     question:
       "The BRANCH of government that decides if laws follow the U.S. Constitution is the…",
     choices: ["Legislative", "Executive", "Judicial", "Voting"],
     answer: "Judicial",
   },
   {
+    _cat: "civics",
     passage:
       "A citizen has both rights (things they may do) and responsibilities (things they should do).",
     question: "Which is a RESPONSIBILITY of a good citizen?",
@@ -566,6 +582,7 @@ export const tennesseeSummerSocial = [
     answer: "Following the rules and helping the community",
   },
   {
+    _cat: "civics",
     question:
       "The first ten changes added to the U.S. Constitution are called the…",
     choices: [
@@ -577,6 +594,7 @@ export const tennesseeSummerSocial = [
     answer: "Bill of Rights",
   },
   {
+    _cat: "indigenous_history",
     passage:
       "Long before European settlers arrived, the CHEROKEE people lived in what is now East Tennessee. They built villages, farmed corn, and fished.",
     question: "The Cherokee are an example of…",
@@ -589,6 +607,7 @@ export const tennesseeSummerSocial = [
     answer: "Native American / American Indian people",
   },
   {
+    _cat: "tennessee_history",
     passage:
       "Davy Crockett was a famous Tennessean known as a hunter, a soldier, and later a member of the U.S. Congress from Tennessee.",
     question: "Which title BEST describes Davy Crockett based on the passage?",
@@ -601,6 +620,7 @@ export const tennesseeSummerSocial = [
     answer: "Tennessee frontiersman and lawmaker",
   },
   {
+    _cat: "tennessee_culture",
     passage:
       "Tennessee's largest music genre grew from folk, gospel, and blues. Nashville became known as 'Music City' because of it.",
     question: "Which type of music is Nashville MOST famous for?",
@@ -608,6 +628,7 @@ export const tennesseeSummerSocial = [
     answer: "Country",
   },
   {
+    _cat: "civics",
     question:
       "When people take TURNS voting for leaders, this important part of American life is called…",
     choices: ["An election", "A parade", "A recess", "A committee"],

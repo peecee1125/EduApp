@@ -1,5 +1,5 @@
 /**
- * Grade-3 readiness + curiosity topics — TN Academic Standards for Grade 3
+ * Grade-3 learning + curiosity topics — TN Academic Standards for Grade 3
  * (Math 3.OA/3.NBT/3.NF/3.MD/3.G, Science 3.LS/3.PS/3.ESS, Social Studies world
  * geography with TN connections) plus enrichment banks for planets, "wow" facts,
  * and paleontology as science.
@@ -81,7 +81,7 @@ export const stemThirdGradeCuriosity = [
   {
     _cat: "energy",
     passage:
-      "A guitar string is plucked. It vibrates back and forth, and Aahana hears the note.",
+      "A guitar string is plucked. It vibrates back and forth, and a listener hears the note.",
     question: "What did the vibrating string produce?",
     choices: ["Sound energy", "Only heat", "Only light", "A magnet"],
     answer: "Sound energy",

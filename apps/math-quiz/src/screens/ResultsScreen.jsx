@@ -5,6 +5,7 @@ import {
   loadHighScore,
   saveHighScore,
   saveAttempt,
+  saveSkillResults,
   starsFromScore,
 } from "../data/registry";
 import NavHeader from "../components/NavHeader";
@@ -68,7 +69,15 @@ export default function ResultsScreen({
   const { playFanfare } = useSound();
   const subj = SUBJECTS[subject];
   const test = subj?.tests[testIdx];
-  const { score, bestStreak, completionId } = results ?? {};
+  const {
+    score,
+    bestStreak,
+    completionId,
+    correctCount,
+    answeredCount,
+    answers,
+    missedQuestions = [],
+  } = results ?? {};
   const stars = starsFromScore(score);
   const [isNewHigh, setIsNewHigh] = useState(false);
 
@@ -89,6 +98,7 @@ export default function ResultsScreen({
       subjectLabel: subj?.label,
       testLabel: test?.label,
     });
+    saveSkillResults(subject, answers);
   }, [
     completionId,
     playFanfare,
@@ -98,6 +108,10 @@ export default function ResultsScreen({
     subj?.label,
     test?.key,
     test?.label,
+    correctCount,
+    answeredCount,
+    missedQuestions,
+    answers,
   ]);
 
   const badges = [
@@ -132,7 +146,7 @@ export default function ResultsScreen({
         backLabel="🏠 Home"
       />
 
-      <div className="flex-1 flex flex-col items-center justify-center gap-3 sm:gap-5 px-5 sm:px-8 min-h-0">
+      <div className="flex-1 flex flex-col items-center justify-start sm:justify-center gap-3 sm:gap-5 px-5 sm:px-8 py-4 min-h-0 overflow-y-auto">
         {/* Stars */}
         <motion.div
           initial={{ scale: 0 }}
@@ -169,7 +183,7 @@ export default function ResultsScreen({
             <span className="text-3xl text-zinc-400">/100</span>
           </div>
           <div className="text-zinc-300 text-base mt-1">
-            {score / 10} of 10 correct
+            {correctCount ?? score / 10} of {answeredCount ?? 10} correct
           </div>
         </motion.div>
 
@@ -202,29 +216,67 @@ export default function ResultsScreen({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex gap-4 flex-wrap justify-center"
+          className="flex flex-col items-center gap-3"
         >
-          <motion.button
-            whileTap={{ scale: 0.93 }}
-            onClick={onPlayAgain}
-            className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
-            style={{
-              background: subj?.bg ?? "linear-gradient(135deg,#7c3aed,#4f46e5)",
-            }}
-          >
-            🔄 Play Again
-          </motion.button>
-          <motion.button
-            whileTap={{ scale: 0.93 }}
-            onClick={onSubjectMenu}
-            className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
-            style={{
-              background: "rgba(255,255,255,0.14)",
-              border: "1px solid rgba(255,255,255,0.28)",
-            }}
-          >
-            📋 All Tests
-          </motion.button>
+          {missedQuestions.length > 0 && (
+            <details
+              className="w-full max-w-2xl rounded-xl px-4 py-3 text-white"
+              style={{
+                background: "rgba(0,0,0,0.22)",
+                border: "1px solid rgba(255,255,255,0.2)",
+              }}
+            >
+              <summary className="cursor-pointer font-bold">
+                Review {missedQuestions.length} missed{" "}
+                {missedQuestions.length === 1 ? "answer" : "answers"}
+              </summary>
+              <ol className="mt-3 space-y-3">
+                {missedQuestions.map((item, index) => (
+                  <li
+                    key={`${item.question.question}-${index}`}
+                    className="rounded-lg p-3 text-sm"
+                    style={{ background: "rgba(255,255,255,0.08)" }}
+                  >
+                    <p className="font-bold">{item.question.question}</p>
+                    <p className="mt-1 text-white/75">Your answer: {item.selected}</p>
+                    <p className="text-green-200">Correct answer: {item.correct}</p>
+                    {item.question.explanation ? (
+                      <p className="mt-1 text-white/90">
+                        Why: {item.question.explanation}
+                      </p>
+                    ) : (
+                      <p className="mt-1 text-white/60">
+                        Try explaining what clue or strategy leads to the correct answer.
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </details>
+          )}
+          <div className="flex gap-4 flex-wrap justify-center">
+            <motion.button
+              whileTap={{ scale: 0.93 }}
+              onClick={onPlayAgain}
+              className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
+              style={{
+                background: subj?.bg ?? "linear-gradient(135deg,#7c3aed,#4f46e5)",
+              }}
+            >
+              🔄 Play Again
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.93 }}
+              onClick={onSubjectMenu}
+              className="px-5 sm:px-8 py-3 sm:py-4 rounded-2xl font-extrabold text-white text-base sm:text-lg shadow-xl"
+              style={{
+                background: "rgba(255,255,255,0.14)",
+                border: "1px solid rgba(255,255,255,0.28)",
+              }}
+            >
+              📋 All Tests
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </motion.div>

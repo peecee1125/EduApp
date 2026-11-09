@@ -5,8 +5,8 @@ export const advancedMath = [
   {
     _cat: "multi_step",
     passage:
-      "Aahana collects 18 stickers on Monday and 14 on Tuesday. She gives 9 stickers to her brother.",
-    question: "How many stickers does Aahana have LEFT?",
+      "A student collects 18 stickers on Monday and 14 on Tuesday, then gives 9 stickers to a friend.",
+    question: "How many stickers does the student have LEFT?",
     choices: ["23", "32", "41", "17"],
     answer: "23",
   },
@@ -18,8 +18,8 @@ export const advancedMath = [
   },
   {
     _cat: "fractions",
-    passage: "A pizza is cut into 8 equal slices. Aahana eats 3 slices.",
-    question: "What fraction of the pizza did Aahana eat?",
+    passage: "A pizza is cut into 8 equal slices. A student eats 3 slices.",
+    question: "What fraction of the pizza did the student eat?",
     choices: ["3/8", "5/8", "3/5", "1/3"],
     answer: "3/8",
   },
@@ -38,8 +38,8 @@ export const advancedMath = [
   {
     _cat: "measurement",
     passage:
-      "A ribbon is 2 feet long. Aahana needs pieces that are 6 inches each. (Remember: 1 foot = 12 inches.)",
-    question: "How many 6-inch pieces can she cut from the ribbon?",
+      "A ribbon is 2 feet long. A student needs pieces that are 6 inches each. (Remember: 1 foot = 12 inches.)",
+    question: "How many 6-inch pieces can the student cut from the ribbon?",
     choices: ["2", "3", "4", "6"],
     answer: "4",
   },
@@ -52,8 +52,8 @@ export const advancedMath = [
   {
     _cat: "multi_step",
     passage:
-      "Each box holds 6 crayons. Aahana packs 4 boxes for her class and keeps 5 crayons for herself.",
-    question: "How many crayons does she pack for her class?",
+      "Each box holds 6 crayons. A student packs 4 boxes for the class and keeps 5 crayons.",
+    question: "How many crayons are packed for the class?",
     choices: ["18", "24", "29", "30"],
     answer: "24",
   },
@@ -73,8 +73,8 @@ export const advancedMath = [
   {
     _cat: "multi_step",
     passage:
-      "Aahana saves $2 each week for 6 weeks. She spends $7 on a science kit.",
-    question: "How much money does she have LEFT?",
+      "A student saves $2 each week for 6 weeks, then spends $7 on a science kit.",
+    question: "How much money is LEFT?",
     choices: ["$3", "$5", "$7", "$12"],
     answer: "$5",
   },

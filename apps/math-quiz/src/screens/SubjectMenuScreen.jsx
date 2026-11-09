@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { SUBJECTS, loadHighScore, starsFromScore } from "../data/registry";
+import {
+  SUBJECTS,
+  loadHighScore,
+  starsFromScore,
+  getWeakSkillQuestions,
+} from "../data/registry";
 import NavHeader from "../components/NavHeader";
 import { useSound } from "../hooks/useSound";
 
@@ -13,6 +18,8 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
   const { playTap } = useSound();
   const subj = SUBJECTS[subject];
   if (!subj) return null;
+  const weakQuestionCount =
+    subject === "math" ? getWeakSkillQuestions(subject).length : 0;
 
   return (
     <motion.div
@@ -31,7 +38,7 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
 
       <div className="text-center py-3 shrink-0">
         <span className="text-zinc-200 text-base font-semibold px-2">
-          Each round = 10 questions · learn something new
+          Most rounds have 10 questions · learn something new
         </span>
       </div>
 
@@ -39,6 +46,8 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
         {subj.tests.map((test, i) => {
           const hs = loadHighScore(subject, test.key);
           const isChallenge = test.variant === "challenge";
+          const isWeakPractice = test.mode === "weak";
+          const isDisabledWeakPractice = isWeakPractice && weakQuestionCount === 0;
           return (
             <motion.button
               key={test.key}
@@ -51,7 +60,9 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
                 damping: 20,
               }}
               whileTap={{ scale: 0.95 }}
+              disabled={isDisabledWeakPractice}
               onClick={() => {
+                if (isDisabledWeakPractice) return;
                 playTap();
                 onSelect(i);
               }}
@@ -60,6 +71,7 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
                 background: isChallenge
                   ? "linear-gradient(135deg,#92400e,#b45309)"
                   : subj.bg,
+                opacity: isDisabledWeakPractice ? 0.65 : 1,
                 minHeight: 82,
               }}
             >
@@ -68,7 +80,13 @@ export default function SubjectMenuScreen({ subject, onBack, onSelect }) {
                 <span className="text-white font-extrabold text-lg sm:text-xl drop-shadow-sm">
                   {test.label}
                 </span>
-                {hs ? (
+                {isWeakPractice ? (
+                  <span className="text-white/85 text-sm font-semibold mt-0.5">
+                    {weakQuestionCount > 0
+                      ? `${weakQuestionCount} questions from skills to review`
+                      : "Play a few math rounds to unlock skill practice"}
+                  </span>
+                ) : hs ? (
                   <span className="text-white/85 text-sm font-semibold mt-0.5">
                     Best: {hs.score}/100 &nbsp;
                     <Stars score={hs.score} />

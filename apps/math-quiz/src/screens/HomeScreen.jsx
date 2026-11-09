@@ -17,7 +17,6 @@ function formatReleaseDate(iso) {
 
 export default function HomeScreen({ onSelect, onHistory }) {
   const { playTap } = useSound();
-  const year = new Date().getFullYear();
   const totalStars = loadHistory().reduce((sum, a) => sum + (a.stars ?? 0), 0);
   const releaseLabel = formatReleaseDate(__RELEASE_DATE__);
 
@@ -42,7 +41,7 @@ export default function HomeScreen({ onSelect, onHistory }) {
           transition={{ delay: 0.1 }}
         >
           <span className="text-white font-extrabold text-2xl sm:text-3xl drop-shadow-lg">
-            🔭 Ready for 3rd grade · STEM & curiosity
+            🔭 Grade 3 learning · STEM & curiosity
           </span>
         </motion.div>
         <motion.p
@@ -51,7 +50,7 @@ export default function HomeScreen({ onSelect, onHistory }) {
           transition={{ delay: 0.2 }}
           className="text-zinc-200 text-sm font-semibold mt-0.5 px-3"
         >
-          Warm up for 3rd grade with math and reading, then explore STEM, maps,
+          Practice this year&apos;s math and reading, then explore STEM, maps,
           planets, dinosaurs, and wild facts. Tap a topic!
         </motion.p>
       </div>
@@ -106,7 +105,7 @@ export default function HomeScreen({ onSelect, onHistory }) {
         </div>
         <div className="flex items-center justify-center sm:justify-between px-4 py-2">
           <span className="text-zinc-400 text-xs font-semibold hidden sm:block">
-            Developed by Dad ❤️ &nbsp;© {year} prateekchhabra.com
+            EduApp
             <span className="ml-2 opacity-50">v{__APP_VERSION__}</span>
             <span className="ml-2 opacity-50">Released {releaseLabel}</span>
           </span>

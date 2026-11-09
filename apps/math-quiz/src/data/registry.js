@@ -32,9 +32,9 @@ import {
   advancedWorld,
 } from "./advancedQuestions.js";
 import {
-  mathGrade3SummerPrep,
-  elaGrade3SummerPrep,
-  tennesseeSummerSocial,
+  mathGrade3Practice,
+  elaGrade3Practice,
+  tennesseeSocialStudies,
 } from "./summerTennesseeGrade3.js";
 import {
   stemThirdGradeCuriosity,
@@ -50,14 +50,21 @@ import {
   multiplicationTablesAdvanced,
   multiplicationWordProblems,
 } from "./multiplicationLearning.js";
+import {
+  factFluencyQuestions,
+  divisionPractice,
+  fractionsPractice,
+  measurementPractice,
+  elaGrade3Depth,
+  scienceGrade3Strands,
+} from "./grade3Expansion.js";
 
 /**
- * Subject keys unchanged (saved scores). Topics emphasize 3rd-grade readiness,
- * STEM habits, geography, planets, and curiosity-driving facts.
+ * Subject and test keys remain stable so saved progress is preserved.
  */
 export const SUBJECTS = {
   math: {
-    label: "Math · 3rd-grade ready",
+    label: "Math · Grade 3",
     emoji: "🔢",
     color: "#0ea5e9",
     bg: "linear-gradient(135deg,#0ea5e9,#0369a1)",
@@ -78,7 +85,7 @@ export const SUBJECTS = {
         key: "g3",
         label: "Multiplication, fractions & measurement",
         emoji: "☀️",
-        questions: mathGrade3SummerPrep,
+        questions: mathGrade3Practice,
       },
       {
         key: "mst",
@@ -111,6 +118,38 @@ export const SUBJECTS = {
         questions: multiplicationWordProblems,
       },
       {
+        key: "division",
+        label: "Division: groups & fact families",
+        emoji: "➗",
+        questions: divisionPractice,
+      },
+      {
+        key: "fractions",
+        label: "Fractions: number lines & comparisons",
+        emoji: "🍕",
+        questions: fractionsPractice,
+      },
+      {
+        key: "measurement",
+        label: "Area, perimeter & elapsed time",
+        emoji: "📏",
+        questions: measurementPractice,
+      },
+      {
+        key: "fluency",
+        label: "Math facts: 60-second sprint",
+        emoji: "⏱️",
+        mode: "timed",
+        questions: factFluencyQuestions,
+      },
+      {
+        key: "weak",
+        label: "Practice my math skills",
+        emoji: "🎯",
+        mode: "weak",
+        questions: [],
+      },
+      {
         key: "ch",
         label: "Big math challenge",
         emoji: "🏆",
@@ -120,7 +159,7 @@ export const SUBJECTS = {
     ],
   },
   ela: {
-    label: "Reading & writing · 3rd-grade ready",
+    label: "Reading & writing · Grade 3",
     emoji: "📖",
     color: "#f472b6",
     bg: "linear-gradient(135deg,#fb7185,#be185d)",
@@ -145,9 +184,15 @@ export const SUBJECTS = {
       },
       {
         key: "g3",
-        label: "Tennessee stories & 3rd-grade texts",
+        label: "Tennessee stories & grade 3 texts",
         emoji: "🌻",
-        questions: elaGrade3SummerPrep,
+        questions: elaGrade3Practice,
+      },
+      {
+        key: "depth",
+        label: "Reading clues, vocabulary & word study",
+        emoji: "🔎",
+        questions: elaGrade3Depth,
       },
     ],
   },
@@ -174,6 +219,12 @@ export const SUBJECTS = {
         label: "STEM curiosity: data, design & Earth",
         emoji: "🧠",
         questions: stemThirdGradeCuriosity,
+      },
+      {
+        key: "strands",
+        label: "Forces, weather & life cycles",
+        emoji: "🧲",
+        questions: scienceGrade3Strands,
       },
       {
         key: "ch",
@@ -206,7 +257,7 @@ export const SUBJECTS = {
         key: "tn",
         label: "Tennessee: symbols, rivers & civics",
         emoji: "🎸",
-        questions: tennesseeSummerSocial,
+        questions: tennesseeSocialStudies,
       },
       {
         key: "exp",
@@ -360,9 +411,95 @@ export const SUBJECTS = {
   },
 };
 
-/** 1–3 stars from score (same thresholds as results UI). */
+/** 0–3 stars from score. */
 export function starsFromScore(score) {
-  return score >= 90 ? 3 : score >= 70 ? 2 : 1;
+  return score >= 90 ? 3 : score >= 70 ? 2 : score > 0 ? 1 : 0;
+}
+
+const SKILL_PROGRESS_PREFIX = "skill-progress-";
+
+export function loadSkillProgress(subjectKey) {
+  try {
+    const raw = localStorage.getItem(`${SKILL_PROGRESS_PREFIX}${subjectKey}`);
+    const parsed = raw ? JSON.parse(raw) : {};
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? parsed
+      : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveSkillResults(subjectKey, answers) {
+  const progress = loadSkillProgress(subjectKey);
+  for (const result of answers ?? []) {
+    const category = result.question?._cat;
+    if (!category) continue;
+    const current = progress[category] ?? { correct: 0, total: 0 };
+    progress[category] = {
+      correct: current.correct + Number(Boolean(result.isCorrect)),
+      total: current.total + 1,
+    };
+  }
+  try {
+    localStorage.setItem(
+      `${SKILL_PROGRESS_PREFIX}${subjectKey}`,
+      JSON.stringify(progress),
+    );
+  } catch {}
+}
+
+export function getWeakSkillQuestions(subjectKey) {
+  const progress = loadSkillProgress(subjectKey);
+  const weakCategories = new Set(
+    Object.entries(progress)
+      .filter(([, value]) => value.total >= 2 && value.correct / value.total < 0.7)
+      .sort(([, a], [, b]) => a.correct / a.total - b.correct / b.total)
+      .map(([category]) => category),
+  );
+  if (weakCategories.size === 0) return [];
+
+  const seen = new Set();
+  return SUBJECTS[subjectKey].tests
+    .filter((test) => test.mode !== "weak" && test.mode !== "timed")
+    .flatMap((test) => test.questions)
+    .filter((question) => {
+      if (!weakCategories.has(question._cat)) return false;
+      const key = question.question.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 60);
+}
+
+export function validateQuestionBanks(subjects = SUBJECTS) {
+  const errors = [];
+  for (const [subjectKey, subject] of Object.entries(subjects)) {
+    for (const test of subject.tests) {
+      if (test.mode === "weak") continue;
+      const seen = new Set();
+      for (const [index, question] of (test.questions ?? []).entries()) {
+        const label = `${subjectKey}/${test.key}[${index}]`;
+        if (!question.question?.trim()) errors.push(`${label}: missing question text`);
+        if (!question._cat) errors.push(`${label}: missing _cat`);
+        if (
+          !Array.isArray(question.choices) ||
+          question.choices.length !== 4 ||
+          !question.choices.every((choice) => typeof choice === "string") ||
+          !question.choices.includes(question.answer)
+        ) {
+          errors.push(`${label}: expected four string choices including the answer`);
+        }
+        const normalized = question.question?.trim().toLowerCase();
+        if (normalized && seen.has(normalized)) {
+          errors.push(`${label}: duplicate question in ${subjectKey}/${test.key}`);
+        }
+        if (normalized) seen.add(normalized);
+      }
+    }
+  }
+  return errors;
 }
 
 /** Keep localStorage history bounded (newest attempts kept). */

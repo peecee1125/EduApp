@@ -1,11 +1,22 @@
-import { useReducer, useLayoutEffect, useCallback, useRef } from "react";
+import {
+  useReducer,
+  useLayoutEffect,
+  useEffect,
+  useCallback,
+  useRef,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SUBJECTS, shuffle, pickRepresentative } from "../data/registry";
-import { loadCustomQuestions } from "../data/questionStore";
+import {
+  SUBJECTS,
+  shuffle,
+  pickRepresentative,
+  getWeakSkillQuestions,
+} from "../data/registry";
 import NavHeader from "../components/NavHeader";
 import { useSound } from "../hooks/useSound";
 
 const PER_ROUND = 10;
+const TIMED_SECONDS = 60;
 
 /** Unanswered: readable on dark purple without looking “washed out”. */
 const BG_UNANSWERED = "rgba(255,255,255,0.16)";
@@ -13,16 +24,22 @@ const BG_DIM = "rgba(255,255,255,0.09)";
 const BG_CORRECT = "#15803d";
 const BG_WRONG = "#b91c1c";
 
-function initState(questions) {
+function initState({ questions, mode }) {
   return {
-    questions: pickRepresentative(questions, PER_ROUND).map((q) => ({
+    questions: (
+      mode === "timed" ? shuffle(questions) : pickRepresentative(questions, PER_ROUND)
+    ).map((q) => ({
       ...q,
       choices: shuffle(q.choices),
     })),
     index: 0,
     score: 0,
+    answeredCount: 0,
     streak: 0,
     bestStreak: 0,
+    answers: [],
+    mode,
+    timeRemaining: TIMED_SECONDS,
     answered: null,
   };
 }
@@ -36,13 +53,35 @@ function reducer(state, action) {
       return {
         ...state,
         score: ok ? state.score + 10 : state.score,
+        answeredCount: state.answeredCount + 1,
         streak,
         bestStreak: Math.max(state.bestStreak, streak),
+        answers: [
+          ...state.answers,
+          {
+            question: q,
+            selected: action.choice,
+            correct: q.answer,
+            isCorrect: ok,
+          },
+        ],
         answered: { selected: action.choice, correct: q.answer },
       };
     }
     case "NEXT":
-      return { ...state, index: state.index + 1, answered: null };
+      return {
+        ...state,
+        index:
+          state.mode === "timed"
+            ? (state.index + 1) % state.questions.length
+            : state.index + 1,
+        answered: null,
+      };
+    case "TICK":
+      return {
+        ...state,
+        timeRemaining: Math.max(0, state.timeRemaining - 1),
+      };
     default:
       return state;
   }
@@ -60,11 +99,18 @@ function choiceBackground(choice, answered, correct, selected) {
 export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
   const subj = SUBJECTS[subject];
   const test = subj?.tests[testIdx];
-  const customBank = loadCustomQuestions(subject, test?.key);
-  const pool = customBank ? customBank.questions : (test?.questions ?? []);
-  const [state, dispatch] = useReducer(reducer, pool, initState);
+  const pool =
+    test?.mode === "weak"
+      ? getWeakSkillQuestions(subject)
+      : (test?.questions ?? []);
+  const [state, dispatch] = useReducer(
+    reducer,
+    { questions: pool, mode: test?.mode },
+    initState,
+  );
   const { playCorrect, playWrong, playTap } = useSound();
   const timerRef = useRef(null);
+  const countdownRef = useRef(null);
   const completedRef = useRef(false);
   const completionIdRef = useRef(
     typeof crypto !== "undefined" && crypto.randomUUID
@@ -72,7 +118,10 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
       : `q-${Date.now()}-${Math.random().toString(36).slice(2)}`,
   );
 
-  const isDone = state.index >= state.questions.length;
+  const isDone =
+    state.mode === "timed"
+      ? state.timeRemaining === 0
+      : state.index >= state.questions.length;
   const q = !isDone ? state.questions[state.index] : null;
 
   useLayoutEffect(() => {
@@ -83,13 +132,42 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
     if (completedRef.current) return;
     completedRef.current = true;
     onComplete({
-      score: state.score,
+      score:
+        state.mode === "timed"
+          ? state.answeredCount
+            ? Math.round((state.score / state.answeredCount) * 100)
+            : 0
+          : state.score,
       bestStreak: state.bestStreak,
+      correctCount: state.score / 10,
+      answeredCount: state.answeredCount,
+      answers: state.answers,
+      missedQuestions: state.answers.filter((answer) => !answer.isCorrect),
       completionId: completionIdRef.current,
     });
-  }, [isDone, state.score, state.bestStreak, onComplete]);
+  }, [
+    isDone,
+    state.score,
+    state.bestStreak,
+    state.answeredCount,
+    state.answers,
+    state.mode,
+    onComplete,
+  ]);
 
-  useLayoutEffect(() => () => clearTimeout(timerRef.current), []);
+  useEffect(() => {
+    if (state.mode !== "timed" || isDone) return undefined;
+    countdownRef.current = setInterval(() => dispatch({ type: "TICK" }), 1000);
+    return () => clearInterval(countdownRef.current);
+  }, [state.mode, isDone]);
+
+  useLayoutEffect(
+    () => () => {
+      clearTimeout(timerRef.current);
+      clearInterval(countdownRef.current);
+    },
+    [],
+  );
 
   const answer = useCallback(
     (choice) => {
@@ -97,9 +175,12 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
       dispatch({ type: "ANSWER", choice });
       if (choice === q.answer) playCorrect();
       else playWrong();
-      timerRef.current = setTimeout(() => dispatch({ type: "NEXT" }), 1500);
+      timerRef.current = setTimeout(
+        () => dispatch({ type: "NEXT" }),
+        state.mode === "timed" ? 500 : 1500,
+      );
     },
-    [state.answered, q, playCorrect, playWrong],
+    [state.answered, state.mode, q, playCorrect, playWrong],
   );
 
   if (!test) return null;
@@ -122,6 +203,7 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
           onBack={() => {
             playTap();
             clearTimeout(timerRef.current);
+            clearInterval(countdownRef.current);
             onBack();
           }}
         />
@@ -157,6 +239,7 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
         onBack={() => {
           playTap();
           clearTimeout(timerRef.current);
+          clearInterval(countdownRef.current);
           onBack();
         }}
       />
@@ -170,11 +253,29 @@ export default function QuizScreen({ subject, testIdx, onComplete, onBack }) {
         }}
       >
         <span className="text-white/90">
-          Q <span style={{ color: "#fbbf24" }}>{state.index + 1}</span> /{" "}
-          {PER_ROUND}
+          {state.mode === "timed" ? (
+            <>
+              Answered{" "}
+              <span style={{ color: "#fbbf24" }}>{state.answeredCount}</span>
+            </>
+          ) : (
+            <>
+              Q <span style={{ color: "#fbbf24" }}>{state.index + 1}</span> /{" "}
+              {state.questions.length}
+            </>
+          )}
         </span>
         <span className="text-white/90">
-          Score&nbsp;<span style={{ color: "#4ade80" }}>{state.score}</span>
+          {state.mode === "timed" ? (
+            <>
+              Time&nbsp;
+              <span style={{ color: "#4ade80" }}>{state.timeRemaining}s</span>
+            </>
+          ) : (
+            <>
+              Score&nbsp;<span style={{ color: "#4ade80" }}>{state.score}</span>
+            </>
+          )}
         </span>
         {state.streak >= 2 && (
           <span className="text-orange-300 font-bold">

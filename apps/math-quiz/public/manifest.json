@@ -1,7 +1,7 @@
 {
-  "name": "Summer TN 3rd prep",
-  "short_name": "TN Summer",
-  "description": "Summer practice for kids heading into 3rd grade in Tennessee — math, reading, science, maps, and more",
+  "name": "Grade 3 Tennessee Learning",
+  "short_name": "Grade 3",
+  "description": "In-year Tennessee grade 3 practice for math, reading, science, maps, and more",
   "start_url": ".",
   "display": "standalone",
   "orientation": "landscape",
